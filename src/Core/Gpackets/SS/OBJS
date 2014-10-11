@@ -1,0 +1,13 @@
+OBJS	= \
+	GSAddGuild.o GSAddGuildHandler.o \
+	GSAddGuildMember.o GSAddGuildMemberHandler.o \
+	GSAddGuildMember.o GSAddGuildMemberHandler.o \
+	GSQuitGuild.o GSQuitGuildHandler.o \
+	GSExpelGuildMember.o GSExpelGuildMemberHandler.o \
+	GSModifyGuildMember.o GSModifyGuildMemberHandler.o \
+	GSRequestGuildInfo.o GSRequestGuildInfoHandler.o \
+	GSModifyGuildIntro.o GSModifyGuildIntroHandler.o \
+	GSGuildMemberLogOn.o GSGuildMemberLogOnHandler.o \
+
+SRCS	= $(OBJS:.o=.cpp)
+
