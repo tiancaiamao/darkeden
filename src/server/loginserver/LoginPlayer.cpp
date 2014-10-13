@@ -195,8 +195,8 @@ void LoginPlayer::processCommand (bool Option )
 			memcpy(&packetID   , &header[0] , szPacketID);
 			memcpy(&packetSize , &header[szPacketID] , szPacketSize);
 
-			/*
-			LOG4("RECV PACKET from %s, %s(%d) %d/%d\n",
+
+            printf("RECV PACKET from %s, %s(%d) %d/%d\n",
 				m_ID.c_str(),
 				g_pPacketFactoryManager->getPacketName(packetID ).c_str(),
 				packetID,
@@ -204,6 +204,7 @@ void LoginPlayer::processCommand (bool Option )
 				m_pInputStream->length()
 			);
 
+            /*
 			StringStream msg;
 			msg << "RECV PACKET from " << m_ID << ", "
 				<< g_pPacketFactoryManager->getPacketName(packetID ) << "(" << packetID << ") "

@@ -22,9 +22,11 @@
               "./server",
               "./server/database",
           ],
-          # 'linkflags': [
-          #     "-mysqlclient",
-          # ],
+          'link_settings': {
+               'libraries': [
+                '-L/usr/local/lib -lmysqlclient'
+             ],
+          },
           'sources': [
               "./server/loginserver/ClientManager.cpp",
               "./server/loginserver/GameServerGroupInfoManager.cpp",
@@ -39,18 +41,6 @@
               "./server/loginserver/ZoneGroupInfoManager.cpp",
               "./server/loginserver/ZoneInfoManager.cpp",
           ],
-          'conditions':[
-              ['OS=="linux"',{
-                 'ldflags':[
-                     '-L/usr/local/lib -lmysqlclient',
-                 ],
-              }],
-              ['OS=="mac"',{
-                 'ldflags':[
-                     '-L/usr/local/lib -lmysqlclient',
-                 ],
-              }],
-          ]
       },
       
       {
@@ -60,6 +50,7 @@
           ],
           'defines':[
             '__LINUX__',
+            '__GAME_SERVER__',
           ],
           'include_dirs':[
               "/usr/local/include",
@@ -96,8 +87,6 @@
                 "./Core/NicknameInfo.cpp",
                 "./Core/NPCInfo.cpp",
                 "./Core/OustersSkillInfo.cpp",
-                "./Core/PacketIDSet.cpp",
-                "./Core/PacketValidator.cpp",
                 "./Core/PCItemInfo.cpp",
                 "./Core/PCOustersInfo.cpp",
                 "./Core/PCOustersInfo2.cpp",
@@ -191,6 +180,8 @@
               "./server/database",
           ],
           'sources': [
+              "./Core/PacketIDSet.cpp",
+              "./Core/PacketValidator.cpp",
                "./Core/Lpackets/LCCreatePCError.cpp",
                 "./Core/Lpackets/LCCreatePCErrorHandler.cpp",
                 "./Core/Lpackets/LCCreatePCOK.cpp",
@@ -430,6 +421,13 @@
           '__LINUX__',
           '__GAME_SERVER__',
         ],
+        'link_settings': {
+             'libraries': [
+              '-L/usr/local/lib -lmysqlclient',
+              '-L/usr/local/lib -lxerces-c',
+              '-L/usr/local/lib -llua',
+           ],
+        },
         'include_dirs':[
             "/usr/local/include",
             "./Core",
@@ -1347,7 +1345,6 @@
             "./server/gameserver/war/WarScheduler.cpp",
             "./server/gameserver/war/WarSystem.cpp",
             "./server/gameserver/war/ZoneItemPosition.cpp",
-            "./Core/PacketFactoryManager.cpp",
         ],
     },
       
@@ -1374,6 +1371,8 @@
               "./server/gameserver/war",
           ],
           'sources': [
+                "./Core/PacketIDSet.cpp",
+                "./Core/PacketValidator.cpp",
                 "./Core/Gpackets/GCActiveGuildList.cpp",
                 "./Core/Gpackets/GCActiveGuildListHandler.cpp",
                 "./Core/Gpackets/GCAddBat.cpp",
@@ -2540,6 +2539,11 @@
             "./server",
             "./server/database",
         ],
+        'link_settings': {
+             'libraries': [
+              '-L/usr/local/lib -lmysqlclient'
+           ],
+        },
         'sources': [
             "./server/sharedserver/GameServerGroupInfoManager.cpp",
             "./server/sharedserver/GameServerInfoManager.cpp",
@@ -2573,6 +2577,8 @@
               "./server/gameserver",
           ],
           'sources': [
+                "./Core/PacketIDSet.cpp",
+                "./Core/PacketValidator.cpp",
                 "./Core/PacketFactoryManager.cpp",
                 "./Core/Spackets/SGAddGuildMemberOKHandler.cpp",
                 "./Core/Spackets/SGExpelGuildMemberOK.cpp",

@@ -123,6 +123,7 @@ void GameServerPlayer::processCommand() throw(IOException, Error) {
             // 패킷팩토리매니저로부터 패킷아이디를 사용해서 패킷 스트럭처를 생성하면 된다.
             // 패킷아이디가 잘못될 경우는 패킷팩토리매니저에서 처리한다.
             pPacket = g_pPacketFactoryManager->createPacket(packetID);
+            printf("get a packet: %d\n", packetID);
 
             // 이제 이 패킷스트럭처를 초기화한다.
             // 패킷하위클래스에 정의된 read()가 virtual 메커니즘에 의해서 호출되어
