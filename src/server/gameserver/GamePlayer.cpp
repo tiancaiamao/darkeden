@@ -44,6 +44,7 @@
 	#include "chinabilling/CBillingPlayerManager.h"
 #endif
 
+#include "zlog.h"
 #include <stdio.h>
 
 
@@ -460,6 +461,7 @@ void GamePlayer::processCommand (bool Option)
 				// 현재 패킷을 패킷 히스토리의 맨 뒤에 넣는다.
 				m_PacketHistory.push_back(pPacket);
 
+                dzlog_debug("%s\n", pPacket->toString().c_str());
 				// packet file log를 남긴다.
 				if (m_bPacketLog )
 				{
@@ -491,7 +493,7 @@ void GamePlayer::processCommand (bool Option)
 				#endif
 				} catch (Throwable& t )
 				{
-					filelog("GPPC.txt", "%s PacketID : %d", t.toString().c_str(), packetID);
+                    dzlog_error("%s PacketID : %d", t.toString().c_str(), packetID);
 					throw;
 				}
 

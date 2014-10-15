@@ -42,7 +42,7 @@ void CGMoveHandler::execute (CGMove* pPacket , Player* pPlayer)
 
 		// ��Ż �̵��� �������� �ұ��ϰ�, Ŭ���̾�Ʈ ��ã���� �������� ���ؼ�
 		// �����󿡼� ũ��ó�� ������ IPM ���� �Ű��� ���¿��� CGMove �� ���ƿ�
-		// ���ɼ��� �ִ�. ����..
+        // ���ɼ��� �ִ�. ����..
 		if (pCreature->getZone() == NULL) return;
 	
 		Zone* pZone = pCreature->getZone();
@@ -53,10 +53,6 @@ void CGMoveHandler::execute (CGMove* pPacket , Player* pPlayer)
 			g_Sniping.checkRevealRatio(pCreature, 10, 20);
 		}
 
-		// Ư�� PC�� �̵��� �������� ó���Ǵ� ������, PC�� �̵��� ���� �ִ� �ٸ� PC�鿡��
-		// ���ε�ĳ��Ʈ�ؾ� �ϱ� �����̴�. �̶�, CGMove ��Ŷ�� �����Ӹ� �ƴ϶� ���� ��ǥ��
-		// ���Ե� ������, ���� üũ�� �ϱ� ���ؼ��̴�.
-		cout << "move: " << pPacket->getX() << " " << pPacket->getY() << " " << pPacket->getDir();
 		pZone->movePC(pCreature , pPacket->getX() , pPacket->getY() , pPacket->getDir());
 	}
 

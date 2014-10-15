@@ -20,6 +20,7 @@
 #include <new>
 #include <stdexcept>
 #include <stdio.h>
+#include "zlog.h"
 
 void handleMemoryError()
 {
@@ -74,53 +75,22 @@ int main (int argc, char** argv) {
 
 	filelog("serverStart.log", "GameServer Start");
 
-	// ���� �ڵ鷯�� �����Ѵ�. 
 	std::set_new_handler(handleMemoryError);
 	std::set_terminate(handleUnhandledException);
 	std::set_unexpected(handleUnexpectedException);
 
-	/*
-	int* pPointer = NULL;
-	pPointer = new int[10000000];
-	delete [] pPointer;
-	*/
-
-	// ������ ��ġ�� ã�ƺ���.
 	srand(time(0));
 	cout << "[GAMESERVER] Randomization Initialization success." << endl;
 
     g_pConfig = new Properties();
     g_pConfig->load("../conf/gameserver.conf");
 
-	// �α� �Ŵ����� �����ϰ� �ʱ�ȭ���� Ȱ��ȭ��Ų��.
-	// �α� �Ŵ����� ���� ������ �ʱ�ȭ�������� �߻��� ���ɼ��� �ִ� ����������
-	// �����س��� �ϹǷ� ���� ���� ���ο��� �ʱ�ȭ�ؼ��� �ȵȴ�.
-	// ���� �ٸ� ��ü�� �����ϰ� �ʱ�ȭ�ϱ����� �α׸Ŵ����� �켱������ ����,
-	// �ʱ�ȭ�Ǿ��� �Ѵ�.
-	try 
-	{
-		string LogServerIP   = g_pConfig->getProperty("LogServerIP");
-		int    LogServerPort = g_pConfig->getPropertyInt("LogServerPort");
-		int    LogLevel      = g_pConfig->getPropertyInt("LogLevel");
-		//g_pLogClient = new LogClient(LogServerIP, LogServerPort);
-		//LogClient::setLogLevel(LogLevel);
+    int rc = dzlog_init("../conf/log.conf", "my_cat");
+    if (rc != 0) {
+        printf("zlog init failed\n");
+        return -1;
+    }
 
-		//log(LOG_GAMESERVER, "", "", "Game Server Start");
-
-		//cout << "LogServerIP = " << LogServerIP << endl;
-		//cout << "LogServerPort = " << LogServerPort << endl;
-		//cout << "LogLevel = " << LogClient::getLogLevel() << endl;
-	} 
-	catch (Error & e) 
-	{
-		//cout << e.toString() << endl;
-	}
-
-	//cout << ">>> LOGCLIENT INITIALZATION SUCCESS..." << endl;
-
-	//
-	// ���� ���� ��ü�� �����ϰ� �ʱ�ȭ�� �� Ȱ��ȭ��Ų��.
-	//
 	try 
 	{
 		struct rlimit rl;
@@ -154,6 +124,7 @@ int main (int argc, char** argv) {
 		// ���� ������ �ߴܽ�Ų��.
 		// �� ���ο��� ���� �Ŵ��� ���� �ߴܵǾ��� �Ѵ�.
 		g_pGameServer->stop();
+        zlog_fini();
 	} 
 	catch (...) 
 	{

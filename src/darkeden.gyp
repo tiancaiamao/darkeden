@@ -426,9 +426,11 @@
               '-L/usr/local/lib -lmysqlclient',
               '-L/usr/local/lib -lxerces-c',
               '-L/usr/local/lib -llua',
+              '-L./Third/zlog/src -lzlog',
            ],
         },
         'include_dirs':[
+            "./Third/zlog/src"
             "/usr/local/include",
             "./Core",
             "./server",

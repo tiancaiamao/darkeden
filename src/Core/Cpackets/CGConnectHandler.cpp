@@ -959,7 +959,6 @@ void CGConnectHandler::execute (CGConnect* pPacket , Player* pPlayer)
 	//pGamePlayer->addEvent(pEventSave);
 
 #ifdef __USE_ENCRYPTER__
-	// 암호화 코드 등록. 지금은 objectID로 하기 때문에.. by sigi. 2002.11.27
     pGamePlayer->setEncryptCode();
 #endif
 
