@@ -24,7 +24,8 @@
           ],
           'link_settings': {
                'libraries': [
-                '-L/usr/local/lib -lmysqlclient'
+                '-L/usr/local/lib -lmysqlclient',
+                '-L../src/Third/zlog/src -lzlog',
              ],
           },
           'sources': [
@@ -2543,7 +2544,8 @@
         ],
         'link_settings': {
              'libraries': [
-              '-L/usr/local/lib -lmysqlclient'
+              '-L/usr/local/lib -lmysqlclient',
+              '-L./Third/zlog/src -lzlog',
            ],
         },
         'sources': [

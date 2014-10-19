@@ -14,6 +14,7 @@
 #include "Assert1.h"
 #include "Packet.h"
 //#include "PacketFactoryManager.h"
+#include "zlog.h"
 
 //////////////////////////////////////////////////////////////////////
 //
@@ -214,15 +215,11 @@ void Player::sendPacket (Packet * pPacket )
 {
 	__BEGIN_TRY
 
+
 	if (m_pOutputStream!=NULL)	// -_-;
 		m_pOutputStream->writePacket(pPacket);
 
-	/*
-	cout << endl;
-	cout << "=== Player::sendPacket() ===" << endl;
-	cout << pPacket->toString() << endl;
-	cout << "============================" << endl;
-	*/
+    dzlog_debug("get a packet: %s\n", pPacket->toString().c_str());
 
 	__END_CATCH
 }
