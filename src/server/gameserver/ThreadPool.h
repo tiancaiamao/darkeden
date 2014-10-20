@@ -63,7 +63,7 @@ public:
 	void stop() throw(Error);
 	
 	// 쓰레드풀에 쓰레드 객체를 등록한다.
-	void addThread(Thread* thread) throw(Error);
+//	void addThread(Thread* thread) throw(Error);
 	
 	// 쓰레드풀에서 특정 쓰레드 객체를 삭제한다.
 	void deleteThread(TID tid) throw(NoSuchElementException, Error);

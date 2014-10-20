@@ -4599,13 +4599,13 @@ void Zone::broadcastSayPacket(ZoneCoord_t cx, ZoneCoord_t cy, Packet* pPacket, C
 	ZoneCoord_t endx = 0;
 	ZoneCoord_t endy = 0;
 
-#ifdef __USE_ENCRYPTER__
-	SocketEncryptOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
-	outputStream.setEncryptCode(m_EncryptCode);
-#else
-	SocketOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
-#endif
-	pPacket->writeHeaderNBody(outputStream);
+//#ifdef __USE_ENCRYPTER__
+//	SocketEncryptOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
+//	outputStream.setEncryptCode(m_EncryptCode);
+//#else
+//	SocketOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
+//#endif
+//	pPacket->writeHeaderNBody(outputStream);
 
 	//-------------------------------------------------------------------
 	// ���� ���� �ʱ�ȭ..
@@ -4660,14 +4660,14 @@ void Zone::broadcastSayPacket(ZoneCoord_t cx, ZoneCoord_t cy, Packet* pPacket, C
 								&& ((isVampire && pCreature->isVampire()) || (!isVampire && pCreature->isSlayer()) || pCreature->isOusters())
 								)
 							{
-								//pCreature->getPlayer()->sendPacket(pPacket);
-								pCreature->getPlayer()->sendStream(&outputStream);
+                                pCreature->getPlayer()->sendPacket(pPacket);
+//								pCreature->getPlayer()->sendStream(&outputStream);
 							}
 						}
 						else
 						{
-							//pCreature->getPlayer()->sendPacket(pPacket);
-							pCreature->getPlayer()->sendStream(&outputStream);
+                            pCreature->getPlayer()->sendPacket(pPacket);
+//							pCreature->getPlayer()->sendStream(&outputStream);
 						}
 					}
 				}
@@ -4698,13 +4698,13 @@ void Zone::broadcastPacket(ZoneCoord_t cx, ZoneCoord_t cy, Packet* pPacket, Crea
 
 	__BEGIN_PROFILE_ZONE("Z_BC_NORMAL")
 
-#ifdef __USE_ENCRYPTER__
-//	SocketEncryptOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
-//	outputStream.setEncryptCode(m_EncryptCode);
-#else
-	SocketOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
-#endif
-//	pPacket->writeHeaderNBody(outputStream);
+//#ifdef __USE_ENCRYPTER__
+////	SocketEncryptOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
+////	outputStream.setEncryptCode(m_EncryptCode);
+//#else
+//	SocketOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
+//#endif
+////	pPacket->writeHeaderNBody(outputStream);
 
 	ZoneCoord_t ix = 0;
 	ZoneCoord_t iy = 0;
@@ -5185,13 +5185,13 @@ list<Creature*> Zone::broadcastSkillPacket(ZoneCoord_t x1, ZoneCoord_t y1, ZoneC
 {
 	__BEGIN_TRY
 
-#ifdef __USE_ENCRYPTER__
-	SocketEncryptOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
-	outputStream.setEncryptCode(m_EncryptCode);
-#else
-	SocketOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
-#endif
-	pPacket->writeHeaderNBody(outputStream);
+//#ifdef __USE_ENCRYPTER__
+//	SocketEncryptOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
+//	outputStream.setEncryptCode(m_EncryptCode);
+//#else
+//	SocketOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
+//#endif
+////	pPacket->writeHeaderNBody(outputStream);
 
 	list<Creature*> cList;
 
@@ -5251,8 +5251,8 @@ list<Creature*> Zone::broadcastSkillPacket(ZoneCoord_t x1, ZoneCoord_t y1, ZoneC
 						{
 							// ���� �ִ� ���� �� ���̸鼭 ��ų�� �� ������ ����.. ������ HIDEüũ�� ���� �ʴ´�.
 							Player* pPlayer = pCreature->getPlayer();
-							//pPlayer->sendPacket(pPacket);
-							pPlayer->sendStream(&outputStream);
+                            pPlayer->sendPacket(pPacket);
+//							pPlayer->sendStream(&outputStream);
 							cList.push_back(pCreature);
 						}
 					}
@@ -5294,13 +5294,13 @@ void Zone::broadcastPacket(ZoneCoord_t cx, ZoneCoord_t cy, Packet* pPacket, cons
 
 	__BEGIN_PROFILE_ZONE("Z_BC_EXCLIST")
 
-#ifdef __USE_ENCRYPTER__
-	SocketEncryptOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
-	outputStream.setEncryptCode(m_EncryptCode);
-#else
-	SocketOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
-#endif
-	pPacket->writeHeaderNBody(outputStream);
+//#ifdef __USE_ENCRYPTER__
+//	SocketEncryptOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
+//	outputStream.setEncryptCode(m_EncryptCode);
+//#else
+//	SocketOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
+//#endif
+//	pPacket->writeHeaderNBody(outputStream);
 
 	ZoneCoord_t ix = 0;
 	ZoneCoord_t iy = 0;
@@ -5353,8 +5353,8 @@ void Zone::broadcastPacket(ZoneCoord_t cx, ZoneCoord_t cy, Packet* pPacket, cons
 //						if ((!belong && pCreature->getVisionState(cx,cy) >= IN_SIGHT) ||(!belong && Plus))
 						if (!belong )
 						{
-							//pCreature->getPlayer()->sendPacket(pPacket);
-							pCreature->getPlayer()->sendStream(&outputStream);
+                            pCreature->getPlayer()->sendPacket(pPacket);
+//							pCreature->getPlayer()->sendStream(&outputStream);
 						} // if
 					} // if
 
@@ -5379,13 +5379,13 @@ void Zone::scan (Creature* pPC, ZoneCoord_t cx, ZoneCoord_t cy, Packet* pPacket)
 
 	__BEGIN_PROFILE_ZONE("Z_SCAN")
 
-#ifdef __USE_ENCRYPTER__
-	SocketEncryptOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
-	outputStream.setEncryptCode(m_EncryptCode);
-#else
-	SocketOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
-#endif
-	pPacket->writeHeaderNBody(outputStream);
+//#ifdef __USE_ENCRYPTER__
+//	SocketEncryptOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
+//	outputStream.setEncryptCode(m_EncryptCode);
+//#else
+//	SocketOutputStream outputStream(NULL, szPacketHeader + pPacket->getPacketSize() + 2);
+//#endif
+//	pPacket->writeHeaderNBody(outputStream);
 
 	Assert(pPC->isPC());
 
@@ -5493,8 +5493,8 @@ void Zone::scan (Creature* pPC, ZoneCoord_t cx, ZoneCoord_t cy, Packet* pPacket)
 											// canSee �� ��ü. 2003.05.29 by bezz
 											if (canSee(pCreature, pPC ) )
 											{
-												//pCreature->getPlayer()->sendPacket(pPacket);
-												pCreature->getPlayer()->sendStream(&outputStream);
+                                                pCreature->getPlayer()->sendPacket(pPacket);
+//												pCreature->getPlayer()->sendStream(&outputStream);
 											}
 										}
 									}
@@ -5554,8 +5554,8 @@ void Zone::scan (Creature* pPC, ZoneCoord_t cx, ZoneCoord_t cy, Packet* pPacket)
 										if (pPacket && pCreature->getVisionState(cx, cy) >= IN_SIGHT && canSee(pCreature, pPC ))
 										{
 											Assert(pCreature->getPlayer() != NULL);
-											//pCreature->getPlayer()->sendPacket(pPacket);
-											pCreature->getPlayer()->sendStream(&outputStream);
+                                            pCreature->getPlayer()->sendPacket(pPacket);
+//											pCreature->getPlayer()->sendStream(&outputStream);
 										}
 									}
 									break;
@@ -5584,8 +5584,8 @@ void Zone::scan (Creature* pPC, ZoneCoord_t cx, ZoneCoord_t cy, Packet* pPacket)
 										if (pPacket && pCreature->getVisionState(cx, cy) >= IN_SIGHT && canSee(pCreature, pPC ) )
 										{
 											Assert(pCreature->getPlayer() != NULL);
-											//pCreature->getPlayer()->sendPacket(pPacket);
-											pCreature->getPlayer()->sendStream(&outputStream);
+                                            pCreature->getPlayer()->sendPacket(pPacket);
+//											pCreature->getPlayer()->sendStream(&outputStream);
 										}
 									}
 									break;
@@ -6729,13 +6729,13 @@ bool Zone::moveFastMonster(Monster* pMonster, ZoneCoord_t x1, ZoneCoord_t y1, Zo
 	gcFastMove.setXY(x1, y1, x2, y2);
 	gcFastMove.setSkillType(skillType);
 
-#ifdef __USE_ENCRYPTER__
-	SocketEncryptOutputStream outputStream(NULL, szPacketHeader + gcFastMove.getPacketSize() + 2);
-	outputStream.setEncryptCode(m_EncryptCode);
-#else
-	SocketOutputStream outputStream(NULL, szPacketHeader + gcFastMove.getPacketSize() + 2);
-#endif
-	gcFastMove.writeHeaderNBody(outputStream);
+//#ifdef __USE_ENCRYPTER__
+//	SocketEncryptOutputStream outputStream(NULL, szPacketHeader + gcFastMove.getPacketSize() + 2);
+//	outputStream.setEncryptCode(m_EncryptCode);
+//#else
+//	SocketOutputStream outputStream(NULL, szPacketHeader + gcFastMove.getPacketSize() + 2);
+//#endif
+//	gcFastMove.writeHeaderNBody(outputStream);
 
 	// ���������״� ���� �ʿ䰡 ����.
 	//pPlayer->sendPacket(&gcFastMove);
@@ -6904,13 +6904,13 @@ bool Zone::moveFastMonster(Monster* pMonster, ZoneCoord_t x1, ZoneCoord_t y1, Zo
 													if (prevVS == OUT_OF_SIGHT && currVS >= IN_SIGHT)
 													{
 														pCreature->getPlayer()->sendPacket(pAddMonsterPacket);
-														//pCreature->getPlayer()->sendPacket(&gcFastMove);
-														pCreature->getPlayer()->sendStream(&outputStream);
+                                                        pCreature->getPlayer()->sendPacket(&gcFastMove);
+//														pCreature->getPlayer()->sendStream(&outputStream);
 													}
 													else if (prevVS >= IN_SIGHT && currVS >= IN_SIGHT)
 													{
-														//pCreature->getPlayer()->sendPacket(&gcFastMove);
-														pCreature->getPlayer()->sendStream(&outputStream);
+                                                        pCreature->getPlayer()->sendPacket(&gcFastMove);
+//														pCreature->getPlayer()->sendStream(&outputStream);
 													}
 													else if (prevVS >= IN_SIGHT && currVS == OUT_OF_SIGHT)
 													{
@@ -6946,13 +6946,13 @@ bool Zone::moveFastMonster(Monster* pMonster, ZoneCoord_t x1, ZoneCoord_t y1, Zo
 												if (prevVS == OUT_OF_SIGHT && currVS >= IN_SIGHT)
 												{
 													pCreature->getPlayer()->sendPacket(pAddMonsterPacket);
-													//pCreature->getPlayer()->sendPacket(&gcFastMove);
-													pCreature->getPlayer()->sendStream(&outputStream);
+                                                    pCreature->getPlayer()->sendPacket(&gcFastMove);
+//													pCreature->getPlayer()->sendStream(&outputStream);
 												}
 												else if (prevVS >= IN_SIGHT && currVS >= IN_SIGHT)
 												{
-													//pCreature->getPlayer()->sendPacket(&gcFastMove);
-													pCreature->getPlayer()->sendStream(&outputStream);
+                                                    pCreature->getPlayer()->sendPacket(&gcFastMove);
+//													pCreature->getPlayer()->sendStream(&outputStream);
 												}
 												else if (prevVS >= IN_SIGHT && currVS == OUT_OF_SIGHT)
 												{
@@ -6974,13 +6974,13 @@ bool Zone::moveFastMonster(Monster* pMonster, ZoneCoord_t x1, ZoneCoord_t y1, Zo
 													if (prevVS == OUT_OF_SIGHT && currVS >= IN_SIGHT)
 													{
 														pCreature->getPlayer()->sendPacket(pAddMonsterPacket);
-														//pCreature->getPlayer()->sendPacket(&gcFastMove);
-														pCreature->getPlayer()->sendStream(&outputStream);
+                                                        pCreature->getPlayer()->sendPacket(&gcFastMove);
+//														pCreature->getPlayer()->sendStream(&outputStream);
 													}
 													else if (prevVS >= IN_SIGHT && currVS >= IN_SIGHT)
 													{
-														//pCreature->getPlayer()->sendPacket(&gcFastMove);
-														pCreature->getPlayer()->sendStream(&outputStream);
+                                                        pCreature->getPlayer()->sendPacket(&gcFastMove);
+//														pCreature->getPlayer()->sendStream(&outputStream);
 													}
 													else if (prevVS >= IN_SIGHT && currVS == OUT_OF_SIGHT)
 													{
@@ -7098,16 +7098,16 @@ try
 		gcKnockback.setTarget(x2, y2);
 	}
 
-#ifdef __USE_ENCRYPTER__
-	SocketEncryptOutputStream outputStream(NULL, szPacketHeader + (bSendMove ? gcMove.getPacketSize() : gcKnockback.getPacketSize() ) + 2);
-	outputStream.setEncryptCode(m_EncryptCode);
-#else
-	SocketOutputStream outputStream(NULL, szPacketHeader + (bSendMove ? gcMove.getPacketSize() : gcKnockback.getPacketSize() ) + 2);
-#endif
-	if (bSendMove )
-		gcMove.writeHeaderNBody(outputStream);
-	else
-		gcKnockback.writeHeaderNBody(outputStream);
+//#ifdef __USE_ENCRYPTER__
+//	SocketEncryptOutputStream outputStream(NULL, szPacketHeader + (bSendMove ? gcMove.getPacketSize() : gcKnockback.getPacketSize() ) + 2);
+//	outputStream.setEncryptCode(m_EncryptCode);
+//#else
+//	SocketOutputStream outputStream(NULL, szPacketHeader + (bSendMove ? gcMove.getPacketSize() : gcKnockback.getPacketSize() ) + 2);
+//#endif
+//	if (bSendMove )
+//		gcMove.writeHeaderNBody(outputStream);
+//	else
+//		gcKnockback.writeHeaderNBody(outputStream);
 
 	//////////////////////////////////////////////////////////////////////////////
 	// �����̴� PC�� ���� ���Ե� �ٸ� PC���� ���ؼ� PC�� Ÿ�Կ� ���� GCAdd ��Ŷ��
@@ -7238,8 +7238,8 @@ try
 							// Ÿ�ο� ���� �����̴� ���̹Ƿ� �������� �Ѵ�.
 							if (bKnockback)
 							{
-								//pPC->getPlayer()->sendPacket(&gcKnockback);
-								pPC->getPlayer()->sendStream(&outputStream);
+                                pPC->getPlayer()->sendPacket(&gcKnockback);
+//								pPC->getPlayer()->sendStream(&outputStream);
 								// �˹��� ���������� continue�Ѵ�.
 							}
 
@@ -7336,11 +7336,11 @@ try
 								}
 								else if (prevVS >= IN_SIGHT && currVS >= IN_SIGHT)
 								{
-									//if (bSendMove)
-									//	pCreature->getPlayer()->sendPacket(&gcMove);
-									//else if (bKnockback)
-									//	pCreature->getPlayer()->sendPacket(&gcKnockback);
-									pCreature->getPlayer()->sendStream(&outputStream);
+                                    if (bSendMove)
+                                        pCreature->getPlayer()->sendPacket(&gcMove);
+                                    else if (bKnockback)
+                                        pCreature->getPlayer()->sendPacket(&gcKnockback);
+//									pCreature->getPlayer()->sendStream(&outputStream);
 								}
 								else if (prevVS >= IN_SIGHT && currVS == OUT_OF_SIGHT)
 								{
@@ -7429,9 +7429,9 @@ try
 								}
 								else if (prevVS >= IN_SIGHT && currVS >= IN_SIGHT)
 								{
-									//if (bSendMove) pCreature->getPlayer()->sendPacket(&gcMove);
-									////else if (bKnockback) pCreature->getPlayer()->sendPacket(&gcKnockback);
-									pCreature->getPlayer()->sendStream(&outputStream);
+                                    if (bSendMove) pCreature->getPlayer()->sendPacket(&gcMove);
+                                    else if (bKnockback) pCreature->getPlayer()->sendPacket(&gcKnockback);
+//									pCreature->getPlayer()->sendStream(&outputStream);
 								}
 								else if (prevVS >= IN_SIGHT && currVS == OUT_OF_SIGHT)
 								{
@@ -7489,9 +7489,9 @@ try
 								}
 								else if (prevVS >= IN_SIGHT && currVS >= IN_SIGHT)
 								{
-									//if (bSendMove) pCreature->getPlayer()->sendPacket(&gcMove);
-									//else if (bKnockback) pCreature->getPlayer()->sendPacket(&gcKnockback);
-									pCreature->getPlayer()->sendStream(&outputStream);
+                                    if (bSendMove) pCreature->getPlayer()->sendPacket(&gcMove);
+                                    else if (bKnockback) pCreature->getPlayer()->sendPacket(&gcKnockback);
+//									pCreature->getPlayer()->sendStream(&outputStream);
 								}
 								else if (prevVS >= IN_SIGHT && currVS == OUT_OF_SIGHT)
 								{
@@ -7740,16 +7740,16 @@ void Zone::moveCreatureBroadcast(Creature* pCreature, ZoneCoord_t x1, ZoneCoord_
 		gcKnockback.setTarget(x2, y2);
 	}
 
-#ifdef __USE_ENCRYPTER__
-	SocketEncryptOutputStream outputStream(NULL, szPacketHeader + (bSendMove ? gcMove.getPacketSize() : gcKnockback.getPacketSize() ) + 2);
-	outputStream.setEncryptCode(m_EncryptCode);
-#else
-	SocketOutputStream outputStream(NULL, szPacketHeader + (bSendMove ? gcMove.getPacketSize() : gcKnockback.getPacketSize() ) + 2);
-#endif
-	if (bSendMove )
-		gcMove.writeHeaderNBody(outputStream);
-	else
-		gcKnockback.writeHeaderNBody(outputStream);
+//#ifdef __USE_ENCRYPTER__
+//	SocketEncryptOutputStream outputStream(NULL, szPacketHeader + (bSendMove ? gcMove.getPacketSize() : gcKnockback.getPacketSize() ) + 2);
+//	outputStream.setEncryptCode(m_EncryptCode);
+//#else
+//	SocketOutputStream outputStream(NULL, szPacketHeader + (bSendMove ? gcMove.getPacketSize() : gcKnockback.getPacketSize() ) + 2);
+//#endif
+//	if (bSendMove )
+//		gcMove.writeHeaderNBody(outputStream);
+//	else
+//		gcKnockback.writeHeaderNBody(outputStream);
 
 	// GCAddNPC/GCAddMonster ��Ŷ�� �������д�.
 	Packet* pGCAddXXX = NULL;
@@ -7840,15 +7840,15 @@ void Zone::moveCreatureBroadcast(Creature* pCreature, ZoneCoord_t x1, ZoneCoord_
 					}
 					else if (prevVS >= IN_SIGHT && currVS >= IN_SIGHT)
 					{
-						//if (bSendMove)
-						//{
-						//	pPC->getPlayer()->sendPacket(&gcMove);
-						//}
-						//else if (bKnockback)
-						//{
-						//	pPC->getPlayer()->sendPacket(&gcKnockback);
-						//}
-						pPC->getPlayer()->sendStream(&outputStream);
+                        if (bSendMove)
+                        {
+                            pPC->getPlayer()->sendPacket(&gcMove);
+                        }
+                        else if (bKnockback)
+                        {
+                            pPC->getPlayer()->sendPacket(&gcKnockback);
+                        }
+//						pPC->getPlayer()->sendStream(&outputStream);
 					}
 					else if (prevVS >= IN_SIGHT && currVS == OUT_OF_SIGHT)
 					{

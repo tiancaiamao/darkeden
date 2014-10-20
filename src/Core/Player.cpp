@@ -229,16 +229,16 @@ void Player::sendPacket (Packet * pPacket )
 // send stream to player's output buffer
 //
 //////////////////////////////////////////////////////////////////////
-void Player::sendStream (SocketOutputStream* pOutputStream )
-	throw(ProtocolException , Error )
-{
-	__BEGIN_TRY
+//void Player::sendStream (SocketOutputStream* pOutputStream )
+//    throw(ProtocolException , Error )
+//{
+//    __BEGIN_TRY
 
-	if (m_pOutputStream!=NULL)
-		m_pOutputStream->write(pOutputStream->getBuffer(), pOutputStream->length());
+//    if (m_pOutputStream!=NULL)
+//        m_pOutputStream->write(pOutputStream->getBuffer(), pOutputStream->length());
 
-	__END_CATCH
-}
+//    __END_CATCH
+//}
 
 
 //////////////////////////////////////////////////////////////////////

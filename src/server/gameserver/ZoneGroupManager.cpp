@@ -380,16 +380,16 @@ void   ZoneGroupManager::broadcast(Packet* pPacket)
 void   ZoneGroupManager::pushBroadcastPacket(Packet* pPacket, BroadcastFilter* pFilter) 
 	throw(Error)
 {
-	ZoneGroup* pZoneGroup = NULL;
+//	ZoneGroup* pZoneGroup = NULL;
 
-	map< ZoneGroupID_t , ZoneGroup *>::const_iterator itr = m_ZoneGroups.begin();
+//	map< ZoneGroupID_t , ZoneGroup *>::const_iterator itr = m_ZoneGroups.begin();
 	
-	for (; itr != m_ZoneGroups.end(); itr++)
-	{
-		pZoneGroup = itr->second;
+//	for (; itr != m_ZoneGroups.end(); itr++)
+//	{
+//		pZoneGroup = itr->second;
 
-		pZoneGroup->getZonePlayerManager()->pushBroadcastPacket(pPacket, pFilter);
-	}	
+//		pZoneGroup->getZonePlayerManager()->pushBroadcastPacket(pPacket, pFilter);
+//	}
 }
 
 void ZoneGroupManager::outputLoadValue()

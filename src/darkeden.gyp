@@ -17,17 +17,48 @@
           ],
           'include_dirs':[
               "/usr/local/include",
-              "./server/loginserver",
               "./Core",
+              "./server/loginserver",
               "./server",
               "./server/database",
           ],
           'link_settings': {
                'libraries': [
-                '-L/usr/local/lib -lmysqlclient',
-                '-L../src/Third/zlog/src -lzlog',
+                '/usr/local/lib -lmysqlclient',
+                '../src/Third/zlog/src -lzlog',
              ],
           },
+          "conditions": [
+                          [
+                              "OS=='mac'",
+                              {
+                                  "link_settings": {
+                                      "libraries": [
+                                          "-lzlog",
+                                          "-lmysqlclient",   
+                                      ],
+                                      "configurations": {
+                                          "Debug": {
+                                              "xcode_settings": {
+                                                  "OTHER_LDFLAGS": [
+                                                      "-L/usr/local/lib",
+                                                      "-L../src/Third/zlog/src",
+                                                  ]
+                                              }
+                                          },
+                                          "Release": {
+                                              "xcode_settings": {
+                                               "OTHER_LDFLAGS": [
+                                                   "-L/usr/local/lib",
+                                                   "-L../src/Third/zlog/src",
+                                               ]
+                                              }
+                                          }
+                                      }
+                                  }
+                              }
+                          ],
+                      ],
           'sources': [
               "./server/loginserver/ClientManager.cpp",
               "./server/loginserver/GameServerGroupInfoManager.cpp",
@@ -431,7 +462,7 @@
            ],
         },
         'include_dirs':[
-            "./Third/zlog/src"
+            "./Third/zlog/src",
             "/usr/local/include",
             "./Core",
             "./server",

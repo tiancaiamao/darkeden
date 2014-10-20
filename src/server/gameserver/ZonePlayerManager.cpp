@@ -210,14 +210,14 @@ void ZonePlayerManager::flushBroadcastPacket()
 				GamePlayer* pGamePlayer = dynamic_cast<GamePlayer*>(m_pPlayers[i]);
 				if (pFilter == NULL || pFilter->isSatisfy(pGamePlayer) )
 				{
-					try
-					{
-						pGamePlayer->sendStream(pStream);
-					}
-					catch (Throwable& t )
-					{
-						filelog("ZonePlayerManager.log", "broadcastPacket: %s", t.toString().c_str());
-					}
+//					try
+//					{
+//						pGamePlayer->sendStream(pStream);
+//					}
+//					catch (Throwable& t )
+//					{
+//						filelog("ZonePlayerManager.log", "broadcastPacket: %s", t.toString().c_str());
+//					}
 				}
 			}
 		}

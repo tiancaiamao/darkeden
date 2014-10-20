@@ -12,7 +12,7 @@
 // include files
 #include "Types.h"
 #include "Exception.h"
-#include <mysql.h>
+#include "mysql.h"
 #include "Mutex.h"
 
 // forward declaration
