@@ -15,7 +15,7 @@
 	#include "skill/Sniping.h"
 	#include "skill/EffectAberration.h"
 
-	#include "Gpackets/GCSkillFailed1.h"
+	#include "GCSkillFailed1.h"
 
 	//#define __PROFILE_SKILLS__
 

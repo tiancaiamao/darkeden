@@ -11,8 +11,8 @@
 	#include "Zone.h"
 	#include "Creature.h"
 	#include "Ousters.h"
-	#include "Gpackets/GCUntransformFail.h"
-	#include "Gpackets/GCRemoveEffect.h"
+	#include "GCUntransformFail.h"
+	#include "GCRemoveEffect.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

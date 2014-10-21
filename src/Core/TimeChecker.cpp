@@ -7,7 +7,7 @@
 #include "TimeChecker.h"
 #include "Properties.h"
 #include "types/ServerType.h"
-#include "Assert1.h"
+#include "Assert.h"
 
 
 ///////////////////////////////////////////////////////////////

@@ -8,8 +8,8 @@
 #include "Creature.h"
 #include "Player.h"
 
-#include "Cpackets/CGDonationMoney.h"
-#include "Gpackets/GCNPCResponse.h"
+#include "CGDonationMoney.h"
+#include "GCNPCResponse.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // read from property buffer

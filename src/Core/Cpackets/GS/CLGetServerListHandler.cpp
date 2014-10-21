@@ -15,7 +15,7 @@
 	#include "ServerGroupInfo.h"
 	#include "UserInfoManager.h"
 
-	#include "Lpackets/LCServerList.h"
+	#include "LCServerList.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

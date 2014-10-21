@@ -17,9 +17,9 @@
 	#include "Guild.h"
 	#include "GuildManager.h"
 	#include "StringPool.h"
-	#include "Gpackets/GCNPCResponse.h"
-	#include "Gpackets/GCShowGuildJoin.h"
-	#include "Gpackets/GCSystemMessage.h"
+	#include "GCNPCResponse.h"
+	#include "GCShowGuildJoin.h"
+	#include "GCSystemMessage.h"
 	#include "VariableManager.h"
 
 	#include <stdio.h>

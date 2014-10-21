@@ -18,7 +18,7 @@
 #include "ShrineInfoManager.h"
 #include "ZoneInfoManager.h"
 #include "PCManager.h"
-#include "Gpackets/GCWarScheduleList.h"
+#include "GCWarScheduleList.h"
 #include "RaceWarInfo.h"
 #include "HolyLandManager.h"
 #include "VariableManager.h"
@@ -28,9 +28,9 @@
 
 #include "StringStream.h"
 
-#include "Gpackets/GCSystemMessage.h"
-#include "Gpackets/GCNoticeEvent.h"
-#include "Cpackets/CGSay.h"
+#include "GCSystemMessage.h"
+#include "GCNoticeEvent.h"
+#include "CGSay.h"
 
 #include <map>
 

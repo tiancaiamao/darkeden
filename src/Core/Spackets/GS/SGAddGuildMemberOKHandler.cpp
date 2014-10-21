@@ -22,9 +22,9 @@
 	#include "StringStream.h"
 	#include "DB.h"
 	#include "Properties.h"
-	#include "Gpackets/GCSystemMessage.h"
-	#include "Gpackets/GCModifyInformation.h"
-	#include "Gpackets/GCOtherModifyInfo.h"
+	#include "GCSystemMessage.h"
+	#include "GCModifyInformation.h"
+	#include "GCOtherModifyInfo.h"
 
 	#include <stdio.h>
 
@@ -138,7 +138,7 @@ void SGAddGuildMemberOKHandler::execute (SGAddGuildMemberOK* pPacket )
 			else
 				Fee = 0;
 
-			string table = "";
+			string table ="";
 			if (pGuild->getRace() == Guild::GUILD_RACE_SLAYER )
 			{
 				table = "Slayer";
@@ -152,7 +152,7 @@ void SGAddGuildMemberOKHandler::execute (SGAddGuildMemberOK* pPacket )
 				table = "Ousters";
 			}
 
-			if (table != "" && Fee != 0 )
+			if (table != " && Fee != 0 )
 			{
 				Statement* pStmt = NULL;
 

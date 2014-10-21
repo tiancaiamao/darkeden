@@ -189,8 +189,8 @@ VSDate VSDate::fromString(string text)
 	VSDate vsd = VSDate::currentDate();
 
 	// trim white space
-    size_t begin = text.find_first_not_of(whiteSpaces);
-    size_t end = text.find_last_not_of(whiteSpaces);
+    uint begin = text.find_first_not_of(whiteSpaces);
+    uint end = text.find_last_not_of(whiteSpaces);
     text = text.substr(begin , end - begin + 1);
 
 	/////////////////////////////////////////
@@ -198,8 +198,8 @@ VSDate VSDate::fromString(string text)
 	/////////////////////////////////////////
 	if (text.size() < 8) return vsd;
 
-	size_t a=0;
-	size_t b=0;
+	uint a=0;
+	uint b=0;
 
 	a = text.find_first_of('.', 0 );
 	b = text.find_first_of('.', a+1);
@@ -421,8 +421,8 @@ VSTime VSTime::fromString(string text)
 	VSTime vst = VSTime::currentTime();
 
 	// trim white space
-    size_t begin = text.find_first_not_of(whiteSpaces);
-    size_t end = text.find_last_not_of(whiteSpaces);
+    uint begin = text.find_first_not_of(whiteSpaces);
+    uint end = text.find_last_not_of(whiteSpaces);
     text = text.substr(begin , end - begin + 1);
 
 	/////////////////////////////////////////
@@ -430,7 +430,7 @@ VSTime VSTime::fromString(string text)
 	/////////////////////////////////////////
 	if (text.size() < 5) return vst;
 
-	size_t a=0, b=0, c=0;
+	uint a=0, b=0, c=0;
 
 	a = text.find_first_of(':', 0 );
 	b = text.find_first_of(':', a+1);
@@ -688,10 +688,10 @@ VSDateTime VSDateTime::currentDateTime()
 VSDateTime VSDateTime::fromString(string text)
 {
 	VSDateTime vsdt = VSDateTime::currentDateTime();
-	size_t       a    = 0;
+	uint       a    = 0;
 
-    size_t begin = text.find_first_not_of(whiteSpaces);
-    size_t end = text.find_last_not_of(whiteSpaces);
+    uint begin = text.find_first_not_of(whiteSpaces);
+    uint end = text.find_last_not_of(whiteSpaces);
     text = text.substr(begin , end - begin + 1);
 
 	/////////////////////////////////////////
@@ -722,7 +722,7 @@ VSDateTime VSDateTime::fromString(string text)
 ////////////////////////////////////////////////////////////////////////////////
 VSDateTime VSDateTime::fromYYYYMMDDHHMMSS(string text, bool bEndOfDay )
 {
-	size_t szText = text.size();
+	uint szText = text.size();
 
 	if (szText < 8 )
 		return VSDateTime::currentDateTime();
@@ -762,8 +762,8 @@ VSTime VSTime::fromStringHM(string text)
     VSTime vst = VSTime::currentTime();
 
     // trim white space
-    size_t begin = text.find_first_not_of(whiteSpaces);
-    size_t end = text.find_last_not_of(whiteSpaces);
+    uint begin = text.find_first_not_of(whiteSpaces);
+    uint end = text.find_last_not_of(whiteSpaces);
     text = text.substr(begin , end - begin + 1);
 
     /////////////////////////////////////////
@@ -771,7 +771,7 @@ VSTime VSTime::fromStringHM(string text)
     /////////////////////////////////////////
     if (text.size() < 3) return vst;
 
-    size_t a=0;
+    uint a=0;
 
     a = text.find_first_of(':', 0);
 

@@ -8,7 +8,7 @@
 #define __PC_VAMPIRE_INFO_3_H__
 
 #include "PCInfo.h"
-#include "Assert1.h"
+#include "Assert.h"
 
 //////////////////////////////////////////////////////////////////////////////
 // class PCVampireInfo3;

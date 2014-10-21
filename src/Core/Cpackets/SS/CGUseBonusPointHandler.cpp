@@ -15,9 +15,9 @@
 	//#include "LogClient.h"
 	#include "Slayer.h"
 
-	#include "Gpackets/GCUseBonusPointFail.h"
-	#include "Gpackets/GCUseBonusPointOK.h"
-	#include "Gpackets/GCLearnSkillReady.h"
+	#include "GCUseBonusPointFail.h"
+	#include "GCUseBonusPointOK.h"
+	#include "GCLearnSkillReady.h"
 #endif	
 
 //////////////////////////////////////////////////////////////////////////////
@@ -133,7 +133,7 @@ void CGUseBonusPointHandler::execute (CGUseBonusPoint* pPacket , Player* pPlayer
 			}
 			*/
 
-			//log(LOG_USE_BONUS_POINT, pVampire->getName(), "", "INT");
+			//log(LOG_USE_BONUS_POINT, pVampire->getName(), ", "INT");
 		}
 		else if (which == INC_STR)
 		{
@@ -144,7 +144,7 @@ void CGUseBonusPointHandler::execute (CGUseBonusPoint* pPacket , Player* pPlayer
 			sst << "STR = " << (int)cur;
 			pVampire->tinysave(sst.toString());
 
-			//log(LOG_USE_BONUS_POINT, pVampire->getName(), "", "STR");
+			//log(LOG_USE_BONUS_POINT, pVampire->getName(), ", "STR");
 		}
 		else if (which == INC_DEX)
 		{
@@ -155,7 +155,7 @@ void CGUseBonusPointHandler::execute (CGUseBonusPoint* pPacket , Player* pPlayer
 			sst << "DEX = " << (int)cur;
 			pVampire->tinysave(sst.toString());
 
-			//log(LOG_USE_BONUS_POINT, pVampire->getName(), "", "DEX");
+			//log(LOG_USE_BONUS_POINT, pVampire->getName(), ", "DEX");
 		}
 
 		// 바뀐 보너스 포인트를 저장한다.

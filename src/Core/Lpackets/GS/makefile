@@ -579,7 +579,7 @@ LGIncomingConnectionErrorHandler.o: \
   ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
   ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
   ../../../../src/server/chinabilling/CBillingInfo.h \
-  ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+  ../../../../src/Core/"GCReconnectLogin.h \
   ../../../../src/server/gameserver/IncomingPlayerManager.h \
   ../../../../src/server/PlayerManager.h \
   ../../../../src/Core/ServerSocket.h \
@@ -768,8 +768,8 @@ LGIncomingConnectionHandler.o: ../LGIncomingConnectionHandler.cpp \
   ../../../../src/server/gameserver/VariableManager.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/vector \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__split_buffer \
-  ../../../../src/Core/Gpackets/GLIncomingConnectionError.h \
-  ../../../../src/Core/Gpackets/GLIncomingConnectionOK.h
+  ../../../../src/Core/"GLIncomingConnectionError.h \
+  ../../../../src/Core/"GLIncomingConnectionOK.h
 LGIncomingConnectionOK.o: ../LGIncomingConnectionOK.cpp \
   ../LGIncomingConnectionOK.h ../../../../src/Core/DatagramPacket.h \
   ../../../../src/Core/Packet.h ../../../../src/Core/Types.h \
@@ -1267,7 +1267,7 @@ LGKickCharacterHandler.o: ../LGKickCharacterHandler.cpp \
   ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
   ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
   ../../../../src/server/chinabilling/CBillingInfo.h \
-  ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+  ../../../../src/Core/"GCReconnectLogin.h \
   ../../../../src/server/gameserver/LoginServerManager.h \
   ../../../../src/server/Thread.h ../../../../src/server/pthreadAPI.h \
   ../../../../src/Core/DatagramSocket.h \
@@ -1306,9 +1306,9 @@ LGKickCharacterHandler.o: ../LGKickCharacterHandler.cpp \
   ../../../../src/server/gameserver/Garbage.h \
   ../../../../src/server/gameserver/RankBonus.h \
   ../../../../src/server/gameserver/ExpFwd.h \
-  ../../../../src/Core/Gpackets/GCMonsterKillQuestInfo.h \
-  ../../../../src/Core/Gpackets/GCSelectQuestID.h \
+  ../../../../src/Core/"GCMonsterKillQuestInfo.h \
+  ../../../../src/Core/"GCSelectQuestID.h \
   ../../../../src/server/gameserver/OptionInfo.h \
   ../../../../src/server/gameserver/LogDef.h \
   ../../../../src/server/gameserver/VariableManager.h \
-  ../../../../src/Core/Gpackets/GLKickVerify.h
+  ../../../../src/Core/"GLKickVerify.h

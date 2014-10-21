@@ -11,8 +11,8 @@
 	#include "PlayerCreature.h"
 	#include "GuildManager.h"
 	#include "CastleInfoManager.h"
-	#include "Gpackets/GCNPCResponse.h"
-	#include "Gpackets/GCModifyInformation.h"
+	#include "GCNPCResponse.h"
+	#include "GCModifyInformation.h"
 #endif	// __GAME_SERVER__
 
 //////////////////////////////////////////////////////////////////////////////

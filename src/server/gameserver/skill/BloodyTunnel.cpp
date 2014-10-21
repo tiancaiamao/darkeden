@@ -11,9 +11,9 @@
 
 #include "item/VampirePortalItem.h"
 
-#include "Gpackets/GCSkillToSelfOK1.h"
-#include "Gpackets/GCSkillToInventoryOK1.h"
-#include "Gpackets/GCSkillToSelfOK3.h"
+#include "GCSkillToSelfOK1.h"
+#include "GCSkillToInventoryOK1.h"
+#include "GCSkillToSelfOK3.h"
 
 #include "item/SubInventory.h"
 #include "TradeManager.h"

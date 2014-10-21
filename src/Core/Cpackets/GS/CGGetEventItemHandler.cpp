@@ -19,8 +19,8 @@
 	#include "Zone.h"
 	#include "NicknameBook.h"
 
-	#include "Gpackets/GCNPCResponse.h"
-	#include "Gpackets/GCCreateItem.h"
+	#include "GCNPCResponse.h"
+	#include "GCCreateItem.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////
@@ -195,7 +195,7 @@ void CGGetEventItemHandler::executeCombackItem(CGGetEventItem* pPacket, Player* 
 
 				if (pItem->isTraceItem() )
 				{
-					remainTraceLog(pItem, "", pPC->getName(), ITEM_LOG_CREATE, DETAIL_EVENTNPC);
+					remainTraceLog(pItem, ", pPC->getName(), ITEM_LOG_CREATE, DETAIL_EVENTNPC);
 				}
 
 				if (!pInventory->addItem(pItem, tp ) )
@@ -396,7 +396,7 @@ void CGGetEventItemHandler::executeCombackPremiumItem(CGGetEventItem* pPacket, P
 
 					if (pItem[i]->isTraceItem() )
 					{
-						remainTraceLog(pItem[i], "", pPC->getName(), ITEM_LOG_CREATE, DETAIL_EVENTNPC);
+						remainTraceLog(pItem[i], ", pPC->getName(), ITEM_LOG_CREATE, DETAIL_EVENTNPC);
 					}
 
 					if (!pInventory->addItem(pItem[i], tp[i] ) )
@@ -614,7 +614,7 @@ void CGGetEventItemHandler::executeCombackRecommendItem(CGGetEventItem* pPacket,
 
 				if (pItem->isTraceItem() )
 				{
-					remainTraceLog(pItem, "", pPC->getName(), ITEM_LOG_CREATE, DETAIL_EVENTNPC);
+					remainTraceLog(pItem, ", pPC->getName(), ITEM_LOG_CREATE, DETAIL_EVENTNPC);
 				}
 
 				if (!pInventory->addItem(pItem, tp ) )

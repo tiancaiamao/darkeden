@@ -14,9 +14,9 @@
 	#include "Guild.h"
 	#include "GuildUnion.h"
 	#include "GuildManager.h"
-	#include "Gpackets/GCGuildResponse.h"
-	#include "Gpackets/GCSystemMessage.h"
-	#include "Gpackets/GSModifyGuildMember.h"
+	#include "GCGuildResponse.h"
+	#include "GCSystemMessage.h"
+	#include "GSModifyGuildMember.h"
 	#include "SharedServerManager.h"
 #endif	// __GAME_SERVER__
 

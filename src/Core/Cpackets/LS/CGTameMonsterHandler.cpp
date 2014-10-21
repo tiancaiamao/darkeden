@@ -22,9 +22,9 @@
 #include "ItemFactoryManager.h"
 #include <list>
 
-#include "Gpackets/GCCreateItem.h"
-#include "Gpackets/GCCannotUse.h"
-#include "Gpackets/GCDeleteInventoryItem.h"
+#include "GCCreateItem.h"
+#include "GCCannotUse.h"
+#include "GCDeleteInventoryItem.h"
 #include "PacketUtil.h"
 
 #include "PetTypeInfo.h"

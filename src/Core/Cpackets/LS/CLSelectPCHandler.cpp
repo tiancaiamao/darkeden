@@ -18,9 +18,9 @@
 	#include "Assert1.h"
 	#include "gameserver/billing/BillingInfo.h"
 
-	#include "Lpackets/LCSelectPCError.h"
-	#include "Lpackets/LCReconnect.h"
-	#include "Lpackets/LGIncomingConnection.h"
+	#include "LCSelectPCError.h"
+	#include "LCReconnect.h"
+	#include "LGIncomingConnection.h"
 
 	#include "chinabilling/CBillingInfo.h"
 #endif

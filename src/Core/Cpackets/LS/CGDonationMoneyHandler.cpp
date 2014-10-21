@@ -18,8 +18,8 @@
 	#include "VariableManager.h"
 	#include "Properties.h"
 
-	#include "Gpackets/GCNPCResponse.h"
-	#include "Gpackets/GCModifyInformation.h"
+	#include "GCNPCResponse.h"
+	#include "GCModifyInformation.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

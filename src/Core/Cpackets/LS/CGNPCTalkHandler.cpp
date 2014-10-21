@@ -16,8 +16,8 @@
 	#include "quest/Condition.h"
 	#include "quest/Action.h"
 
-	#include "Gpackets/GCNPCSayDynamic.h"
-	#include "Gpackets/GCNPCResponse.h"
+	#include "GCNPCSayDynamic.h"
+	#include "GCNPCResponse.h"
 
 	#include "PlayerCreature.h"
 	#include "GQuestManager.h"

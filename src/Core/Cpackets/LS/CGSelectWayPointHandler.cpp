@@ -37,10 +37,10 @@
 	#include "DynamicZoneManager.h"
 	#include "GQuestManager.h"
 
-	#include "Gpackets/GCAddHelicopter.h"
-	#include "Gpackets/GCSystemMessage.h"
-	#include "Gpackets/GCNoticeEvent.h"
-	#include "Gpackets/GCModifyInformation.h"
+	#include "GCAddHelicopter.h"
+	#include "GCSystemMessage.h"
+	#include "GCNoticeEvent.h"
+	#include "GCModifyInformation.h"
 
 	#include <cmath>
 #endif	// __GAME_SERVER__

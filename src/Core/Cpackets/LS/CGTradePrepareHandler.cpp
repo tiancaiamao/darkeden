@@ -15,9 +15,9 @@
 	#include "ZoneUtil.h"
 	#include "StringStream.h"
 
-	#include "Gpackets/GCTradePrepare.h"
-	#include "Gpackets/GCTradeError.h"
-	#include "Gpackets/GCTradeVerify.h"
+	#include "GCTradePrepare.h"
+	#include "GCTradeError.h"
+	#include "GCTradeVerify.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

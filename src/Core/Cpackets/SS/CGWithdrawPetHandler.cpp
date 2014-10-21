@@ -11,8 +11,8 @@
 #include "PlayerCreature.h"
 #include "Inventory.h"
 #include "PetItem.h"
-#include "Gpackets/GCPetStashVerify.h"
-#include "Gpackets/GCPetStashList.h"
+#include "GCPetStashVerify.h"
+#include "GCPetStashList.h"
 
 #include <cstdio>
 #endif

@@ -27,9 +27,9 @@
 	#include "item/Potion.h"
 	#include "item/Magazine.h"
 
-	#include "Gpackets/GCShopBuyOK.h"
-	#include "Gpackets/GCShopBuyFail.h"
-	#include "Gpackets/GCShopSold.h"
+	#include "GCShopBuyOK.h"
+	#include "GCShopBuyFail.h"
+	#include "GCShopSold.h"
 
 	#include "SystemAvailabilitiesManager.h"
 	#include "GuildManager.h"
@@ -356,12 +356,12 @@ void CGShopRequestBuyHandler::executeNormal (CGShopRequestBuy* pPacket , Player*
 		OKPacket.setPrice(playerMoney-itemMoney);
 		pPlayer->sendPacket(&OKPacket);
 
-		//log(LOG_BUY_ITEM, pPC->getName(), "", pItem->toString());
+		//log(LOG_BUY_ITEM, pPC->getName(), ", pItem->toString());
 	}
 	else
 	{
 		//cout << "pile ok" << endl;
-		//log(LOG_BUY_ITEM, pPC->getName(), "", pItem->toString());
+		//log(LOG_BUY_ITEM, pPC->getName(), ", pItem->toString());
 
 		// pReturnItem과 pItem이 다르다는 말은 아이템이 
 		// 쌓이는 아이템이었다는 말이다. 그러므로 더하라고 보낸 pItem은 
@@ -819,11 +819,11 @@ void CGShopRequestBuyHandler::executeEvent(CGShopRequestBuy* pPacket , Player* p
 		OKPacket.setPrice(playerMoney);
 		pPlayer->sendPacket(&OKPacket);
 
-		//log(LOG_BUY_ITEM, pPC->getName(), "", pItem->toString());
+		//log(LOG_BUY_ITEM, pPC->getName(), ", pItem->toString());
 	}
 	else
 	{
-		//log(LOG_BUY_ITEM, pPC->getName(), "", pItem->toString());
+		//log(LOG_BUY_ITEM, pPC->getName(), ", pItem->toString());
 
 		// pReturnItem과 pItem이 다르다는 말은 아이템이 
 		// 쌓이는 아이템이었다는 말이다. 그러므로 더하라고 보낸 pItem은 

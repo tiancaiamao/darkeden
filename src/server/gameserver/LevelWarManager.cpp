@@ -12,11 +12,11 @@
 #include "SweeperBonusManager.h"
 #include "VariableManager.h"
 
-#include "Gpackets/GCNoticeEvent.h"
-#include "Gpackets/GCSystemMessage.h"
-#include "Gpackets/GCSweeperBonusInfo.h"
+#include "GCNoticeEvent.h"
+#include "GCSystemMessage.h"
+#include "GCSweeperBonusInfo.h"
 
-#include "Cpackets/CGSay.h"
+#include "CGSay.h"
 
 // 전쟁 하는 날짜
 int LevelWarTime[4][3] = {

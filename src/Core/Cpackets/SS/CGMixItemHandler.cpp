@@ -16,9 +16,9 @@
 #include "ItemUtil.h"
 #include "ItemInfoManager.h"
 #include "OptionInfo.h"
-#include "Gpackets/GCCannotUse.h"
-#include "Gpackets/GCUseOK.h"
-#include "Gpackets/GCAddItemToItemVerify.h"
+#include "GCCannotUse.h"
+#include "GCUseOK.h"
+#include "GCAddItemToItemVerify.h"
 void sendCannotUse(CGMixItem* pPacket, Player* pPlayer);
 #endif
 
@@ -335,7 +335,7 @@ void CGMixItemHandler::executeMix(CGMixItem* pPacket, Player* pPlayer, Item* pIt
 	pTargetItem1->setTraceItem(pTargetItem1->isTraceItem() || pTargetItem2->isTraceItem());
 	pTargetItem1->setGrade(TargetGrade);
 
-	string optionfield = "";
+	string optionfield ="";
 	setOptionTypeToField(pTargetItem1->getOptionTypeList(), optionfield);
 	char query[100];
 	if (TargetGrade == -1 )
@@ -554,7 +554,7 @@ void CGMixItemHandler::executeDetach(CGMixItem* pPacket, Player* pPlayer, Item* 
 	if (optionNo == 0 ) oList.pop_front(); else oList.pop_back();
 	pTargetItem->setOptionType(oList);
 
-	string optionfield = "";
+	string optionfield ="";
 	setOptionTypeToField(pTargetItem->getOptionTypeList(), optionfield);
 	char query[100];
 	sprintf(query, "OptionType='%s'", optionfield.c_str());

@@ -8,7 +8,7 @@
 
 #ifdef __GAME_SERVER__
 	#include "GamePlayer.h"
-	#include "Gpackets/GCPartyPosition.h"
+	#include "GCPartyPosition.h"
 	#include "Party.h"
 	#include "Creature.h"
 #endif

@@ -7,7 +7,7 @@
 
 // include files
 #include "Types.h"
-#include "Assert1.h"
+#include "Assert.h"
 #include "Exception.h"
 #include <time.h>
 

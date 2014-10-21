@@ -53,7 +53,7 @@ void CGVerifyTimeHandler::saveSpeedHackPlayer(Player* pPlayer )
 
 	string ID = pPlayer->getID();
 	string IP = pPlayer->getSocket()->getHost();
-	string Name = "";
+	string Name ="";
 
 	if (pCreature != NULL )
 	{

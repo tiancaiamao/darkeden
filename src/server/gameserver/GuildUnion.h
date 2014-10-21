@@ -6,7 +6,7 @@
 #include <list>
 #include <map>
 #include <algorithm>
-#include "Gpackets/GCUnionOfferList.h"
+#include "GCUnionOfferList.h"
 
 #include "Mutex.h"
 

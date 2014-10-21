@@ -18,8 +18,8 @@
 	#include "ItemInfoManager.h"
 	#include "ItemUtil.h"
 
-	#include "Gpackets/GCModifyInformation.h"
-	#include "Gpackets/GCCannotAdd.h"
+	#include "GCModifyInformation.h"
+	#include "GCCannotAdd.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

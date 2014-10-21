@@ -16,7 +16,7 @@
 	#include "ItemInfoManager.h"
 	//#include "LogClient.h"
 
-	#include "Gpackets/GCCannotAdd.h"
+	#include "GCCannotAdd.h"
 	#include <stdio.h>
 #endif
 
@@ -86,7 +86,7 @@ void CGStashToMouseHandler::execute (CGStashToMouse* pPacket , Player* pPlayer)
 	pStashItem->tinysave(pField);
 
 
-	//log(LOG_STASH_REMOVE_ITEM, pPC->getName(), "", pStashItem->toString());
+	//log(LOG_STASH_REMOVE_ITEM, pPC->getName(), ", pStashItem->toString());
 	
 #endif	// __GAME_SERVER__
 

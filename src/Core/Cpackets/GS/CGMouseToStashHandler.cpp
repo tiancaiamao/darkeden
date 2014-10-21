@@ -23,7 +23,7 @@
 	#include "item/Magazine.h"
 	#include "item/PetItem.h"
 
-	#include "Gpackets/GCCannotAdd.h"
+	#include "GCCannotAdd.h"
 	#include <stdio.h>
 #endif
 
@@ -113,7 +113,7 @@ void CGMouseToStashHandler::execute (CGMouseToStash* pPacket , Player* pPlayer)
 					pMouseItem->tinysave(pField);
 
 
-					//log(LOG_STASH_ADD_ITEM, pPC->getName(), "", pMouseItem->toString());
+					//log(LOG_STASH_ADD_ITEM, pPC->getName(), ", pMouseItem->toString());
 
 					Success = true;
 				} 
@@ -130,7 +130,7 @@ void CGMouseToStashHandler::execute (CGMouseToStash* pPacket , Player* pPlayer)
 					pStashItem->tinysave(pField);
 
 
-					//log(LOG_STASH_ADD_ITEM, pPC->getName(), "", pMouseItem->toString());
+					//log(LOG_STASH_ADD_ITEM, pPC->getName(), ", pMouseItem->toString());
 
 					// 두개의 아이템이 하나로 되었으니까, 
 					// 더하라고 온 아이템은 삭제해 준다.
@@ -165,8 +165,8 @@ void CGMouseToStashHandler::execute (CGMouseToStash* pPacket , Player* pPlayer)
 				sprintf(pField, "Storage=%d, X=%d, Y=%d", STORAGE_STASH, rack, index);
 				pMouseItem->tinysave(pField);
 
-				//log(LOG_STASH_REMOVE_ITEM, pPC->getName(), "", pStashItem->toString());
-				//log(LOG_STASH_ADD_ITEM, pPC->getName(), "", pMouseItem->toString());
+				//log(LOG_STASH_REMOVE_ITEM, pPC->getName(), ", pStashItem->toString());
+				//log(LOG_STASH_ADD_ITEM, pPC->getName(), ", pMouseItem->toString());
 
 				Success = true;
 			}
@@ -184,7 +184,7 @@ void CGMouseToStashHandler::execute (CGMouseToStash* pPacket , Player* pPlayer)
 			pMouseItem->tinysave(pField);
 
 
-			//log(LOG_STASH_ADD_ITEM, pPC->getName(), "", pMouseItem->toString());
+			//log(LOG_STASH_ADD_ITEM, pPC->getName(), ", pMouseItem->toString());
 
 			Success = true;
 		}

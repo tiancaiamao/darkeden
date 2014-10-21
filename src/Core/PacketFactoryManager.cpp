@@ -6,357 +6,365 @@
 //--------------------------------------------------------------------------------
 
 // include files
-#include "Assert1.h"
+#include "Assert.h"
 #include "PacketFactoryManager.h"
 #include "StringStream.h"
 
-#include "Cpackets/CGAttack.h"
-#include "Cpackets/CGAddGearToMouse.h"
-#include "Cpackets/CGAddInventoryToMouse.h"
-#include "Cpackets/CGAddMouseToGear.h"
-#include "Cpackets/CGAddMouseToInventory.h"
-#include "Cpackets/CGAddMouseToQuickSlot.h"
-#include "Cpackets/CGAddMouseToZone.h"
-#include "Cpackets/CGAddQuickSlotToMouse.h"
-#include "Cpackets/CGAddZoneToMouse.h"
-#include "Cpackets/CGAddZoneToInventory.h"
-#include "Cpackets/CGBloodDrain.h"
-#include "Cpackets/CGUnburrow.h"
-#include "Cpackets/CGUntransform.h"
-#include "Cpackets/CGCastingSkill.h"
-#include "Cpackets/CGConnect.h"
-#include "Cpackets/CGDissectionCorpse.h"
-#include "Cpackets/CGDropMoney.h"
-#include "Cpackets/CGGetOffMotorCycle.h"
-#include "Cpackets/CGGlobalChat.h"
-#include "Cpackets/CGLearnSkill.h"
-#include "Cpackets/CGLogout.h"
-#include "Cpackets/CGMakeItem.h"
-#include "Cpackets/CGMove.h"
-#include "Cpackets/CGNPCAskAnswer.h"
-#include "Cpackets/CGNPCTalk.h"
-#include "Cpackets/CGPickupMoney.h"
-#include "Cpackets/CGReady.h"
-#include "Cpackets/CGReloadFromInventory.h"
-#include "Cpackets/CGReloadFromQuickSlot.h"
-#include "Cpackets/CGRideMotorCycle.h"
-#include "Cpackets/CGSay.h"
-#include "Cpackets/CGShopRequestBuy.h"
-#include "Cpackets/CGShopRequestList.h"
-#include "Cpackets/CGShopRequestSell.h"
-#include "Cpackets/CGSkillToInventory.h"
-#include "Cpackets/CGThrowBomb.h"
-#include "Gpackets/GCThrowBombOK1.h"
-#include "Gpackets/GCThrowBombOK2.h"
-#include "Gpackets/GCThrowBombOK3.h"
-#include "Cpackets/CGThrowItem.h"
-#include "Cpackets/CGUseBonusPoint.h"
-#include "Cpackets/CGUsePotionFromInventory.h"
-#include "Cpackets/CGUsePotionFromQuickSlot.h"
-#include "Cpackets/CGRequestRepair.h"
-#include "Cpackets/CGVisible.h"
-#include "Cpackets/CGVerifyTime.h"
-#include "Cpackets/CGRequestNewbieItem.h"
-#include "Cpackets/CGWithdrawTax.h"
-#include "Cpackets/CGTypeStringList.h"
-#include "Cpackets/CGUseItemFromGear.h"
-
-#include "Cpackets/CLCreatePC.h"
-#include "Cpackets/CLDeletePC.h"
-#include "Cpackets/CLGetPCList.h"
-#include "Cpackets/CLLogin.h"
-#include "Cpackets/CLLogout.h"
-#include "Cpackets/CLQueryPlayerID.h"
-#include "Cpackets/CLQueryCharacterName.h"
-#include "Cpackets/CLRegisterPlayer.h"
-#include "Cpackets/CLSelectPC.h"
-#include "Cpackets/CLVersionCheck.h"
-#include "Cpackets/CLGetServerList.h"
-#include "Cpackets/CLChangeServer.h"
-#include "Cpackets/CLReconnectLogin.h"
-#include "Cpackets/CLGetWorldList.h"
-#include "Cpackets/CLSelectWorld.h"
-#include "Cpackets/CLSelectServer.h"
-
-
-#include "Gpackets/GCAddBat.h"
-#include "Gpackets/GCAddBurrowingCreature.h"
-#include "Gpackets/GCAddEffect.h"
-#include "Gpackets/GCAddEffectToTile.h"
-#include "Gpackets/GCAddGearToInventory.h"
-#include "Gpackets/GCAddGearToZone.h"
-#include "Gpackets/GCAddInstalledMineToZone.h"
-#include "Gpackets/GCAddMonster.h"
-#include "Gpackets/GCAddMonsterCorpse.h"
-#include "Gpackets/GCAddMonsterFromBurrowing.h"
-#include "Gpackets/GCAddMonsterFromTransformation.h"
-#include "Gpackets/GCAddNewItemToZone.h"
-#include "Gpackets/GCAddNPC.h"
-#include "Gpackets/GCAddSlayer.h"
-#include "Gpackets/GCAddSlayerCorpse.h"
-#include "Gpackets/GCAddVampire.h"
-#include "Gpackets/GCAddVampireCorpse.h"
-#include "Gpackets/GCAddVampireFromBurrowing.h"
-#include "Gpackets/GCAddVampireFromTransformation.h"
-#include "Gpackets/GCAddWolf.h"
-#include "Gpackets/GCAddInjuriousCreature.h"
-#include "Gpackets/GCAttackArmsOK1.h"
-#include "Gpackets/GCAttackArmsOK2.h"
-#include "Gpackets/GCAttackArmsOK3.h"
-#include "Gpackets/GCAttackArmsOK4.h"
-#include "Gpackets/GCAttackArmsOK5.h"
-#include "Gpackets/GCAttackMeleeOK1.h"
-#include "Gpackets/GCAttackMeleeOK2.h"
-#include "Gpackets/GCAttackMeleeOK3.h"
-#include "Gpackets/GCAttack.h"
-#include "Gpackets/GCBloodDrainOK1.h"
-#include "Gpackets/GCBloodDrainOK2.h"
-#include "Gpackets/GCBloodDrainOK3.h"
-#include "Gpackets/GCCannotAdd.h"
-#include "Gpackets/GCCannotUse.h"
-#include "Gpackets/GCCastingSkill.h"
-#include "Gpackets/GCCreateItem.h"
-#include "Gpackets/GCCreatureDied.h"
-#include "Gpackets/GCChangeShape.h"
-#include "Gpackets/GCChangeDarkLight.h"
-#include "Gpackets/GCChangeWeather.h"
-#include "Gpackets/GCCrossCounterOK1.h"
-#include "Gpackets/GCCrossCounterOK2.h"
-#include "Gpackets/GCCrossCounterOK3.h"
-#include "Gpackets/GCDeleteInventoryItem.h"
-#include "Gpackets/GCDeleteObject.h"
-#include "Gpackets/GCRemoveCorpseHead.h"
-#include "Gpackets/GCRemoveInjuriousCreature.h"
-#include "Gpackets/GCDeleteandPickUpOK.h"
-#include "Gpackets/GCDeleteEffectFromTile.h"
-#include "Gpackets/GCDisconnect.h"
-#include "Gpackets/GCDropItemToZone.h"
-#include "Gpackets/GCFastMove.h"
-#include "Gpackets/GCFakeMove.h"
-#include "Gpackets/GCGetDamage.h"
-#include "Gpackets/GCGetOffMotorCycle.h"
-#include "Gpackets/GCGetOffMotorCycleFailed.h"
-#include "Gpackets/GCGetOffMotorCycleOK.h"
-#include "Gpackets/GCGlobalChat.h"
-
-#include "Gpackets/GCHPRecoveryStartToSelf.h"
-#include "Gpackets/GCHPRecoveryStartToOthers.h"
-#include "Gpackets/GCHPRecoveryEndToSelf.h"
-#include "Gpackets/GCHPRecoveryEndToOthers.h"
-
-#include "Gpackets/GCKnockBack.h"
-#include "Gpackets/GCKnocksTargetBackOK1.h"
-#include "Gpackets/GCKnocksTargetBackOK2.h"
-#include "Gpackets/GCKnocksTargetBackOK4.h"
-#include "Gpackets/GCKnocksTargetBackOK5.h"
-#include "Gpackets/GCLearnSkillFailed.h"
-#include "Gpackets/GCLearnSkillOK.h"
-#include "Gpackets/GCLearnSkillReady.h"
-#include "Gpackets/GCLightning.h"
-#include "Gpackets/GCMakeItemOK.h"
-#include "Gpackets/GCMakeItemFail.h"
-#include "Gpackets/GCMineExplosionOK1.h"
-#include "Gpackets/GCMineExplosionOK2.h"
-#include "Gpackets/GCModifyInformation.h"
-#include "Gpackets/GCMorph1.h"
-#include "Gpackets/GCMorphSlayer2.h"
-#include "Gpackets/GCMorphVampire2.h"
-#include "Gpackets/GCMove.h"
-#include "Gpackets/GCMoveOK.h"
-#include "Gpackets/GCMoveError.h"
-
-#include "Gpackets/GCMPRecoveryStart.h"
-#include "Gpackets/GCMPRecoveryEnd.h"
-
-#include "Gpackets/GCNPCAsk.h"
-#include "Gpackets/GCNPCSay.h"
-#include "Gpackets/GCRealWearingInfo.h"
-#include "Gpackets/GCReconnect.h"
-#include "Gpackets/GCReconnectLogin.h"
-#include "Gpackets/GCRemoveEffect.h"
-#include "Gpackets/GCRemoveFromGear.h"
-#include "Gpackets/GCRideMotorCycle.h"
-#include "Gpackets/GCRideMotorCycleFailed.h"
-#include "Gpackets/GCRideMotorCycleOK.h"
-#include "Gpackets/GCReloadOK.h"
-#include "Gpackets/GCSay.h"
-#include "Gpackets/GCSearchMotorcycleOK.h"
-#include "Gpackets/GCSearchMotorcycleFail.h"
-#include "Gpackets/GCSetPosition.h"
-// Shop Interface
-#include "Gpackets/GCShopBuyOK.h"
-#include "Gpackets/GCShopBuyFail.h"
-#include "Gpackets/GCShopList.h"
-#include "Gpackets/GCShopListMysterious.h"
-#include "Gpackets/GCShopSold.h"
-#include "Gpackets/GCShopVersion.h"
-#include "Gpackets/GCShopBought.h"
-#include "Gpackets/GCShopSellOK.h"
-#include "Gpackets/GCShopSellFail.h"
-#include "Gpackets/GCShopMarketCondition.h"
-
-#include "Gpackets/GCSkillFailed1.h"
-#include "Gpackets/GCSkillFailed2.h"
-#include "Gpackets/GCSkillToInventoryOK1.h"
-#include "Gpackets/GCSkillToInventoryOK2.h"
-#include "Gpackets/GCSkillToObjectOK1.h"
-#include "Gpackets/GCSkillToObjectOK2.h"
-#include "Gpackets/GCSkillToObjectOK3.h"
-#include "Gpackets/GCSkillToObjectOK4.h"
-#include "Gpackets/GCSkillToObjectOK5.h"
-#include "Gpackets/GCSkillToObjectOK6.h"
-#include "Gpackets/GCSkillToSelfOK1.h"
-#include "Gpackets/GCSkillToSelfOK2.h"
-#include "Gpackets/GCSkillToSelfOK3.h"
-#include "Gpackets/GCSkillToTileOK1.h"
-#include "Gpackets/GCSkillToTileOK2.h"
-#include "Gpackets/GCSkillToTileOK3.h"
-#include "Gpackets/GCSkillToTileOK4.h"
-#include "Gpackets/GCSkillToTileOK5.h"
-#include "Gpackets/GCSkillToTileOK6.h"
-#include "Gpackets/GCSystemMessage.h"
-#include "Gpackets/GCUnburrowOK.h"
-#include "Gpackets/GCUnburrowFail.h"
-#include "Gpackets/GCUntransformOK.h"
-#include "Gpackets/GCUntransformFail.h"
-#include "Gpackets/GCTeachSkillInfo.h"
-#include "Gpackets/GCUpdateInfo.h"
-#include "Gpackets/GCUseBonusPointFail.h"
-#include "Gpackets/GCUseBonusPointOK.h"
-#include "Gpackets/GCUseOK.h"
-#include "Gpackets/GCTakeOff.h"
-#include "Gpackets/GCThrowItemOK1.h"
-#include "Gpackets/GCThrowItemOK2.h"
-#include "Gpackets/GCThrowItemOK3.h"
-#include "Gpackets/GCVisibleOK.h"
-#include "Gpackets/GCVisibleFail.h"
-#include "Gpackets/GCNPCInfo.h"
-#include "Gpackets/GCNPCAskVariable.h"
-#include "Gpackets/GCWarScheduleList.h"
-#include "Gpackets/GCWarList.h"
-
-#ifndef __GAME_CLIENT__
-	#include "Gpackets/GMServerInfo.h"
-	#include "Gpackets/GLIncomingConnection.h"
-	#include "Gpackets/GLIncomingConnectionError.h"
-	#include "Gpackets/GLIncomingConnectionOK.h"
-	#include "Gpackets/GLKickVerify.h"
-#endif
-
-#include "Lpackets/LCCreatePCError.h"
-#include "Lpackets/LCCreatePCOK.h"
-#include "Lpackets/LCDeletePCError.h"
-#include "Lpackets/LCDeletePCOK.h"
-#include "Lpackets/LCLoginError.h"
-#include "Lpackets/LCLoginOK.h"
-#include "Lpackets/LCPCList.h"
-#include "Lpackets/LCQueryResultPlayerID.h"
-#include "Lpackets/LCQueryResultCharacterName.h"
-#include "Lpackets/LCReconnect.h"
-#include "Lpackets/LCRegisterPlayerError.h"
-#include "Lpackets/LCRegisterPlayerOK.h"
-#include "Lpackets/LCSelectPCError.h"
-
-#ifndef __GAME_CLIENT__
-	#include "Lpackets/LGIncomingConnection.h"
-	#include "Lpackets/LGIncomingConnectionOK.h"
-	#include "Lpackets/LGIncomingConnectionError.h"
-	#include "Lpackets/LGKickCharacter.h"
-#endif
-
-#include "Lpackets/LCVersionCheckOK.h"
-#include "Lpackets/LCVersionCheckError.h"
-#include "Lpackets/LCServerList.h"
-#include "Lpackets/LCWorldList.h"
-
+#ifdef __GAME_SERVER__
 // added by elcastle 2000-11-29
-//#include "Cpackets/CGDialUp.h"
-//#include "Cpackets/CGPhoneDisconnect.h"
-//#include "Cpackets/CGPhoneSay.h"
-#include "Cpackets/CGWhisper.h"
+//#include "CGDialUp.h"
+//#include "CGPhoneDisconnect.h"
+//#include "CGPhoneSay.h"
+// added by elca 2000-12-09
+#include "CGSetSlayerHotKey.h"
+#include "CGSetVampireHotKey.h"
+// added by elca 2001-06-26
+#include "CGSelectPortal.h"
+// 2001-01-08 �輺��
+#include "CGMouseToStash.h"
+#include "CGStashToMouse.h"
+#include "CGStashList.h"
+#include "GCStashList.h"
+#include "CGStashDeposit.h"
+#include "CGStashWithdraw.h"
+#include "CGStashRequestBuy.h"
+#include "CGWhisper.h"
+#include "CGAttack.h"
+#include "CGAddGearToMouse.h"
+#include "CGAddInventoryToMouse.h"
+#include "CGAddMouseToGear.h"
+#include "CGAddMouseToInventory.h"
+#include "CGAddMouseToQuickSlot.h"
+#include "CGAddMouseToZone.h"
+#include "CGAddQuickSlotToMouse.h"
+#include "CGAddZoneToMouse.h"
+#include "CGAddZoneToInventory.h"
+#include "CGBloodDrain.h"
+#include "CGUnburrow.h"
+#include "CGUntransform.h"
+#include "CGCastingSkill.h"
+#include "CGConnect.h"
+#include "CGDissectionCorpse.h"
+#include "CGDropMoney.h"
+#include "CGGetOffMotorCycle.h"
+#include "CGGlobalChat.h"
+#include "CGLearnSkill.h"
+#include "CGLogout.h"
+#include "CGMakeItem.h"
+#include "CGMove.h"
+#include "CGNPCAskAnswer.h"
+#include "CGNPCTalk.h"
+#include "CGPickupMoney.h"
+#include "CGReady.h"
+#include "CGReloadFromInventory.h"
+#include "CGReloadFromQuickSlot.h"
+#include "CGRideMotorCycle.h"
+#include "CGSay.h"
+#include "CGShopRequestBuy.h"
+#include "CGShopRequestList.h"
+#include "CGShopRequestSell.h"
+#include "CGSkillToInventory.h"
+#include "CGThrowBomb.h"
+#include "GCThrowBombOK1.h"
+#include "GCThrowBombOK2.h"
+#include "GCThrowBombOK3.h"
+#include "CGThrowItem.h"
+#include "CGUseBonusPoint.h"
+#include "CGUsePotionFromInventory.h"
+#include "CGUsePotionFromQuickSlot.h"
+#include "CGRequestRepair.h"
+#include "CGVisible.h"
+#include "CGVerifyTime.h"
+#include "CGRequestNewbieItem.h"
+#include "CGWithdrawTax.h"
+#include "CGTypeStringList.h"
+#include "CGUseItemFromGear.h"
+#endif
 
-//#include "Gpackets/GCPhoneConnected.h"
-//#include "Gpackets/GCRing.h"
-//#include "Gpackets/GCPhoneDisconnected.h"
-//#include "Gpackets/GCPhoneConnectionFailed.h"
-//#include "Gpackets/GCPhoneSay.h"
-#include "Gpackets/GCWhisper.h"
-#include "Gpackets/GCWhisperFailed.h"
+#ifdef __LOGIN_SERVER__
+#include "CLCreatePC.h"
+#include "CLDeletePC.h"
+#include "CLGetPCList.h"
+#include "CLLogin.h"
+#include "CLLogout.h"
+#include "CLQueryPlayerID.h"
+#include "CLQueryCharacterName.h"
+#include "CLRegisterPlayer.h"
+#include "CLSelectPC.h"
+#include "CLVersionCheck.h"
+#include "CLGetServerList.h"
+#include "CLChangeServer.h"
+#include "CLReconnectLogin.h"
+#include "CLGetWorldList.h"
+#include "CLSelectWorld.h"
+#include "CLSelectServer.h"
+#endif
+
+#ifdef __GAME_SERVER__
+#include "GCWhisper.h"
+#include "GCWhisperFailed.h"
 
 // added by elca 2000-11-29
-#include "Gpackets/GCSkillInfo.h"
+#include "GCSkillInfo.h"
 
 // added by elca 2000-12-09
-#include "Gpackets/GCStatusCurrentHP.h"
+#include "GCStatusCurrentHP.h"
+#include "GCAddBat.h"
+#include "GCAddBurrowingCreature.h"
+#include "GCAddEffect.h"
+#include "GCAddEffectToTile.h"
+#include "GCAddGearToInventory.h"
+#include "GCAddGearToZone.h"
+#include "GCAddInstalledMineToZone.h"
+#include "GCAddMonster.h"
+#include "GCAddMonsterCorpse.h"
+#include "GCAddMonsterFromBurrowing.h"
+#include "GCAddMonsterFromTransformation.h"
+#include "GCAddNewItemToZone.h"
+#include "GCAddNPC.h"
+#include "GCAddSlayer.h"
+#include "GCAddSlayerCorpse.h"
+#include "GCAddVampire.h"
+#include "GCAddVampireCorpse.h"
+#include "GCAddVampireFromBurrowing.h"
+#include "GCAddVampireFromTransformation.h"
+#include "GCAddWolf.h"
+#include "GCAddInjuriousCreature.h"
+#include "GCAttackArmsOK1.h"
+#include "GCAttackArmsOK2.h"
+#include "GCAttackArmsOK3.h"
+#include "GCAttackArmsOK4.h"
+#include "GCAttackArmsOK5.h"
+#include "GCAttackMeleeOK1.h"
+#include "GCAttackMeleeOK2.h"
+#include "GCAttackMeleeOK3.h"
+#include "GCAttack.h"
+#include "GCBloodDrainOK1.h"
+#include "GCBloodDrainOK2.h"
+#include "GCBloodDrainOK3.h"
+#include "GCCannotAdd.h"
+#include "GCCannotUse.h"
+#include "GCCastingSkill.h"
+#include "GCCreateItem.h"
+#include "GCCreatureDied.h"
+#include "GCChangeShape.h"
+#include "GCChangeDarkLight.h"
+#include "GCChangeWeather.h"
+#include "GCCrossCounterOK1.h"
+#include "GCCrossCounterOK2.h"
+#include "GCCrossCounterOK3.h"
+#include "GCDeleteInventoryItem.h"
+#include "GCDeleteObject.h"
+#include "GCRemoveCorpseHead.h"
+#include "GCRemoveInjuriousCreature.h"
+#include "GCDeleteandPickUpOK.h"
+#include "GCDeleteEffectFromTile.h"
+#include "GCDisconnect.h"
+#include "GCDropItemToZone.h"
+#include "GCFastMove.h"
+#include "GCFakeMove.h"
+#include "GCGetDamage.h"
+#include "GCGetOffMotorCycle.h"
+#include "GCGetOffMotorCycleFailed.h"
+#include "GCGetOffMotorCycleOK.h"
+#include "GCGlobalChat.h"
 
-// added by elca 2000-12-09
-#include "Cpackets/CGSetSlayerHotKey.h"
-#include "Cpackets/CGSetVampireHotKey.h"
+#include "GCHPRecoveryStartToSelf.h"
+#include "GCHPRecoveryStartToOthers.h"
+#include "GCHPRecoveryEndToSelf.h"
+#include "GCHPRecoveryEndToOthers.h"
 
+#include "GCKnockBack.h"
+#include "GCKnocksTargetBackOK1.h"
+#include "GCKnocksTargetBackOK2.h"
+#include "GCKnocksTargetBackOK4.h"
+#include "GCKnocksTargetBackOK5.h"
+#include "GCLearnSkillFailed.h"
+#include "GCLearnSkillOK.h"
+#include "GCLearnSkillReady.h"
+#include "GCLightning.h"
+#include "GCMakeItemOK.h"
+#include "GCMakeItemFail.h"
+#include "GCMineExplosionOK1.h"
+#include "GCMineExplosionOK2.h"
+#include "GCModifyInformation.h"
+#include "GCMorph1.h"
+#include "GCMorphSlayer2.h"
+#include "GCMorphVampire2.h"
+#include "GCMove.h"
+#include "GCMoveOK.h"
+#include "GCMoveError.h"
 
-// added by elca 2001-06-26
-#include "Cpackets/CGSelectPortal.h"
+#include "GCMPRecoveryStart.h"
+#include "GCMPRecoveryEnd.h"
 
-// 2001-01-08 �輺��
-#include "Cpackets/CGMouseToStash.h"
-#include "Cpackets/CGStashToMouse.h"
-#include "Cpackets/CGStashList.h"
-#include "Gpackets/GCStashList.h"
-#include "Cpackets/CGStashDeposit.h"
-#include "Cpackets/CGStashWithdraw.h"
-#include "Cpackets/CGStashRequestBuy.h"
-#include "Gpackets/GCStashSell.h"
+#include "GCNPCAsk.h"
+#include "GCNPCSay.h"
+#include "GCRealWearingInfo.h"
+#include "GCReconnect.h"
+#include "GCReconnectLogin.h"
+#include "GCRemoveEffect.h"
+#include "GCRemoveFromGear.h"
+#include "GCRideMotorCycle.h"
+#include "GCRideMotorCycleFailed.h"
+#include "GCRideMotorCycleOK.h"
+#include "GCReloadOK.h"
+#include "GCSay.h"
+#include "GCSearchMotorcycleOK.h"
+#include "GCSearchMotorcycleFail.h"
+#include "GCSetPosition.h"
+// Shop Interface
+#include "GCShopBuyOK.h"
+#include "GCShopBuyFail.h"
+#include "GCShopList.h"
+#include "GCShopListMysterious.h"
+#include "GCShopSold.h"
+#include "GCShopVersion.h"
+#include "GCShopBought.h"
+#include "GCShopSellOK.h"
+#include "GCShopSellFail.h"
+#include "GCShopMarketCondition.h"
 
-#include "Cpackets/CGTradePrepare.h"
-#include "Cpackets/CGTradeAddItem.h"
-#include "Cpackets/CGTradeRemoveItem.h"
-#include "Cpackets/CGTradeMoney.h"
-#include "Cpackets/CGTradeFinish.h"
-#include "Gpackets/GCTradePrepare.h"
-#include "Gpackets/GCTradeAddItem.h"
-#include "Gpackets/GCTradeRemoveItem.h"
-#include "Gpackets/GCTradeMoney.h"
-#include "Gpackets/GCTradeFinish.h"
-#include "Gpackets/GCTradeError.h"
-#include "Gpackets/GCTradeVerify.h"
+#include "GCSkillFailed1.h"
+#include "GCSkillFailed2.h"
+#include "GCSkillToInventoryOK1.h"
+#include "GCSkillToInventoryOK2.h"
+#include "GCSkillToObjectOK1.h"
+#include "GCSkillToObjectOK2.h"
+#include "GCSkillToObjectOK3.h"
+#include "GCSkillToObjectOK4.h"
+#include "GCSkillToObjectOK5.h"
+#include "GCSkillToObjectOK6.h"
+#include "GCSkillToSelfOK1.h"
+#include "GCSkillToSelfOK2.h"
+#include "GCSkillToSelfOK3.h"
+#include "GCSkillToTileOK1.h"
+#include "GCSkillToTileOK2.h"
+#include "GCSkillToTileOK3.h"
+#include "GCSkillToTileOK4.h"
+#include "GCSkillToTileOK5.h"
+#include "GCSkillToTileOK6.h"
+#include "GCSystemMessage.h"
+#include "GCUnburrowOK.h"
+#include "GCUnburrowFail.h"
+#include "GCUntransformOK.h"
+#include "GCUntransformFail.h"
+#include "GCTeachSkillInfo.h"
+#include "GCUpdateInfo.h"
+#include "GCUseBonusPointFail.h"
+#include "GCUseBonusPointOK.h"
+#include "GCUseOK.h"
+#include "GCTakeOff.h"
+#include "GCThrowItemOK1.h"
+#include "GCThrowItemOK2.h"
+#include "GCThrowItemOK3.h"
+#include "GCVisibleOK.h"
+#include "GCVisibleFail.h"
+#include "GCNPCInfo.h"
+#include "GCNPCAskVariable.h"
+#include "GCWarScheduleList.h"
+#include "GCWarList.h"
+#include "GMServerInfo.h"
+#endif
 
-#include "Cpackets/CGSkillToObject.h"
-#include "Cpackets/CGSkillToSelf.h"
-#include "Cpackets/CGSkillToTile.h"
+#if defined(__GAME_SERVER__) || defined(__LOGIN_SERVER__)
+	#include "GLIncomingConnection.h"
+	#include "GLIncomingConnectionError.h"
+	#include "GLIncomingConnectionOK.h"
+	#include "GLKickVerify.h"
+#endif
 
-#include "Cpackets/CGSilverCoating.h"
-#include "Gpackets/GCNPCResponse.h"
-
-#include "Gpackets/GCNPCSayDynamic.h"
-#include "Gpackets/GCNPCAskDynamic.h"
-
-#include "Cpackets/CGUseItemFromInventory.h"
-#include "Cpackets/CGSelectWayPoint.h"
-#include "Gpackets/GCAddHelicopter.h"
-#include "Gpackets/GCAddVampirePortal.h"
-#include "Gpackets/GCEnterVampirePortal.h"
-
-#include "Cpackets/CGSelectTileEffect.h"
-
-#include "Cpackets/CGPartyInvite.h"
-#include "Cpackets/CGPartyLeave.h"
-
-#include "Gpackets/GCPartyInvite.h"
-#include "Gpackets/GCPartyLeave.h"
-#include "Gpackets/GCPartyJoined.h"
-#include "Gpackets/GCPartyError.h"
-
-#include "Cpackets/CGResurrect.h"
-
-#include "Cpackets/CGRequestIP.h"
-#include "Gpackets/GCRequestedIP.h"
-
-#include "Gpackets/GCRequestFailed.h"
-
-#include "Gpackets/GCOtherModifyInfo.h"
+#ifdef __LOGIN_SERVER__
+#include "LCCreatePCError.h"
+#include "LCCreatePCOK.h"
+#include "LCDeletePCError.h"
+#include "LCDeletePCOK.h"
+#include "LCLoginError.h"
+#include "LCLoginOK.h"
+#include "LCPCList.h"
+#include "LCQueryResultPlayerID.h"
+#include "LCQueryResultCharacterName.h"
+#include "LCReconnect.h"
+#include "LCRegisterPlayerError.h"
+#include "LCRegisterPlayerOK.h"
+#include "LCSelectPCError.h"
+#endif
 
 #ifndef __GAME_CLIENT__
-	#include "Gpackets/GGCommand.h"
+	#include "LGIncomingConnection.h"
+	#include "LGIncomingConnectionOK.h"
+	#include "LGIncomingConnectionError.h"
+	#include "LGKickCharacter.h"
+#endif
+
+#ifdef __LOGIN_SERVER__
+#include "LCVersionCheckOK.h"
+#include "LCVersionCheckError.h"
+#include "LCServerList.h"
+#include "LCWorldList.h"
+#endif
+
+
+//#include "GCPhoneConnected.h"
+//#include "GCRing.h"
+//#include "GCPhoneDisconnected.h"
+//#include "GCPhoneConnectionFailed.h"
+//#include "GCPhoneSay.h"
+
+#ifdef __GAME_SERVER__
+#include "GCStashSell.h"
+
+#include "CGTradePrepare.h"
+#include "CGTradeAddItem.h"
+#include "CGTradeRemoveItem.h"
+#include "CGTradeMoney.h"
+#include "CGTradeFinish.h"
+#include "GCTradePrepare.h"
+#include "GCTradeAddItem.h"
+#include "GCTradeRemoveItem.h"
+#include "GCTradeMoney.h"
+#include "GCTradeFinish.h"
+#include "GCTradeError.h"
+#include "GCTradeVerify.h"
+
+#include "CGSkillToObject.h"
+#include "CGSkillToSelf.h"
+#include "CGSkillToTile.h"
+
+#include "CGSilverCoating.h"
+#include "GCNPCResponse.h"
+
+#include "GCNPCSayDynamic.h"
+#include "GCNPCAskDynamic.h"
+
+#include "CGUseItemFromInventory.h"
+#include "CGSelectWayPoint.h"
+#include "GCAddHelicopter.h"
+#include "GCAddVampirePortal.h"
+#include "GCEnterVampirePortal.h"
+
+#include "CGSelectTileEffect.h"
+
+#include "CGPartyInvite.h"
+#include "CGPartyLeave.h"
+
+#include "GCPartyInvite.h"
+#include "GCPartyLeave.h"
+#include "GCPartyJoined.h"
+#include "GCPartyError.h"
+
+#include "CGResurrect.h"
+
+#include "CGRequestIP.h"
+#include "GCRequestedIP.h"
+
+#include "GCRequestFailed.h"
+
+#include "GCOtherModifyInfo.h"
+#endif
+
+#ifndef __GAME_CLIENT__
+	#include "GGCommand.h"
 #endif
 
 
@@ -374,197 +382,205 @@
 	#include "Rpackets/RCCharacterInfo.h"
 #endif
 
+#ifdef __GAME_SERVER__
 // �������� 2002. 05. 31. bezz
-//#include "Gpackets/GCShowGuildRegist.h"
-#include "Cpackets/CGRegistGuild.h"
-#include "Gpackets/GCWaitGuildList.h"
-#include "Gpackets/GCShowWaitGuildInfo.h"
-#include "Gpackets/GCShowGuildInfo.h"
-#include "Cpackets/CGSelectGuild.h"
-#include "Cpackets/CGTryJoinGuild.h"
-#include "Gpackets/GCShowGuildJoin.h"
-#include "Cpackets/CGJoinGuild.h"
-#include "Gpackets/GCShowMessageBox.h"
-//#include "Gpackets/GCModifyMoney.h"
-//#include "Cpackets/CGQuitGuild.h"
-#include "Cpackets/CGRequestGuildMemberList.h"
-#include "Cpackets/CGSelectGuildMember.h"
-//#include "Cpackets/CGExpelGuildMember.h"
-#include "Cpackets/CGModifyGuildMember.h"
-#include "Gpackets/GCActiveGuildList.h"
-#include "Gpackets/GCShowGuildMemberInfo.h"
-#include "Gpackets/GCGuildMemberList.h"
-#include "Gpackets/GCModifyGuildMemberInfo.h"
-
-#ifndef __GAME_CLIENT__
-	#include "Gpackets/GSAddGuild.h"
-	#include "Gpackets/GSAddGuildMember.h"
-	#include "Gpackets/GSQuitGuild.h"
-	#include "Gpackets/GSExpelGuildMember.h"
-	#include "Gpackets/GSModifyGuildMember.h"
-	#include "Spackets/SGAddGuildOK.h"
-	#include "Spackets/SGAddGuildMemberOK.h"
-	#include "Spackets/SGQuitGuildOK.h"
-	#include "Spackets/SGExpelGuildMemberOK.h"
-	#include "Spackets/SGModifyGuildMemberOK.h"
-	#include "Spackets/SGDeleteGuildOK.h"
-	#include "Spackets/SGModifyGuildOK.h"
+//#include "GCShowGuildRegist.h"
+#include "CGRegistGuild.h"
+#include "GCWaitGuildList.h"
+#include "GCShowWaitGuildInfo.h"
+#include "GCShowGuildInfo.h"
+#include "CGSelectGuild.h"
+#include "CGTryJoinGuild.h"
+#include "GCShowGuildJoin.h"
+#include "CGJoinGuild.h"
+#include "GCShowMessageBox.h"
+//#include "GCModifyMoney.h"
+//#include "CGQuitGuild.h"
+#include "CGRequestGuildMemberList.h"
+#include "CGSelectGuildMember.h"
+//#include "CGExpelGuildMember.h"
+#include "CGModifyGuildMember.h"
+#include "GCActiveGuildList.h"
+#include "GCShowGuildMemberInfo.h"
+#include "GCGuildMemberList.h"
+#include "GCModifyGuildMemberInfo.h"
 #endif
 
-#include "Cpackets/CGRelicToObject.h"
+#if defined(__GAME_SERVER__) || defined(__SHARED_SERVER__)
+	#include "GSAddGuild.h"
+	#include "GSAddGuildMember.h"
+	#include "GSQuitGuild.h"
+	#include "GSExpelGuildMember.h"
+	#include "GSModifyGuildMember.h"
+	#include "SGAddGuildOK.h"
+	#include "SGAddGuildMemberOK.h"
+	#include "SGQuitGuildOK.h"
+	#include "SGExpelGuildMemberOK.h"
+	#include "SGModifyGuildMemberOK.h"
+	#include "SGDeleteGuildOK.h"
+	#include "SGModifyGuildOK.h"
+	#include "GSRequestGuildInfo.h"
+	#include "SGGuildInfo.h"
+	#include "GSModifyGuildIntro.h"
+	#include "SGModifyGuildIntroOK.h"
 
-#include "Cpackets/CGPortCheck.h"
-
-#include "Cpackets/CGGuildChat.h"
-#include "Gpackets/GCGuildChat.h"
-
-#ifndef __GAME_CLIENT__
-	#include "Gpackets/GGGuildChat.h"
-	#include "Gpackets/GSRequestGuildInfo.h"
-	#include "Spackets/SGGuildInfo.h"
+	#include "GSGuildMemberLogOn.h"
+	#include "SGGuildMemberLogOnOK.h"
 #endif
 
-#include "Cpackets/CGAddItemToItem.h"
-#include "Gpackets/GCAddItemToItemVerify.h"
+#ifdef __GAME_SERVER__
+#include "CGRelicToObject.h"
 
-#include "Cpackets/CGRequestInfo.h"
-#include "Gpackets/GCNoticeEvent.h"
+#include "CGPortCheck.h"
 
-#include "Cpackets/CGModifyGuildIntro.h"
-#include "Cpackets/CGModifyGuildMemberIntro.h"
-
-#ifndef __GAME_CLIENT__
-	#include "Gpackets/GSModifyGuildIntro.h"
-	#include "Spackets/SGModifyGuildIntroOK.h"
-
-	#include "Gpackets/GSGuildMemberLogOn.h"
-	#include "Spackets/SGGuildMemberLogOnOK.h"
+#include "CGGuildChat.h"
+#include "GCGuildChat.h"
 #endif
 
-#include "Cpackets/CGSelectRankBonus.h"
-#include "Gpackets/GCSelectRankBonusOK.h"
-#include "Gpackets/GCSelectRankBonusFailed.h"
-#include "Gpackets/GCRankBonusInfo.h"
+#ifndef __GAME_CLIENT__
+	#include "GGGuildChat.h"
+#endif
 
-#include "Cpackets/CGSkillToNamed.h"
+#ifdef __GAME_SERVER__
+#include "CGAddItemToItem.h"
+#include "GCAddItemToItemVerify.h"
 
-#include "Cpackets/CGUseMessageItemFromInventory.h"
+#include "CGRequestInfo.h"
+#include "GCNoticeEvent.h"
 
-#include "Gpackets/GCHolyLandBonusInfo.h"
-#include "Gpackets/GCBloodBibleStatus.h"
-#include "Gpackets/GCKickMessage.h"
-#include "Gpackets/GCTimeLimitItemInfo.h"
-#include "Gpackets/GCSelectQuestID.h"
-#include "Cpackets/CGSelectQuest.h"
-#include "Gpackets/GCQuestStatus.h"
-#include "Gpackets/GCMonsterKillQuestInfo.h"
-#include "Cpackets/CGLotterySelect.h"
-#include "Gpackets/GCNotifyWin.h"
-#include "Gpackets/GCGoodsList.h"
-#include "Cpackets/CGTakeOutGood.h"
-#include "Gpackets/GCTakeOutOK.h"
-#include "Gpackets/GCTakeOutFail.h"
-#include "Gpackets/GCAddOusters.h"
-#include "Cpackets/CGMixItem.h"
-#include "Gpackets/GCAddOustersCorpse.h"
-#include "Cpackets/CGAbsorbSoul.h"
+#include "CGModifyGuildIntro.h"
+#include "CGModifyGuildMemberIntro.h"
+#endif
 
-#include "Cpackets/CGDownSkill.h"
-#include "Gpackets/GCDownSkillOK.h"
-#include "Gpackets/GCDownSkillFailed.h"
+#ifdef __GAME_SERVER__
+#include "CGSelectRankBonus.h"
+#include "GCSelectRankBonusOK.h"
+#include "GCSelectRankBonusFailed.h"
+#include "GCRankBonusInfo.h"
 
-#include "Gpackets/GCMiniGameScores.h"
-#include "Cpackets/CGSubmitScore.h"
-#include "Cpackets/CGFailQuest.h"
-#include "Cpackets/CGAddItemToCodeSheet.h"
-#include "Gpackets/GCFlagWarStatus.h"
-#include "Gpackets/GCOtherGuildName.h"
-#include "Gpackets/GCSweeperBonusInfo.h"
+#include "CGSkillToNamed.h"
 
-#include "Cpackets/CGSelectRegenZone.h"
-#include "Gpackets/GCRegenZoneStatus.h"
-#include "Gpackets/GCPetInfo.h"
-#include "Cpackets/CGTameMonster.h"
-#include "Cpackets/CGPetGamble.h"
-#include "Cpackets/CGCrashReport.h"
-#include "Gpackets/GCPetUseSkill.h"
-#include "Gpackets/GCSystemAvailabilities.h"
-#include "Gpackets/GCPartyPosition.h"
-#include "Cpackets/CGPartyPosition.h"
-#include "Gpackets/GCPartySay.h"
-#include "Cpackets/CGPartySay.h"
+#include "CGUseMessageItemFromInventory.h"
 
-#include "Gpackets/GGServerChat.h"
+#include "GCHolyLandBonusInfo.h"
+#include "GCBloodBibleStatus.h"
+#include "GCKickMessage.h"
+#include "GCTimeLimitItemInfo.h"
+#include "GCSelectQuestID.h"
+#include "CGSelectQuest.h"
+#include "GCQuestStatus.h"
+#include "GCMonsterKillQuestInfo.h"
+#include "CGLotterySelect.h"
+#include "GCNotifyWin.h"
+#include "GCGoodsList.h"
+#include "CGTakeOutGood.h"
+#include "GCTakeOutOK.h"
+#include "GCTakeOutFail.h"
+#include "GCAddOusters.h"
+#include "CGMixItem.h"
+#include "GCAddOustersCorpse.h"
+#include "CGAbsorbSoul.h"
 
-#include "Gpackets/GCPetStashList.h"
-#include "Cpackets/CGWithdrawPet.h"
-#include "Cpackets/CGDepositPet.h"
-#include "Gpackets/GCPetStashVerify.h"
-#include "Cpackets/CGSMSSend.h"
-#include "Cpackets/CGAddSMSAddress.h"
-#include "Cpackets/CGDeleteSMSAddress.h"
-#include "Cpackets/CGSMSAddressList.h"
-#include "Gpackets/GCSMSAddressList.h"
-#include "Gpackets/GCAddressListVerify.h"
-#include "Gpackets/GCNicknameList.h"
+#include "CGDownSkill.h"
+#include "GCDownSkillOK.h"
+#include "GCDownSkillFailed.h"
 
-#include "Gpackets/GCAddNickname.h"
-#include "Cpackets/CGModifyNickname.h"
-#include "Cpackets/CGSelectNickname.h"
-#include "Gpackets/GCNicknameVerify.h"
-#include "Gpackets/GCModifyNickname.h"
+#include "GCMiniGameScores.h"
+#include "CGSubmitScore.h"
+#include "CGFailQuest.h"
+#include "CGAddItemToCodeSheet.h"
+#include "GCFlagWarStatus.h"
+#include "GCOtherGuildName.h"
+#include "GCSweeperBonusInfo.h"
 
-#include "Gpackets/GCGQuestStatusInfo.h"
-#include "Gpackets/GCGQuestStatusModify.h"
-#include "Cpackets/CGGQuestAccept.h"
-#include "Cpackets/CGGQuestCancel.h"
-#include "Gpackets/GCExecuteElement.h"
-#include "Gpackets/GCGQuestInventory.h"
-#include "Gpackets/GCAuthKey.h"
-#include "Cpackets/CGAuthKey.h"
-#include "Cpackets/CGUseItemFromGQuestInventory.h"
+#include "CGSelectRegenZone.h"
+#include "GCRegenZoneStatus.h"
+#include "GCPetInfo.h"
+#include "CGTameMonster.h"
+#include "CGPetGamble.h"
+#include "CGCrashReport.h"
+#include "GCPetUseSkill.h"
+#include "GCSystemAvailabilities.h"
+#include "GCPartyPosition.h"
+#include "CGPartyPosition.h"
+#include "GCPartySay.h"
+#include "CGPartySay.h"
 
-#include "Gpackets/GCGuildResponse.h"
-#include "Cpackets/CGRequestGuildList.h"
-#include "Cpackets/CGAppointSubmaster.h"
-#include "Cpackets/CGRequestUnion.h"
-#include "Cpackets/CGAcceptUnion.h"
-#include "Cpackets/CGDenyUnion.h"
-#include "Cpackets/CGRequestUnionInfo.h"
-#include "Cpackets/CGExpelGuild.h"
-#include "Cpackets/CGQuitUnion.h"
-#include "Cpackets/CGQuitUnionAccept.h"
-#include "Cpackets/CGQuitUnionDeny.h"
-#include "Gpackets/GCUnionOfferList.h"
-#include "Gpackets/GCBloodBibleList.h"
-#include "Cpackets/CGSelectBloodBible.h"
-#include "Gpackets/GCBloodBibleSignInfo.h"
-#include "Cpackets/CGRangerSay.h"
-#include "Cpackets/CGModifyTaxRatio.h"
-#include "Cpackets/CGDisplayItem.h"
-#include "Cpackets/CGUndisplayItem.h"
-#include "Cpackets/CGStoreSign.h"
-#include "Cpackets/CGStoreOpen.h"
-#include "Cpackets/CGStoreClose.h"
-#include "Cpackets/CGRequestStoreInfo.h"
-#include "Cpackets/CGBuyStoreItem.h"
-#include "Gpackets/GCMyStoreInfo.h"
-#include "Gpackets/GCOtherStoreInfo.h"
-#include "Gpackets/GCRemoveStoreItem.h"
-#include "Gpackets/GCAddStoreItem.h"
-#include "Cpackets/CGRequestPowerPoint.h"
-#include "Gpackets/GCRequestPowerPointResult.h"
-#include "Cpackets/CGUsePowerPoint.h"
-#include "Gpackets/GCUsePowerPointResult.h"
-#include "Cpackets/CGDonationMoney.h"
-#include "Cpackets/CGGetEventItem.h"
-#include "Gpackets/GCSubInventoryInfo.h"
-#include "Cpackets/CLAgreement.h"
+#include "GGServerChat.h"
+
+#include "GCPetStashList.h"
+#include "CGWithdrawPet.h"
+#include "CGDepositPet.h"
+#include "GCPetStashVerify.h"
+#include "CGSMSSend.h"
+#include "CGAddSMSAddress.h"
+#include "CGDeleteSMSAddress.h"
+#include "CGSMSAddressList.h"
+#include "GCSMSAddressList.h"
+#include "GCAddressListVerify.h"
+#include "GCNicknameList.h"
+
+#include "GCAddNickname.h"
+#include "CGModifyNickname.h"
+#include "CGSelectNickname.h"
+#include "GCNicknameVerify.h"
+#include "GCModifyNickname.h"
+
+#include "GCGQuestStatusInfo.h"
+#include "GCGQuestStatusModify.h"
+#include "CGGQuestAccept.h"
+#include "CGGQuestCancel.h"
+#include "GCExecuteElement.h"
+#include "GCGQuestInventory.h"
+#include "GCAuthKey.h"
+#include "CGAuthKey.h"
+#include "CGUseItemFromGQuestInventory.h"
+
+#include "GCGuildResponse.h"
+#include "CGRequestGuildList.h"
+#include "CGAppointSubmaster.h"
+#include "CGRequestUnion.h"
+#include "CGAcceptUnion.h"
+#include "CGDenyUnion.h"
+#include "CGRequestUnionInfo.h"
+#include "CGExpelGuild.h"
+#include "CGQuitUnion.h"
+#include "CGQuitUnionAccept.h"
+#include "CGQuitUnionDeny.h"
+#include "GCUnionOfferList.h"
+#include "GCBloodBibleList.h"
+#include "CGSelectBloodBible.h"
+#include "GCBloodBibleSignInfo.h"
+#include "CGRangerSay.h"
+#include "CGModifyTaxRatio.h"
+#include "CGDisplayItem.h"
+#include "CGUndisplayItem.h"
+#include "CGStoreSign.h"
+#include "CGStoreOpen.h"
+#include "CGStoreClose.h"
+#include "CGRequestStoreInfo.h"
+#include "CGBuyStoreItem.h"
+#include "GCMyStoreInfo.h"
+#include "GCOtherStoreInfo.h"
+#include "GCRemoveStoreItem.h"
+#include "GCAddStoreItem.h"
+#include "CGRequestPowerPoint.h"
+#include "GCRequestPowerPointResult.h"
+#include "CGUsePowerPoint.h"
+#include "GCUsePowerPointResult.h"
+#include "CGDonationMoney.h"
+#include "CGGetEventItem.h"
+#include "GCSubInventoryInfo.h"
+#endif
+
+#ifdef __LOGIN_SERVER__
+#include "CLAgreement.h"
+#endif
 
 
 #ifndef __GAME_CLIENT__
-//#include "Gpackets/GSGuildAction.h"
-//#include "Spackets/SGGuildResponse.h"
+//#include "GSGuildAction.h"
+//#include "SGGuildResponse.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////
@@ -689,10 +705,96 @@ void PacketFactoryManager::init ()
 	addFactory(new CGRequestRepairFactory());
 	addFactory(new CGVisibleFactory());
 	addFactory(new CGVerifyTimeFactory());
+	// 2002.6.28
 	addFactory(new CGPortCheckFactory());
-//	addFactory(new CGDialUpFactory());
-//	addFactory(new CGPhoneDisconnectFactory());
-//	addFactory(new CGPhoneSayFactory());
+
+	// added by elcastle 2000-11-29
+	/*
+	addFactory(new CGDialUpFactory());
+	addFactory(new CGPhoneDisconnectFactory());
+	addFactory(new CGPhoneSayFactory());
+	*/
+	addFactory(new CGWhisperFactory());
+
+	addFactory(new CGMouseToStashFactory());
+	addFactory(new CGStashToMouseFactory());
+	addFactory(new CGStashListFactory());
+	addFactory(new CGStashDepositFactory());
+	addFactory(new CGStashWithdrawFactory());
+
+	addFactory(new CGStashRequestBuyFactory());
+
+	addFactory(new CGTradePrepareFactory());
+	addFactory(new CGTradeAddItemFactory());
+	addFactory(new CGTradeRemoveItemFactory());
+	addFactory(new CGTradeMoneyFactory());
+	addFactory(new CGTradeFinishFactory());
+
+	addFactory(new CGSkillToObjectFactory());
+	addFactory(new CGSkillToSelfFactory());
+	addFactory(new CGSkillToTileFactory());
+
+	addFactory(new CGSilverCoatingFactory());
+	addFactory(new CGRequestNewbieItemFactory());
+	addFactory(new CGUseItemFromInventoryFactory());
+	addFactory(new CGSelectWayPointFactory());
+	addFactory(new CGSelectTileEffectFactory());
+
+	addFactory(new CGPartyInviteFactory());
+	addFactory(new CGPartyLeaveFactory());
+
+	addFactory(new CGResurrectFactory());
+
+	addFactory(new CGRequestIPFactory());
+
+	// ���� �ý���
+	addFactory(new CGRelicToObjectFactory());
+
+	addFactory(new CGRegistGuildFactory());
+	addFactory(new CGSelectGuildFactory());
+	addFactory(new CGTryJoinGuildFactory());
+	addFactory(new CGJoinGuildFactory());
+//	addFactory(new CGQuitGuildFactory());
+	addFactory(new CGRequestGuildMemberListFactory());
+	addFactory(new CGSelectGuildMemberFactory());
+//	addFactory(new CGExpelGuildMemberFactory());
+	addFactory(new CGModifyGuildMemberFactory());
+	addFactory(new CGGuildChatFactory());
+
+	// ��æƮ ������ : �� --> ������ �ֱ�
+	addFactory(new CGAddItemToItemFactory());
+
+	// ���� ��û. 2002.9.2
+	addFactory(new CGRequestInfoFactory());
+
+	addFactory(new CGModifyGuildIntroFactory());
+	addFactory(new CGModifyGuildMemberIntroFactory());
+
+	addFactory(new CGUseMessageItemFromInventoryFactory());
+
+	// 2003. 1. 21
+	addFactory(new CGWithdrawTaxFactory());
+
+	addFactory(new CGTypeStringListFactory());
+
+	addFactory(new CGUseItemFromGearFactory());
+
+	addFactory(new CGSkillToNamedFactory());
+
+	addFactory(new CGSelectRankBonusFactory());
+	addFactory(new CGSelectQuestFactory());
+	addFactory(new CGLotterySelectFactory());
+	addFactory(new CGTakeOutGoodFactory());
+	addFactory(new CGMixItemFactory());
+	addFactory(new CGAbsorbSoulFactory());
+	addFactory(new CGDownSkillFactory());
+	addFactory(new CGSubmitScoreFactory());
+	addFactory(new CGFailQuestFactory());
+	addFactory(new CGAddItemToCodeSheetFactory());
+	addFactory(new CGSelectRegenZoneFactory());
+	addFactory(new CGTameMonsterFactory());
+	addFactory(new CGPetGambleFactory());
+	addFactory(new CGCrashReportFactory());
 #endif
 
 #ifdef __LOGIN_SERVER__
@@ -712,70 +814,9 @@ void PacketFactoryManager::init ()
 	addFactory(new CLReconnectLoginFactory());
 	addFactory(new CLSelectWorldFactory());
 	addFactory(new CLSelectServerFactory());
-	addFactory(new CLAgreementFactory());
 #endif
 
-
 #ifdef __GAME_SERVER__
-	addFactory(new CGWhisperFactory());
-	addFactory(new CGMouseToStashFactory());
-	addFactory(new CGStashToMouseFactory());
-	addFactory(new CGStashListFactory());
-	addFactory(new CGStashDepositFactory());
-	addFactory(new CGStashWithdrawFactory());
-	addFactory(new CGStashRequestBuyFactory());
-	addFactory(new CGTradePrepareFactory());
-	addFactory(new CGTradeAddItemFactory());
-	addFactory(new CGTradeRemoveItemFactory());
-	addFactory(new CGTradeMoneyFactory());
-	addFactory(new CGTradeFinishFactory());
-	addFactory(new CGSkillToObjectFactory());
-	addFactory(new CGSkillToSelfFactory());
-	addFactory(new CGSkillToTileFactory());
-	addFactory(new CGSilverCoatingFactory());
-	addFactory(new CGRequestNewbieItemFactory());
-	addFactory(new CGUseItemFromInventoryFactory());
-	addFactory(new CGSelectWayPointFactory());
-	addFactory(new CGSelectTileEffectFactory());
-	addFactory(new CGPartyInviteFactory());
-	addFactory(new CGPartyLeaveFactory());
-	addFactory(new CGResurrectFactory());
-	addFactory(new CGRequestIPFactory());
-	addFactory(new CGRelicToObjectFactory());
-	addFactory(new CGRegistGuildFactory());
-	addFactory(new CGSelectGuildFactory());
-	addFactory(new CGTryJoinGuildFactory());
-	addFactory(new CGJoinGuildFactory());
-//	addFactory(new CGQuitGuildFactory());
-	addFactory(new CGRequestGuildMemberListFactory());
-	addFactory(new CGSelectGuildMemberFactory());
-//	addFactory(new CGExpelGuildMemberFactory());
-	addFactory(new CGModifyGuildMemberFactory());
-	addFactory(new CGGuildChatFactory());
-	addFactory(new CGAddItemToItemFactory());
-	addFactory(new CGRequestInfoFactory());
-	addFactory(new CGModifyGuildIntroFactory());
-	addFactory(new CGModifyGuildMemberIntroFactory());
-	addFactory(new CGUseMessageItemFromInventoryFactory());
-	addFactory(new CGWithdrawTaxFactory());
-	addFactory(new CGTypeStringListFactory());
-	addFactory(new CGUseItemFromGearFactory());
-	addFactory(new CGSkillToNamedFactory());
-	addFactory(new CGSelectRankBonusFactory());
-	addFactory(new CGSelectQuestFactory());
-	addFactory(new CGLotterySelectFactory());
-	addFactory(new CGTakeOutGoodFactory());
-	addFactory(new CGMixItemFactory());
-	addFactory(new CGAbsorbSoulFactory());
-	addFactory(new CGDownSkillFactory());
-	addFactory(new CGSubmitScoreFactory());
-	addFactory(new CGFailQuestFactory());
-	addFactory(new CGAddItemToCodeSheetFactory());
-	addFactory(new CGSelectRegenZoneFactory());
-	addFactory(new CGTameMonsterFactory());
-	addFactory(new CGPetGambleFactory());
-	addFactory(new CGCrashReportFactory());
-	
 	addFactory(new GCAddBatFactory());
 	addFactory(new GCAddBurrowingCreatureFactory());
 	addFactory(new GCAddEffectFactory());
@@ -972,22 +1013,37 @@ void PacketFactoryManager::init ()
 	addFactory(new GCThrowBombOK2Factory());
 	addFactory(new GCThrowBombOK3Factory());
 
-    addFactory(new GGCommandFactory());
+//	addFactory(new GCShowGuildRegistFactory());
+	addFactory(new GCWaitGuildListFactory());
+	addFactory(new GCShowGuildInfoFactory());
+	addFactory(new GCShowGuildJoinFactory());
+	addFactory(new GCShowMessageBoxFactory());
+//	addFactory(new GCModifyMoneyFactory());
+	addFactory(new GCShowWaitGuildInfoFactory());
+	addFactory(new GCActiveGuildListFactory());
+
+	addFactory(new GCShowGuildMemberInfoFactory());
+	addFactory(new GCGuildChatFactory());
+	addFactory(new GCGuildMemberListFactory());
+	addFactory(new GCModifyGuildMemberInfoFactory());
+
+	addFactory(new GCAddItemToItemVerifyFactory());
+
+	// 2002.9.2
+	addFactory(new GCNoticeEventFactory());
 #endif
 
+#ifdef __GAME_SERVER__
+	addFactory(new GGCommandFactory());
+	addFactory(new GMServerInfoFactory());
+#endif
 
-#if defined(__LOGIN_SERVER__) || defined(__GAME_SERVER__)
-        addFactory(new GMServerInfoFactory());
+	#if defined(__GAME_SERVER__) || defined(__LOGIN__SERVER__)
 		addFactory(new GLIncomingConnectionFactory());
 		addFactory(new GLIncomingConnectionErrorFactory());
 		addFactory(new GLIncomingConnectionOKFactory());
 		addFactory(new GLKickVerifyFactory());
-
-		addFactory(new LGIncomingConnectionFactory());
-		addFactory(new LGIncomingConnectionOKFactory());
-		addFactory(new LGIncomingConnectionErrorFactory());
-		addFactory(new LGKickCharacterFactory());
-#endif
+	#endif
 
 #ifdef __LOGIN_SERVER__
 	addFactory(new LCCreatePCErrorFactory());
@@ -1009,6 +1065,13 @@ void PacketFactoryManager::init ()
 	addFactory(new LCWorldListFactory());
 #endif
 
+	#ifndef __GAME_CLIENT__
+		addFactory(new LGIncomingConnectionFactory());
+		addFactory(new LGIncomingConnectionOKFactory());
+		addFactory(new LGIncomingConnectionErrorFactory());
+		addFactory(new LGKickCharacterFactory());
+	#endif
+
 	#ifdef __GAME_CLIENT__
 		addFactory(new CRConnectFactory());
 		addFactory(new RCConnectVerifyFactory());
@@ -1023,7 +1086,7 @@ void PacketFactoryManager::init ()
 		addFactory(new RCCharacterInfoFactory());
 	#endif
 
-#if defined(__GAME_SERVER__) || defined(__SHARED_SERVER__)
+	#if defined(__GAME_SERVER__) || defined(__SHARED_SERVER__)
 		addFactory(new SGQuitGuildOKFactory());
 		addFactory(new SGExpelGuildMemberOKFactory());
 		addFactory(new SGModifyGuildMemberOKFactory());
@@ -1040,31 +1103,16 @@ void PacketFactoryManager::init ()
 		addFactory(new SGGuildInfoFactory());
 		addFactory(new GSModifyGuildIntroFactory());
 		addFactory(new SGModifyGuildIntroOKFactory());
-
 		addFactory(new GSGuildMemberLogOnFactory());
 		addFactory(new SGGuildMemberLogOnOKFactory());
-#endif
+	#endif
 
-#ifdef __GAME_SERVER__
+
+#ifdef  __GAME_SERVER__
 		addFactory(new GGGuildChatFactory());
 #endif
-	
-#ifdef __GAME_SERVER__
-//	addFactory(new GCShowGuildRegistFactory());
-	addFactory(new GCWaitGuildListFactory());
-	addFactory(new GCShowGuildInfoFactory());
-	addFactory(new GCShowGuildJoinFactory());
-	addFactory(new GCShowMessageBoxFactory());
-//	addFactory(new GCModifyMoneyFactory());
-	addFactory(new GCShowWaitGuildInfoFactory());
-	addFactory(new GCActiveGuildListFactory());
-	addFactory(new GCShowGuildMemberInfoFactory());
-	addFactory(new GCGuildChatFactory());
-	addFactory(new GCGuildMemberListFactory());
-	addFactory(new GCModifyGuildMemberInfoFactory());
-	addFactory(new GCAddItemToItemVerifyFactory());
-	addFactory(new GCNoticeEventFactory());
 
+#ifdef __GAME_SERVER__
 	addFactory(new GCSelectRankBonusOKFactory());
 	addFactory(new GCSelectRankBonusFailedFactory());
 	addFactory(new GCRankBonusInfoFactory());
@@ -1174,6 +1222,7 @@ void PacketFactoryManager::init ()
 	addFactory(new CGDonationMoneyFactory());
 	addFactory(new CGGetEventItemFactory());
 	addFactory(new GCSubInventoryInfoFactory());
+	// addFactory(new CLAgreementFactory());
 #endif
 
 #if __OUTPUT_INIT__

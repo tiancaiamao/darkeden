@@ -8,7 +8,7 @@
 #include "SocketInputStream.h"
 #include "SocketOutputStream.h"
 #include "StringStream.h"
-#include "Assert1.h"
+#include "Assert.h"
 
 //////////////////////////////////////////////////////////////////////////////
 // constructor

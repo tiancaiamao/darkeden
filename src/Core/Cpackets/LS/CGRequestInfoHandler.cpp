@@ -12,8 +12,8 @@
 	#include "Slayer.h"
 	#include "Vampire.h"
 	#include "Ousters.h"
-	#include "Gpackets/GCOtherModifyInfo.h"
-	#include "Gpackets/GCOtherGuildName.h"
+	#include "GCOtherModifyInfo.h"
+	#include "GCOtherGuildName.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

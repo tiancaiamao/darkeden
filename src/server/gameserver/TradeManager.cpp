@@ -23,7 +23,7 @@
 
 #include "VariableManager.h"
 
-#include "Gpackets/GCTradeFinish.h"
+#include "GCTradeFinish.h"
 
 #include <map>
 

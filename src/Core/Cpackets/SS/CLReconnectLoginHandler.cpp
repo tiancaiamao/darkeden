@@ -14,8 +14,8 @@
 	#include "OptionInfo.h"
 	#include "ReconnectLoginInfoManager.h"
 
-	#include "Lpackets/LCPCList.h"
-	#include "Gpackets/GCDisconnect.h"
+	#include "LCPCList.h"
+	#include "GCDisconnect.h"
 	#include "Properties.h"
 
 #endif
@@ -150,7 +150,7 @@ void CLReconnectLoginHandler::execute (CLReconnectLogin* pPacket , Player* pPlay
 
 
 		if (logon == "GAME" || logon == "LOGON") {
-			string msg = "ReconnectLogin verify failed: LogOn = ";
+			string msg = "ReconnectLogin verify failed: LogOn ="";
 			msg += logon;
 			pLoginPlayer->setID("NONE");
 			throw SQLQueryException(msg);

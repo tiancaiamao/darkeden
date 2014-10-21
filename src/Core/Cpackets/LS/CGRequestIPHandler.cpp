@@ -12,8 +12,8 @@
 	#include "PCFinder.h"
 	#include "DB.h"
 
-	#include "Gpackets/GCRequestedIP.h"
-	#include "Gpackets/GCRequestFailed.h"
+	#include "GCRequestedIP.h"
+	#include "GCRequestFailed.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

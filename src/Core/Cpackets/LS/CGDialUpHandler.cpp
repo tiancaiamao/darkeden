@@ -10,9 +10,9 @@
 	#include "GamePlayer.h"
 	#include "TelephoneCenter.h"
 	#include "Slayer.h"
-	#include "Gpackets/GCRing.h"
-	#include "Gpackets/GCPhoneConnected.h"
-	#include "Gpackets/GCPhoneConnectionFailed.h"
+	#include "GCRing.h"
+	#include "GCPhoneConnected.h"
+	#include "GCPhoneConnectionFailed.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

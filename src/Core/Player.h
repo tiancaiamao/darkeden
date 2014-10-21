@@ -62,7 +62,7 @@ public :
 	virtual void sendPacket (Packet* pPacket) throw(ProtocolException, Error);
 
 	// send stream to player's output buffer
-//    virtual void sendStream(SocketOutputStream* pOutputStream ) throw(ProtocolException, Error);
+	virtual void sendStream(SocketOutputStream* pOutputStream ) throw(ProtocolException, Error);
 
 	// disconnect
 	// 플레이어의 연결을 종료할 때, 상대편이 적절하게 로그아웃하지 않을 경우 소켓의 연결이 

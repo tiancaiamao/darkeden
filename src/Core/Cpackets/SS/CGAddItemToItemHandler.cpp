@@ -45,9 +45,9 @@
 	#include "PacketUtil.h"
 	#include "DB.h"
 
-	#include "Gpackets/GCAddItemToItemVerify.h"
-	#include "Gpackets/GCDeleteInventoryItem.h"
-	#include "Gpackets/GCCreateItem.h"
+	#include "GCAddItemToItemVerify.h"
+	#include "GCDeleteInventoryItem.h"
+	#include "GCCreateItem.h"
 
 	#include "SystemAvailabilitiesManager.h"
 
@@ -651,7 +651,7 @@ void CGAddItemToItemHandler::execute (CGAddItemToItem* pPacket , Player* pPlayer
 		//cout << "type fail ratio : " << typeFailRatio << endl;
 
 		float optionFailRatio = 0;
-		string optionString="";
+		string optionString=";
 
 		if (pItem->getOptionTypeSize() >= 1 )
 		{

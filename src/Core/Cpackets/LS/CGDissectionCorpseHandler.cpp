@@ -57,11 +57,11 @@
 
 	#include <stdio.h>
 
-	#include "Gpackets/GCRemoveCorpseHead.h"
-	#include "Gpackets/GCSystemMessage.h"
-	#include "Gpackets/GCCreateItem.h"
-	#include "Gpackets/GCAddEffect.h"
-	#include "Gpackets/GCRemoveEffect.h"
+	#include "GCRemoveCorpseHead.h"
+	#include "GCSystemMessage.h"
+	#include "GCCreateItem.h"
+	#include "GCAddEffect.h"
+	#include "GCRemoveEffect.h"
 #endif	// __GAME_SERVER__
 
 //////////////////////////////////////////////////////////////////////////////
@@ -512,7 +512,7 @@ void CGDissectionCorpseHandler::execute (CGDissectionCorpse* pPacket , Player* p
 								// 기존의 ItemID를 그대로 유지한다.
 								// ItemID가 0이면.. create()할때 다시 ItemID를 받는다.
 								// by sigi. 2002.10.28
-								pTreasure->create("", STORAGE_ZONE, pZone->getZoneID(), pt.x, pt.y, pTreasure->getItemID());
+								pTreasure->create(", STORAGE_ZONE, pZone->getZoneID(), pt.x, pt.y, pTreasure->getItemID());
 							}
 							else 
 							{

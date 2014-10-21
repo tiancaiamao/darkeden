@@ -25,10 +25,10 @@
 #include "EffectRelicLock.h"
 #include "EffectDragonEye.h"
 
-#include "Gpackets/GCSystemMessage.h"
-#include "Gpackets/GCAddEffect.h"
-#include "Gpackets/GCAddEffectToTile.h"
-#include "Gpackets/GCDeleteInventoryItem.h"
+#include "GCSystemMessage.h"
+#include "GCAddEffect.h"
+#include "GCAddEffectToTile.h"
+#include "GCDeleteInventoryItem.h"
 
 #include <stdio.h>
 

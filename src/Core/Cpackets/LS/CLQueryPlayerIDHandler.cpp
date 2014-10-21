@@ -15,7 +15,7 @@
 	#include "Result.h"
 	#include "Assert1.h"
 
-	#include "Lpackets/LCQueryResultPlayerID.h"
+	#include "LCQueryResultPlayerID.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

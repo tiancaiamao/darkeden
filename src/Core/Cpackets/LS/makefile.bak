@@ -3574,7 +3574,7 @@ CLReconnectLoginHandler.o: CLReconnectLoginHandler.cpp \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/Core/Assert1.h ../../../../src/server/database/DB.h \
  ../../../../src/server/database/DatabaseManager.h \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
@@ -3601,11 +3601,11 @@ CLReconnectLoginHandler.o: CLReconnectLoginHandler.cpp \
  /usr/include/c++/4.8.2/ext/algorithm \
  ../../../../src/server/loginserver/ReconnectLoginInfoManager.h \
  ../../../../src/server/loginserver/ReconnectLoginInfo.h \
- ../../../../src/Core/Lpackets/LCPCList.h ../../../../src/Core/PCInfo.h \
+ ../../../../src/Core//LCPCList.h ../../../../src/Core/PCInfo.h \
  ../../../../src/Core/PCSlayerInfo.h ../../../../src/Core/PCInfo.h \
  ../../../../src/Core/PCVampireInfo.h \
  ../../../../src/Core/PCOustersInfo.h \
- ../../../../src/Core/Gpackets/GCDisconnect.h \
+ ../../../../src/Core/"GCDisconnect.h \
  ../../../../src/Core/Properties.h
 CGDissectionCorpse.o: CGDissectionCorpse.cpp /usr/include/stdc-predef.h \
  CGDissectionCorpse.h ../../../../src/Core/Types.h \
@@ -9586,7 +9586,7 @@ CLCreatePCHandler.o: CLCreatePCHandler.cpp /usr/include/stdc-predef.h \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/Core/PCSlayerInfo.h ../../../../src/Core/PCInfo.h \
  ../../../../src/Core/Assert1.h \
  ../../../../src/server/GameServerInfoManager.h \
@@ -9602,8 +9602,8 @@ CLCreatePCHandler.o: CLCreatePCHandler.cpp /usr/include/stdc-predef.h \
  /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
  ../../../../src/server/database/Statement.h \
  ../../../../src/server/database/Result.h \
- ../../../../src/Core/Lpackets/LCCreatePCOK.h \
- ../../../../src/Core/Lpackets/LCCreatePCError.h \
+ ../../../../src/Core//LCCreatePCOK.h \
+ ../../../../src/Core//LCCreatePCError.h \
  ../../../../src/server/chinabilling/CBillingInfo.h
 CLDeletePC.o: CLDeletePC.cpp /usr/include/stdc-predef.h CLDeletePC.h \
  ../../../../src/Core/Packet.h ../../../../src/Core/Types.h \
@@ -9869,7 +9869,7 @@ CLDeletePCHandler.o: CLDeletePCHandler.cpp /usr/include/stdc-predef.h \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/Core/Assert1.h ../../../../src/server/database/DB.h \
  ../../../../src/server/database/DatabaseManager.h \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
@@ -9883,8 +9883,8 @@ CLDeletePCHandler.o: CLDeletePCHandler.cpp /usr/include/stdc-predef.h \
  ../../../../src/server/database/Result.h \
  ../../../../src/server/loginserver/ItemDestroyer.h \
  ../../../../src/server/database/DB.h ../../../../src/Core/Properties.h \
- ../../../../src/Core/Lpackets/LCDeletePCOK.h \
- ../../../../src/Core/Lpackets/LCDeletePCError.h
+ ../../../../src/Core//LCDeletePCOK.h \
+ ../../../../src/Core//LCDeletePCError.h
 CLGetPCList.o: CLGetPCList.cpp /usr/include/stdc-predef.h CLGetPCList.h \
  ../../../../src/Core/Packet.h ../../../../src/Core/Types.h \
  ../../../../src/Core/types/SystemTypes.h \
@@ -10149,7 +10149,7 @@ CLGetPCListHandler.o: CLGetPCListHandler.cpp /usr/include/stdc-predef.h \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/Core/Assert1.h ../../../../src/server/database/DB.h \
  ../../../../src/server/database/DatabaseManager.h \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
@@ -10174,7 +10174,7 @@ CLGetPCListHandler.o: CLGetPCListHandler.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/4.8/bits/stl_bvector.h \
  /usr/include/c++/4.8/bits/vector.tcc \
  /usr/include/c++/4.8.2/ext/algorithm \
- ../../../../src/Core/Lpackets/LCPCList.h ../../../../src/Core/PCInfo.h \
+ ../../../../src/Core//LCPCList.h ../../../../src/Core/PCInfo.h \
  ../../../../src/Core/PCSlayerInfo.h ../../../../src/Core/PCInfo.h \
  ../../../../src/Core/PCVampireInfo.h \
  ../../../../src/Core/PCOustersInfo.h
@@ -10445,7 +10445,7 @@ CLLoginHandler.o: CLLoginHandler.cpp /usr/include/stdc-predef.h CLLogin.h \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/server/database/DatabaseManager.h \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
  /usr/include/c++/4.8/bits/stl_map.h \
@@ -10459,8 +10459,8 @@ CLLoginHandler.o: CLLoginHandler.cpp /usr/include/stdc-predef.h CLLogin.h \
  ../../../../src/Core/StringStream.h \
  ../../../../src/server/GameServerInfoManager.h \
  ../../../../src/server/GameServerInfo.h \
- ../../../../src/Core/Lpackets/LCLoginOK.h \
- ../../../../src/Core/Lpackets/LCLoginError.h \
+ ../../../../src/Core//LCLoginOK.h \
+ ../../../../src/Core//LCLoginError.h \
  ../../../../src/server/loginserver/UserInfoManager.h \
  ../../../../src/server/loginserver/UserInfo.h \
  ../../../../src/Core/Assert1.h ../../../../src/Core/Properties.h \
@@ -10986,7 +10986,7 @@ CLQueryPlayerIDHandler.o: CLQueryPlayerIDHandler.cpp \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/server/database/DatabaseManager.h \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
  /usr/include/c++/4.8/bits/stl_map.h \
@@ -10998,7 +10998,7 @@ CLQueryPlayerIDHandler.o: CLQueryPlayerIDHandler.cpp \
  ../../../../src/server/database/Connection.h \
  ../../../../src/server/database/Statement.h \
  ../../../../src/server/database/Result.h ../../../../src/Core/Assert1.h \
- ../../../../src/Core/Lpackets/LCQueryResultPlayerID.h
+ ../../../../src/Core//LCQueryResultPlayerID.h
 CLQueryCharacterName.o: CLQueryCharacterName.cpp \
  /usr/include/stdc-predef.h CLQueryCharacterName.h \
  ../../../../src/Core/Packet.h ../../../../src/Core/Types.h \
@@ -11265,7 +11265,7 @@ CLQueryCharacterNameHandler.o: CLQueryCharacterNameHandler.cpp \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/server/database/DatabaseManager.h \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
  /usr/include/c++/4.8/bits/stl_map.h \
@@ -11280,7 +11280,7 @@ CLQueryCharacterNameHandler.o: CLQueryCharacterNameHandler.cpp \
  ../../../../src/server/GameWorldInfoManager.h \
  ../../../../src/server/GameWorldInfo.h \
  ../../../../src/Core/StringStream.h \
- ../../../../src/Core/Lpackets/LCQueryResultCharacterName.h
+ ../../../../src/Core//LCQueryResultCharacterName.h
 CLRegisterPlayer.o: CLRegisterPlayer.cpp /usr/include/stdc-predef.h \
  CLRegisterPlayer.h ../../../../src/Core/Packet.h \
  ../../../../src/Core/Types.h ../../../../src/Core/types/SystemTypes.h \
@@ -11546,7 +11546,7 @@ CLRegisterPlayerHandler.o: CLRegisterPlayerHandler.cpp \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/Core/Assert1.h ../../../../src/server/database/DB.h \
  ../../../../src/server/database/DatabaseManager.h \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
@@ -11561,8 +11561,8 @@ CLRegisterPlayerHandler.o: CLRegisterPlayerHandler.cpp \
  ../../../../src/server/loginserver/GameServerGroupInfoManager.h \
  ../../../../src/server/loginserver/GameServerGroupInfo.h \
  ../../../../src/Core/StringStream.h \
- ../../../../src/Core/Lpackets/LCRegisterPlayerError.h \
- ../../../../src/Core/Lpackets/LCRegisterPlayerOK.h
+ ../../../../src/Core//LCRegisterPlayerError.h \
+ ../../../../src/Core//LCRegisterPlayerOK.h
 CLSelectPC.o: CLSelectPC.cpp /usr/include/stdc-predef.h CLSelectPC.h \
  ../../../../src/Core/Packet.h ../../../../src/Core/Types.h \
  ../../../../src/Core/types/SystemTypes.h \
@@ -11828,7 +11828,7 @@ CLSelectPCHandler.o: CLSelectPCHandler.cpp /usr/include/stdc-predef.h \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/server/database/DB.h \
  ../../../../src/server/database/DatabaseManager.h \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
@@ -11855,9 +11855,9 @@ CLSelectPCHandler.o: CLSelectPCHandler.cpp /usr/include/stdc-predef.h \
  ../../../../src/Core/Assert1.h \
  ../../../../src/server/gameserver/billing/BillingInfo.h \
  ../../../../src/Core/types/ServerType.h \
- ../../../../src/Core/Lpackets/LCSelectPCError.h \
- ../../../../src/Core/Lpackets/LCReconnect.h \
- ../../../../src/Core/Lpackets/LGIncomingConnection.h \
+ ../../../../src/Core//LCSelectPCError.h \
+ ../../../../src/Core//LCReconnect.h \
+ ../../../../src/Core//LGIncomingConnection.h \
  ../../../../src/Core/DatagramPacket.h \
  ../../../../src/server/chinabilling/CBillingInfo.h
 CLGetServerList.o: CLGetServerList.cpp /usr/include/stdc-predef.h \
@@ -12125,7 +12125,7 @@ CLGetServerListHandler.o: CLGetServerListHandler.cpp \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/Core/Assert1.h ../../../../src/server/database/DB.h \
  ../../../../src/server/database/DatabaseManager.h \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
@@ -12145,7 +12145,7 @@ CLGetServerListHandler.o: CLGetServerListHandler.cpp \
  ../../../../src/Core/ServerGroupInfo.h \
  ../../../../src/server/loginserver/UserInfoManager.h \
  ../../../../src/server/loginserver/UserInfo.h \
- ../../../../src/Core/Lpackets/LCServerList.h
+ ../../../../src/Core//LCServerList.h
 CLGetWorldList.o: CLGetWorldList.cpp /usr/include/stdc-predef.h \
  CLGetWorldList.h ../../../../src/Core/Packet.h \
  ../../../../src/Core/Types.h ../../../../src/Core/types/SystemTypes.h \
@@ -12411,7 +12411,7 @@ CLGetWorldListHandler.o: CLGetWorldListHandler.cpp \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/Core/Assert1.h ../../../../src/server/database/DB.h \
  ../../../../src/server/database/DatabaseManager.h \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
@@ -12426,7 +12426,7 @@ CLGetWorldListHandler.o: CLGetWorldListHandler.cpp \
  ../../../../src/server/GameWorldInfoManager.h \
  ../../../../src/server/GameWorldInfo.h \
  ../../../../src/Core/StringStream.h ../../../../src/Core/WorldInfo.h \
- ../../../../src/Core/Lpackets/LCWorldList.h
+ ../../../../src/Core//LCWorldList.h
 CLChangeServer.o: CLChangeServer.cpp /usr/include/stdc-predef.h \
  CLChangeServer.h ../../../../src/Core/Packet.h \
  ../../../../src/Core/Types.h ../../../../src/Core/types/SystemTypes.h \
@@ -12693,7 +12693,7 @@ CLChangeServerHandler.o: CLChangeServerHandler.cpp \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/server/database/DatabaseManager.h \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
  /usr/include/c++/4.8/bits/stl_map.h \
@@ -12720,7 +12720,7 @@ CLChangeServerHandler.o: CLChangeServerHandler.cpp \
  /usr/include/c++/4.8/bits/stl_bvector.h \
  /usr/include/c++/4.8/bits/vector.tcc \
  /usr/include/c++/4.8.2/ext/algorithm \
- ../../../../src/Core/Lpackets/LCPCList.h ../../../../src/Core/PCInfo.h \
+ ../../../../src/Core//LCPCList.h ../../../../src/Core/PCInfo.h \
  ../../../../src/Core/PCSlayerInfo.h ../../../../src/Core/PCInfo.h \
  ../../../../src/Core/PCVampireInfo.h \
  ../../../../src/Core/PCOustersInfo.h
@@ -12990,7 +12990,7 @@ CLSelectServerHandler.o: CLSelectServerHandler.cpp \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/server/database/DatabaseManager.h \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
  /usr/include/c++/4.8/bits/stl_map.h \
@@ -13019,7 +13019,7 @@ CLSelectServerHandler.o: CLSelectServerHandler.cpp \
  /usr/include/c++/4.8/bits/stl_bvector.h \
  /usr/include/c++/4.8/bits/vector.tcc \
  /usr/include/c++/4.8.2/ext/algorithm \
- ../../../../src/Core/Lpackets/LCPCList.h ../../../../src/Core/PCInfo.h \
+ ../../../../src/Core//LCPCList.h ../../../../src/Core/PCInfo.h \
  ../../../../src/Core/PCSlayerInfo.h ../../../../src/Core/PCInfo.h \
  ../../../../src/Core/PCVampireInfo.h \
  ../../../../src/Core/PCOustersInfo.h
@@ -13288,7 +13288,7 @@ CLSelectWorldHandler.o: CLSelectWorldHandler.cpp \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/server/database/DatabaseManager.h \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
  /usr/include/c++/4.8/bits/stl_map.h \
@@ -13325,7 +13325,7 @@ CLSelectWorldHandler.o: CLSelectWorldHandler.cpp \
  ../../../../src/server/loginserver/UserInfoManager.h \
  ../../../../src/server/loginserver/UserInfo.h \
  ../../../../src/Core/Shape.h \
- ../../../../src/Core/Lpackets/LCServerList.h
+ ../../../../src/Core//LCServerList.h
 CLVersionCheck.o: CLVersionCheck.cpp /usr/include/stdc-predef.h \
  CLVersionCheck.h ../../../../src/Core/Packet.h \
  ../../../../src/Core/Types.h ../../../../src/Core/types/SystemTypes.h \
@@ -13591,7 +13591,7 @@ CLVersionCheckHandler.o: CLVersionCheckHandler.cpp \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/server/database/DB.h \
  ../../../../src/server/database/DatabaseManager.h \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
@@ -13603,8 +13603,8 @@ CLVersionCheckHandler.o: CLVersionCheckHandler.cpp \
  /usr/include/mysql/typelib.h /usr/include/mysql/my_alloc.h \
  ../../../../src/server/database/Statement.h \
  ../../../../src/server/database/Result.h ../../../../src/Core/Assert1.h \
- ../../../../src/Core/Lpackets/LCVersionCheckOK.h \
- ../../../../src/Core/Lpackets/LCVersionCheckError.h
+ ../../../../src/Core//LCVersionCheckOK.h \
+ ../../../../src/Core//LCVersionCheckError.h
 CGNPCTalk.o: CGNPCTalk.cpp /usr/include/stdc-predef.h CGNPCTalk.h \
  ../../../../src/Core/Packet.h ../../../../src/Core/Types.h \
  ../../../../src/Core/types/SystemTypes.h \
@@ -28038,7 +28038,7 @@ CGTypeStringListHandler.o: CGTypeStringListHandler.cpp \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  /usr/include/c++/4.8/bitset \
  ../../../../src/server/gameserver/PlayerCreature.h \
  ../../../../src/server/gameserver/Creature.h \
@@ -28055,8 +28055,8 @@ CGTypeStringListHandler.o: CGTypeStringListHandler.cpp \
  ../../../../src/server/gameserver/Garbage.h \
  ../../../../src/server/gameserver/RankBonus.h \
  ../../../../src/server/gameserver/ExpFwd.h \
- ../../../../src/Core/Gpackets/GCMonsterKillQuestInfo.h \
- ../../../../src/Core/Gpackets/GCSelectQuestID.h \
+ ../../../../src/Core/"GCMonsterKillQuestInfo.h \
+ ../../../../src/Core/"GCSelectQuestID.h \
  ../../../../src/server/gameserver/OptionInfo.h /usr/include/c++/4.8/map \
  /usr/include/c++/4.8/bits/stl_tree.h /usr/include/c++/4.8/bits/stl_map.h \
  /usr/include/c++/4.8/bits/stl_multimap.h \
@@ -28089,10 +28089,10 @@ CGTypeStringListHandler.o: CGTypeStringListHandler.cpp \
  ../../../../src/server/gameserver/Inventory.h \
  ../../../../src/server/gameserver/couple/PartnerWaitingManager.h \
  ../../../../src/server/gameserver/couple/CoupleManager.h \
- ../../../../src/Core/Gpackets/GCNPCResponse.h \
- ../../../../src/Core/Gpackets/GCModifyInformation.h \
+ ../../../../src/Core/"GCNPCResponse.h \
+ ../../../../src/Core/"GCModifyInformation.h \
  ../../../../src/server/gameserver/SystemAvailabilitiesManager.h \
- ../../../../src/Core/Gpackets/GCSystemAvailabilities.h
+ ../../../../src/Core/"GCSystemAvailabilities.h
 CGUseItemFromGear.o: CGUseItemFromGear.cpp /usr/include/stdc-predef.h \
  CGUseItemFromGear.h ../../../../src/Core/Packet.h \
  ../../../../src/Core/Types.h ../../../../src/Core/types/SystemTypes.h \
@@ -35361,8 +35361,8 @@ CGRequestGuildListHandler.o: CGRequestGuildListHandler.cpp \
  ../../../../src/server/gameserver/Garbage.h \
  ../../../../src/server/gameserver/RankBonus.h \
  ../../../../src/server/gameserver/ExpFwd.h \
- ../../../../src/Core/Gpackets/GCMonsterKillQuestInfo.h \
- ../../../../src/Core/Gpackets/GCSelectQuestID.h \
+ ../../../../src/Core/"GCMonsterKillQuestInfo.h \
+ ../../../../src/Core/"GCSelectQuestID.h \
  ../../../../src/server/gameserver/OptionInfo.h \
  ../../../../src/server/gameserver/GamePlayer.h \
  ../../../../src/Core/Player.h \
@@ -35378,7 +35378,7 @@ CGRequestGuildListHandler.o: CGRequestGuildListHandler.cpp \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/server/gameserver/Slayer.h \
  ../../../../src/server/gameserver/PlayerCreature.h \
  ../../../../src/Core/PCSlayerInfo.h ../../../../src/Core/PCInfo.h \
@@ -35409,7 +35409,7 @@ CGRequestGuildListHandler.o: CGRequestGuildListHandler.cpp \
  ../../../../src/server/database/Result.h \
  ../../../../src/server/gameserver/skill/SkillSlot.h \
  ../../../../src/server/gameserver/skill/Skill.h \
- ../../../../src/Core/Gpackets/GCModifyInformation.h \
+ ../../../../src/Core/"GCModifyInformation.h \
  ../../../../src/server/gameserver/Vampire.h \
  ../../../../src/Core/PCVampireInfo.h \
  ../../../../src/Core/PCVampireInfo2.h \
@@ -35427,9 +35427,9 @@ CGRequestGuildListHandler.o: CGRequestGuildListHandler.cpp \
  ../../../../src/server/gameserver/Guild.h \
  ../../../../src/server/gameserver/GuildManager.h \
  ../../../../src/Core/GuildInfo.h \
- ../../../../src/Core/Gpackets/GCWaitGuildList.h \
- ../../../../src/Core/Gpackets/GCActiveGuildList.h \
- ../../../../src/Core/Gpackets/GCSystemMessage.h
+ ../../../../src/Core/"GCWaitGuildList.h \
+ ../../../../src/Core/"GCActiveGuildList.h \
+ ../../../../src/Core/"GCSystemMessage.h
 CGAppointSubmaster.o: CGAppointSubmaster.cpp /usr/include/stdc-predef.h \
  CGAppointSubmaster.h ../../../../src/Core/Types.h \
  ../../../../src/Core/types/SystemTypes.h \
@@ -41421,7 +41421,7 @@ CLAgreementHandler.o: CLAgreementHandler.cpp /usr/include/stdc-predef.h \
  ../../../../src/server/gameserver/billing/BillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingPlayerInfo.h \
  ../../../../src/server/chinabilling/CBillingInfo.h \
- ../../../../src/Core/Gpackets/GCReconnectLogin.h \
+ ../../../../src/Core/"GCReconnectLogin.h \
  ../../../../src/server/database/DB.h \
  ../../../../src/server/database/DatabaseManager.h \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \

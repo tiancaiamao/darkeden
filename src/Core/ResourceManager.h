@@ -10,7 +10,7 @@
 
 // include files
 #include "Resource.h"
-#include "Assert1.h"
+#include "Assert.h"
 #include <list>
 
 const uint maxResources = 1024;

@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <cstdarg>
-#include "Assert1.h"
+#include "Assert.h"
 #include "VSDateTime.h"
 
 //////////////////////////////////////////////////////////////////////////////
@@ -161,7 +161,7 @@ string getline(const string & str , size_t & pos) throw() {
 	if (pos > str.size())
         return "";
 
-    size_t oldpos = pos;
+	size_t oldpos = pos;
 	pos = str.find_first_of('\n', oldpos);
 
 	if (pos == string::npos)
@@ -187,8 +187,8 @@ string trim(const string & str) throw() {
         return "";
 
 	static const char * WhiteSpaces = " \t\n\r";
-    size_t begin = str.find_first_not_of(WhiteSpaces);
-    size_t end = str.find_last_not_of(WhiteSpaces);
+	size_t begin = str.find_first_not_of(WhiteSpaces);
+	size_t end = str.find_last_not_of(WhiteSpaces);
 
 	if (begin == string::npos)
         begin = 0;

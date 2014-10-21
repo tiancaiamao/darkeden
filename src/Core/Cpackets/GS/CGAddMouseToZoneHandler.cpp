@@ -35,11 +35,11 @@
 	#include "Sweeper.h"
 	#include "OustersArmsband.h"
 
-	#include "Gpackets/GCAddNewItemToZone.h"
-	#include "Gpackets/GCCannotAdd.h"
-	#include "Gpackets/GCRemoveEffect.h"
-	#include "Gpackets/GCSystemMessage.h"
-	#include "Gpackets/GCDeleteObject.h"
+	#include "GCAddNewItemToZone.h"
+	#include "GCCannotAdd.h"
+	#include "GCRemoveEffect.h"
+	#include "GCSystemMessage.h"
+	#include "GCDeleteObject.h"
 	#include <stdio.h>
 #endif
 
@@ -136,7 +136,7 @@ void CGAddMouseToZoneHandler::execute (CGAddMouseToZone* pPacket , Player* pPlay
 		if (pt.x != -1) 
 		{
 			pItem->whenPCLost(pPC);
-			//pItem->save("", STORAGE_ZONE, pZone->getZoneID(), pt.x, pt.y);
+			//pItem->save(", STORAGE_ZONE, pZone->getZoneID(), pt.x, pt.y);
 			// item저장 최적화. by sigi. 2002.5.13
 			char pField[80];
 			sprintf(pField, "OwnerID='', Storage=%d, StorageID=%u, X=%d, Y=%d", (int)STORAGE_ZONE, pZone->getZoneID(), pt.x, pt.y);
@@ -298,7 +298,7 @@ void CGAddMouseToZoneHandler::execute (CGAddMouseToZone* pPacket , Player* pPlay
 				*/
 			}
 
-			//log(LOG_DROP_ITEM, pCreature->getName(), "", pItem->toString());
+			//log(LOG_DROP_ITEM, pCreature->getName(), ", pItem->toString());
 
 			// ItemTrace 를 남긴다
 			if (pItem != NULL && pItem->isTraceItem() )

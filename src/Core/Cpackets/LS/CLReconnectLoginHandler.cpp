@@ -14,8 +14,8 @@
 	#include "OptionInfo.h"
 	#include "ReconnectLoginInfoManager.h"
 
-	#include "Lpackets/LCPCList.h"
-	#include "Gpackets/GCDisconnect.h"
+	#include "LCPCList.h"
+	#include "GCDisconnect.h"
 	#include "Properties.h"
 
 #endif

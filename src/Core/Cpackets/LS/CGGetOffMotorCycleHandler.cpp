@@ -13,9 +13,9 @@
 	#include "item/Motorcycle.h"
 	#include "ctf/FlagManager.h"
 
-	#include "Gpackets/GCGetOffMotorCycle.h"
-	#include "Gpackets/GCGetOffMotorCycleOK.h"
-	#include "Gpackets/GCGetOffMotorCycleFailed.h"
+	#include "GCGetOffMotorCycle.h"
+	#include "GCGetOffMotorCycleOK.h"
+	#include "GCGetOffMotorCycleFailed.h"
 #endif	// __GAME_SERVER__
 
 //////////////////////////////////////////////////////////////////////////////

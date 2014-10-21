@@ -12,7 +12,7 @@
 #include "Types.h"
 #include "UpdateDef.h"
 #include "Exception.h"
-#include "Assert1.h"
+#include "Assert.h"
 #include "SocketInputStream.h"
 #include "SocketOutputStream.h"
 

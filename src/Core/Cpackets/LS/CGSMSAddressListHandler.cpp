@@ -10,7 +10,7 @@
 #include "GamePlayer.h"
 #include "PlayerCreature.h"
 #include "SMSAddressBook.h"
-#include "Gpackets/GCSMSAddressList.h"
+#include "GCSMSAddressList.h"
 #endif	
 
 //////////////////////////////////////////////////////////////////////////////

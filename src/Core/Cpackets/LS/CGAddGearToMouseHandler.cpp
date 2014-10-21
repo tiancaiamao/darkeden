@@ -17,7 +17,7 @@
 	#include "ItemInfo.h"
 	#include "ItemInfoManager.h"
 
-	#include "Gpackets/GCCannotAdd.h"
+	#include "GCCannotAdd.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

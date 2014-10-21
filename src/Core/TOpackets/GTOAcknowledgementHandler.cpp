@@ -14,7 +14,7 @@
 
 #include "DB.h"
 
-#include "Gpackets/GGCommand.h"
+#include "GGCommand.h"
 #include "GameServerManager.h"
 #include "Properties.h"
 

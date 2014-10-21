@@ -22,8 +22,8 @@
 
 	#include "skill/EffectVampirePortal.h"
 
-	#include "Gpackets/GCEnterVampirePortal.h"
-	#include "Gpackets/GCSystemMessage.h"
+	#include "GCEnterVampirePortal.h"
+	#include "GCSystemMessage.h"
 #endif // __GAME_SERVER__
 
 //////////////////////////////////////////////////////////////////////////////

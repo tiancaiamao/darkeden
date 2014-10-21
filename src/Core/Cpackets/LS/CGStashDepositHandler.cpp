@@ -18,8 +18,8 @@
 
 	#include "item/Money.h"
 
-	#include "Gpackets/GCDeleteandPickUpOK.h"
-	#include "Gpackets/GCDeleteObject.h"
+	#include "GCDeleteandPickUpOK.h"
+	#include "GCDeleteObject.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////
@@ -64,7 +64,7 @@ void CGStashDepositHandler::execute (CGStashDeposit* pPacket, Player* pPlayer)
 			pSlayer->decreaseGoldEx(margin);
 			pSlayer->increaseStashGoldEx(margin);
 
-			//log(LOG_STASH_ADD_MONEY, pSlayer->getName(), "", itos(margin));
+			//log(LOG_STASH_ADD_MONEY, pSlayer->getName(), ", itos(margin));
 		}
 		else
 		{
@@ -74,7 +74,7 @@ void CGStashDepositHandler::execute (CGStashDeposit* pPacket, Player* pPlayer)
 			pSlayer->decreaseGoldEx(amount);
 			pSlayer->increaseStashGoldEx(amount);
 
-			//log(LOG_STASH_ADD_MONEY, pSlayer->getName(), "", itos(amount));
+			//log(LOG_STASH_ADD_MONEY, pSlayer->getName(), ", itos(amount));
 		}
 	}
 	else if (pPC->isVampire())
@@ -91,7 +91,7 @@ void CGStashDepositHandler::execute (CGStashDeposit* pPacket, Player* pPlayer)
 			pVampire->decreaseGoldEx(margin);
 			pVampire->increaseStashGoldEx(margin);
 
-			//log(LOG_STASH_ADD_MONEY, pVampire->getName(), "", itos(margin));
+			//log(LOG_STASH_ADD_MONEY, pVampire->getName(), ", itos(margin));
 		}
 		else
 		{
@@ -100,7 +100,7 @@ void CGStashDepositHandler::execute (CGStashDeposit* pPacket, Player* pPlayer)
 			pVampire->decreaseGoldEx(amount);
 			pVampire->increaseStashGoldEx(amount);
 
-			//log(LOG_STASH_ADD_MONEY, pVampire->getName(), "", itos(amount));
+			//log(LOG_STASH_ADD_MONEY, pVampire->getName(), ", itos(amount));
 		}
 	}
 	else if (pPC->isOusters())
@@ -117,7 +117,7 @@ void CGStashDepositHandler::execute (CGStashDeposit* pPacket, Player* pPlayer)
 			pOusters->decreaseGoldEx(margin);
 			pOusters->increaseStashGoldEx(margin);
 
-			//log(LOG_STASH_ADD_MONEY, pOusters->getName(), "", itos(margin));
+			//log(LOG_STASH_ADD_MONEY, pOusters->getName(), ", itos(margin));
 		}
 		else
 		{
@@ -126,7 +126,7 @@ void CGStashDepositHandler::execute (CGStashDeposit* pPacket, Player* pPlayer)
 			pOusters->decreaseGoldEx(amount);
 			pOusters->increaseStashGoldEx(amount);
 
-			//log(LOG_STASH_ADD_MONEY, pOusters->getName(), "", itos(amount));
+			//log(LOG_STASH_ADD_MONEY, pOusters->getName(), ", itos(amount));
 		}
 	}
 

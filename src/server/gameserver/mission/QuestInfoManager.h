@@ -5,7 +5,7 @@
 #include "Exception.h"
 #include "QuestInfo.h"
 
-#include "Gpackets/GCNPCResponse.h"
+#include "GCNPCResponse.h"
 
 #include <map>
 

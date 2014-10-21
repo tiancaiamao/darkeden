@@ -34,7 +34,7 @@ void __protocol_assert__ (const char* file, uint line, const char* func, const c
 	#define Assert(expr) ((void)((expr)?0:(__assert__(__FILE__,__LINE__,__PRETTY_FUNCTION__,#expr),0)))
 	#define ProtocolAssert(expr) ((void)((expr)?0:(__protocol_assert__(__FILE__,__LINE__,__PRETTY_FUNCTION__,#expr),0)))
 #elif __WIN_CONSOLE__ || __WIN32__
-	#define Assert(expr) ((void)((expr)?0:(__assert__(__FILE__,__LINE__,"",#expr),0)))
+	#define Assert(expr) ((void)((expr)?0:(__assert__(__FILE__,__LINE__,",#expr),0)))
 #elif __MFC__
 	#define Assert(expr) ASSERT(expr)
 #endif

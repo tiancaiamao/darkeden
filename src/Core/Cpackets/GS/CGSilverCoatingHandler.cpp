@@ -16,7 +16,7 @@
 	#include "PriceManager.h"
 	//#include "LogClient.h"
 
-	#include "Gpackets/GCNPCResponse.h"
+	#include "GCNPCResponse.h"
 	#include <stdio.h>
 
 #endif
@@ -105,7 +105,7 @@ void CGSilverCoatingHandler::execute (CGSilverCoating* pPacket , Player* pPlayer
 
 		// by sigi. 2002.9.4
 		pSlayer->decreaseGoldEx(coatingPrice);
-		//log(LOG_REPAIR_ITEM, pSlayer->getName(), "", pItem->toString());
+		//log(LOG_REPAIR_ITEM, pSlayer->getName(), ", pItem->toString());
 	}
 	else
 	{
@@ -113,7 +113,7 @@ void CGSilverCoatingHandler::execute (CGSilverCoating* pPacket , Player* pPlayer
 
 		// by sigi. 2002.9.4
 		pVampire->decreaseGoldEx(coatingPrice);
-		//log(LOG_REPAIR_ITEM, pVampire->getName(), "", pItem->toString());
+		//log(LOG_REPAIR_ITEM, pVampire->getName(), ", pItem->toString());
 	}
 
 	// silver만 저장하면 된다.

@@ -15,7 +15,7 @@
 #include "GQuestManager.h"
 #include "Assert1.h"
 
-#include "Gpackets/GCSystemMessage.h"
+#include "GCSystemMessage.h"
 
 #include <stdio.h>
 #include <stdlib.h>

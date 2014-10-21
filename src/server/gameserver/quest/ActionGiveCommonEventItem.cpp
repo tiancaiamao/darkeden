@@ -17,8 +17,8 @@
 #include "VariableManager.h"
 #include "DB.h"
 
-#include "Gpackets/GCCreateItem.h"
-#include "Gpackets/GCNPCResponse.h"
+#include "GCCreateItem.h"
+#include "GCNPCResponse.h"
 
 #include <list>
 

@@ -7,7 +7,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "Socket.h"
-#include "Assert1.h"
+#include "Assert.h"
 
 Socket::Socket () 
 	throw() 

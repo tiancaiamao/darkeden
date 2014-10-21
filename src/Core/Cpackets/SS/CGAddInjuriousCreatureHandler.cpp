@@ -11,8 +11,8 @@
 	#include "Creature.h"
 	#include "PCFinder.h"
 
-	#include "Gpackets/GCAddInjuriousCreature.h"
-	#include "Gpackets/GCAddInjuriousCreatureFailed.h"
+	#include "GCAddInjuriousCreature.h"
+	#include "GCAddInjuriousCreatureFailed.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

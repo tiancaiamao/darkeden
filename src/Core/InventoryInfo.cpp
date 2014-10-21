@@ -7,7 +7,6 @@
 #include "InventoryInfo.h"
 #include "SocketInputStream.h"
 #include "SocketOutputStream.h"
-#include "Assert1.h"
 
 //////////////////////////////////////////////////////////////////////////////
 // constructor

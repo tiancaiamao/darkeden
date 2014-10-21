@@ -58,10 +58,10 @@
 	#include <list>
 	#include <stdio.h>
 
-	#include "Gpackets/GCDisconnect.h"
-	#include "Gpackets/GCUpdateInfo.h"
-	#include "Gpackets/GCSystemMessage.h"
-	#include "Gpackets/GSGuildMemberLogOn.h"
+	#include "GCDisconnect.h"
+	#include "GCUpdateInfo.h"
+	#include "GCSystemMessage.h"
+	#include "GSGuildMemberLogOn.h"
 
 	#include "SystemAvailabilitiesManager.h"
 	#include "types/ServerType.h"
@@ -618,7 +618,7 @@ void CGConnectHandler::execute (CGConnect* pPacket , Player* pPlayer)
 		SAFE_DELETE(pSlayer);
 		SAFE_DELETE(pVampire);
 
-		pGamePlayer->setID(string(""));	// LogOn은 'LOGOFF'가 되는걸 막는다.
+		pGamePlayer->setID(string("));	// LogOn은 'LOGOFF'가 되는걸 막는다.
 		pGamePlayer->setCreature(NULL);	// PCFinder에서 delete하는걸 막는다.
 
 		char str[80];
@@ -639,7 +639,7 @@ void CGConnectHandler::execute (CGConnect* pPacket , Player* pPlayer)
 		SAFE_DELETE(pVampire);
 		SAFE_DELETE(pOusters);
 
-		pGamePlayer->setID(string(""));	// LogOn은 'LOGOFF'가 되는걸 막는다.
+		pGamePlayer->setID(string("));	// LogOn은 'LOGOFF'가 되는걸 막는다.
 		pGamePlayer->setCreature(NULL);	// PCFinder에서 delete하는걸 막는다.
 
 		char str[80];
@@ -1000,7 +1000,7 @@ void CGConnectHandler::execute (CGConnect* pPacket , Player* pPlayer)
 								pCreature->getName().c_str(), IP, g_pConfig->getPropertyInt("ServerID"));
 		SAFE_DELETE(pStmt);
 
-		//log(LOG_CGCONNECT, pPacket->getPCName(), "", host);
+		//log(LOG_CGCONNECT, pPacket->getPCName(), ", host);
 	} 
 	catch (SQLQueryException & se) 
 	{
@@ -1008,7 +1008,7 @@ void CGConnectHandler::execute (CGConnect* pPacket , Player* pPlayer)
 		try {
 			pStmt->executeQuery("UPDATE `UserIPInfo` SET `IP`=%ld, `ServerID`=%d WHERE `Name`='%s'", IP, g_pConfig->getPropertyInt("ServerID"), pCreature->getName().c_str());
 
-			//log(LOG_CGCONNECT, pPacket->getPCName(), "", host);
+			//log(LOG_CGCONNECT, pPacket->getPCName(), ", host);
 
 			SAFE_DELETE(pStmt);
 

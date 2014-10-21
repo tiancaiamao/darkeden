@@ -8,7 +8,7 @@
 // include files
 #include "Assert1.h"
 #include "EffectTransportCreature.h"
-#include "Gpackets/GCSystemMessage.h"
+#include "GCSystemMessage.h"
 #include "VariableManager.h"
 #include "Zone.h"
 #include "ZoneUtil.h"

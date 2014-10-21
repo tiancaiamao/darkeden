@@ -16,9 +16,9 @@
 #include "CreatureUtil.h"
 #include "PetInfo.h"
 
-#include "Gpackets/GCModifyNickname.h"
-#include "Gpackets/GCNicknameVerify.h"
-#include "Gpackets/GCUseOK.h"
+#include "GCModifyNickname.h"
+#include "GCNicknameVerify.h"
+#include "GCUseOK.h"
 
 #include "item/PetItem.h"
 #include "item/EventGiftBox.h"
@@ -153,7 +153,7 @@ void CGModifyNicknameHandler::execute (CGModifyNickname* pPacket , Player* pPlay
 		{
 			NicknameInfo* pNickname = pPC->getNicknameBook()->getNicknameInfo(0);
 
-			if (pNickname == NULL || pNickname->getNicknameType() != NicknameInfo::NICK_CUSTOM || pPacket->getNickname() == "" )
+			if (pNickname == NULL || pNickname->getNicknameType() != NicknameInfo::NICK_CUSTOM || pPacket->getNickname() == " )
 			{
 				gcNV.setCode(NICKNAME_MODIFY_FAIL_NO_ITEM);
 				pGamePlayer->sendPacket(&gcNV);

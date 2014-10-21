@@ -20,8 +20,8 @@
 
 #include "SubInventoryItemPosition.h"
 
-#include "Gpackets/GCDeleteInventoryItem.h"
-#include "Gpackets/GCAddEffect.h"
+#include "GCDeleteInventoryItem.h"
+#include "GCAddEffect.h"
 
 Item* SubInventoryItemPosition::popItem(bool bLock )
 	throw(Error)

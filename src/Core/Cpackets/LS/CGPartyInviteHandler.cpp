@@ -15,9 +15,9 @@
 	#include "GQuestManager.h"
 	#include "PlayerCreature.h"
 
-	#include "Gpackets/GCPartyInvite.h"
-	#include "Gpackets/GCPartyError.h"
-	#include "Gpackets/GCSystemMessage.h"
+	#include "GCPartyInvite.h"
+	#include "GCPartyError.h"
+	#include "GCSystemMessage.h"
 
 	#include "SystemAvailabilitiesManager.h"
 #endif

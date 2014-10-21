@@ -16,7 +16,7 @@
 #include "LogDef.h"
 #include <stdio.h>
 
-#include "Gpackets/GMServerInfo.h"
+#include "GMServerInfo.h"
 
 #include <map>
 

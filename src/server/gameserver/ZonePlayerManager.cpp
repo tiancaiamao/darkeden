@@ -18,7 +18,7 @@
 #include "Zone.h"
 #include <algorithm>
 #include "StringStream.h"
-#include "Cpackets/CGLogout.h"
+#include "CGLogout.h"
 #include "Profile.h"
 #include "ZoneInfoManager.h"
 #include "PaySystem.h"
@@ -37,8 +37,8 @@
 
 #include "chinabilling/CBillingInfo.h"
 
-#include "Gpackets/GCSystemMessage.h"
-#include "Gpackets/GCKickMessage.h"
+#include "GCSystemMessage.h"
+#include "GCKickMessage.h"
 
 #ifdef __THAILAND_SERVER__
 	

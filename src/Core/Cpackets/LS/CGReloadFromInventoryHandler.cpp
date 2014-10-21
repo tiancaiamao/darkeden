@@ -18,7 +18,7 @@
 	#include "EffectManager.h"
 	#include "EffectReloadTimer.h"
 
-	#include "Gpackets/GCCannotUse.h"
+	#include "GCCannotUse.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

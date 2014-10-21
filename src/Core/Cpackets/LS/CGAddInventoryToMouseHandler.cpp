@@ -19,9 +19,9 @@
 	#include "Store.h"
 	#include "item/SubInventory.h"
 
-	#include "Gpackets/GCTradeVerify.h"
-	#include "Gpackets/GCCannotAdd.h"
-	#include "Gpackets/GCCreateItem.h"
+	#include "GCTradeVerify.h"
+	#include "GCCannotAdd.h"
+	#include "GCCreateItem.h"
 	#include <stdio.h>
 #endif
 

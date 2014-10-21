@@ -11,7 +11,7 @@
 	#include "Zone.h"
 	#include "ZoneUtil.h"
 
-	#include "Gpackets/GCUnburrowFail.h"
+	#include "GCUnburrowFail.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

@@ -54,7 +54,7 @@ void CGPortCheckHandler::execute (CGPortCheck * pPacket )
 									port,
 									pPacket->getPCName().c_str());
 
-			//log(LOG_CGCONNECT, pPacket->getPCName(), "", host);
+			//log(LOG_CGCONNECT, pPacket->getPCName(), ", host);
 		}
 
 		SAFE_DELETE(pStmt);
@@ -69,7 +69,7 @@ void CGPortCheckHandler::execute (CGPortCheck * pPacket )
 									port,
 									pPacket->getPCName().c_str());
 
-			//log(LOG_CGCONNECT, pPacket->getPCName(), "", host);
+			//log(LOG_CGCONNECT, pPacket->getPCName(), ", host);
 
 			SAFE_DELETE(pStmt);
 

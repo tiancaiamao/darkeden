@@ -1,6 +1,6 @@
 #include "GameServerSpeedCheckTest.h"
 #include "GamePlayer.h"
-#include "Cpackets/CGVerifyTime.h"
+#include "CGVerifyTime.h"
 
 void
 GameServerSpeedCheckTest::testSpeedHack()

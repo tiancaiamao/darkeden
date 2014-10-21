@@ -23,7 +23,7 @@
 	#include "item/SlayerPortalItem.h"
 	#include "item/OustersSummonItem.h"
 
-	#include "Gpackets/GCNPCResponse.h"
+	#include "GCNPCResponse.h"
 
 	#include <stdio.h>
 #endif
@@ -192,19 +192,19 @@ void CGRequestRepairHandler::executeNormal (CGRequestRepair* pPacket , Player* p
 		//pSlayer->setGoldEx(playerMoney-repairPrice);
 		// by sigi. 2002.9.4
 		pSlayer->decreaseGoldEx(repairPrice);
-		//log(LOG_REPAIR_ITEM, pSlayer->getName(), "", pItem->toString());
+		//log(LOG_REPAIR_ITEM, pSlayer->getName(), ", pItem->toString());
 	}
 	else if (bVampire)
 	{
 		// by sigi. 2002.9.4
 		pVampire->decreaseGoldEx(repairPrice);
-		//log(LOG_REPAIR_ITEM, pVampire->getName(), "", pItem->toString());
+		//log(LOG_REPAIR_ITEM, pVampire->getName(), ", pItem->toString());
 	}
 	else if (bOusters)
 	{
 		// by sigi. 2002.9.4
 		pOusters->decreaseGoldEx(repairPrice);
-		//log(LOG_REPAIR_ITEM, pOusters->getName(), "", pItem->toString());
+		//log(LOG_REPAIR_ITEM, pOusters->getName(), ", pItem->toString());
 	}
 
 	// 아이템을 수리했다는 정보를 DB에다가 저장해준다.
@@ -481,7 +481,7 @@ void CGRequestRepairHandler::executeAll(CGRequestRepair* pPacket , Player* pPlay
 		pSlayer->decreaseGoldEx(repairPrice);
 
 		// 로그를 남긴다.
-		//log(LOG_REPAIR_ITEM, pSlayer->getName(), "", "ALL");
+		//log(LOG_REPAIR_ITEM, pSlayer->getName(), ", "ALL");
 
 		// OK 패킷을 날려준다.
 		response.setCode(NPC_RESPONSE_REPAIR_OK);
@@ -556,7 +556,7 @@ void CGRequestRepairHandler::executeAll(CGRequestRepair* pPacket , Player* pPlay
 		pVampire->decreaseGoldEx(repairPrice);
 
 		// 로그를 남긴다.
-		//log(LOG_REPAIR_ITEM, pVampire->getName(), "", "ALL");
+		//log(LOG_REPAIR_ITEM, pVampire->getName(), ", "ALL");
 
 		// OK 패킷을 날려준다.
 		response.setCode(NPC_RESPONSE_REPAIR_OK);
@@ -630,7 +630,7 @@ void CGRequestRepairHandler::executeAll(CGRequestRepair* pPacket , Player* pPlay
 		pOusters->decreaseGoldEx(repairPrice);
 
 		// 로그를 남긴다.
-		//log(LOG_REPAIR_ITEM, pOusters->getName(), "", "ALL");
+		//log(LOG_REPAIR_ITEM, pOusters->getName(), ", "ALL");
 
 		// OK 패킷을 날려준다.
 		response.setCode(NPC_RESPONSE_REPAIR_OK);

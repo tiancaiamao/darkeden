@@ -15,7 +15,7 @@
 	#include "ItemFactoryManager.h"
 
 	#include "item/Magazine.h"
-	#include "Gpackets/GCCreateItem.h"
+	#include "GCCreateItem.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

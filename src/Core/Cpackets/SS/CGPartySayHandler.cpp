@@ -9,7 +9,7 @@
 #ifdef __GAME_SERVER__
 	#include "GamePlayer.h"
 	#include "Assert1.h"
-	#include "Gpackets/GCPartySay.h"
+	#include "GCPartySay.h"
 	#include "Party.h"
 #endif
 

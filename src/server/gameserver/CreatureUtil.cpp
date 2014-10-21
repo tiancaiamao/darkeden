@@ -53,20 +53,20 @@
 #include "PetInfo.h"
 #include "Store.h"
 
-#include "Cpackets/CGSay.h"
+#include "CGSay.h"
 #include "ZoneGroupManager.h"
 #include "GameWorldInfoManager.h"
 #include "Properties.h"
-#include "Gpackets/GCNotifyWin.h"
+#include "GCNotifyWin.h"
 
-#include "Gpackets/GCAddEffect.h"
-#include "Gpackets/GCAddSlayer.h"
-#include "Gpackets/GCAddVampire.h"
-#include "Gpackets/GCDeleteObject.h"
-#include "Gpackets/GCDeleteInventoryItem.h"
-#include "Gpackets/GCPetInfo.h"
-#include "Gpackets/GCNoticeEvent.h"
-#include "Gpackets/GCSystemMessage.h"
+#include "GCAddEffect.h"
+#include "GCAddSlayer.h"
+#include "GCAddVampire.h"
+#include "GCDeleteObject.h"
+#include "GCDeleteInventoryItem.h"
+#include "GCPetInfo.h"
+#include "GCNoticeEvent.h"
+#include "GCSystemMessage.h"
 
 #include <cstdio>
 

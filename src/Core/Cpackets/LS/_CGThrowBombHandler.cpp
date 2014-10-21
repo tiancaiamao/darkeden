@@ -17,12 +17,12 @@
 	#include "item/Bomb.h"
 	#include "skill/Sniping.h"
 
-	#include "Gpackets/GCThrowBombOK1.h"
-	#include "Gpackets/GCThrowBombOK2.h"
-	#include "Gpackets/GCThrowBombOK3.h"
-	#include "Gpackets/GCSkillFailed1.h"
-	#include "Gpackets/GCSkillFailed2.h"
-	#include "Gpackets/GCStatusCurrentHP.h"
+	#include "GCThrowBombOK1.h"
+	#include "GCThrowBombOK2.h"
+	#include "GCThrowBombOK3.h"
+	#include "GCSkillFailed1.h"
+	#include "GCSkillFailed2.h"
+	#include "GCStatusCurrentHP.h"
 #endif	// __GAME_SERVER__
 
 #ifdef __GAME_SERVER__

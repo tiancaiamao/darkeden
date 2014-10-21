@@ -11,7 +11,7 @@
 	#include "Slayer.h"
 	#include "TelephoneCenter.h"
 
-	#include "Gpackets/GCPhoneDisconnected.h"
+	#include "GCPhoneDisconnected.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

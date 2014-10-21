@@ -10,7 +10,7 @@
 
 // include files
 #include "Update.h"
-#include "Assert1.h"
+#include "Assert.h"
 #include <list>
 #include "Resource.h"
 #include "ResourceManager.h"

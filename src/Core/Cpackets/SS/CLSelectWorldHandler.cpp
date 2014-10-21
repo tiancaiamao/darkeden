@@ -21,7 +21,7 @@
 	#include "OptionInfo.h"
 	#include "UserInfoManager.h"
 	#include "Shape.h"
-	#include "Lpackets/LCServerList.h"
+	#include "LCServerList.h"
 
 #endif
 

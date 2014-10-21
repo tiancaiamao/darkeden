@@ -17,8 +17,8 @@
 
 	#include "item/Money.h"
 
-	#include "Gpackets/GCDeleteandPickUpOK.h"
-	#include "Gpackets/GCDeleteObject.h"
+	#include "GCDeleteandPickUpOK.h"
+	#include "GCDeleteObject.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////
@@ -62,7 +62,7 @@ void CGStashWithdrawHandler::execute (CGStashWithdraw* pPacket, Player* pPlayer)
 			pSlayer->decreaseStashGoldEx(margin);
 			pSlayer->increaseGoldEx(margin);
 
-			//log(LOG_STASH_REMOVE_MONEY, pSlayer->getName(), "", itos(margin));
+			//log(LOG_STASH_REMOVE_MONEY, pSlayer->getName(), ", itos(margin));
 		}
 		else
 		{
@@ -73,7 +73,7 @@ void CGStashWithdrawHandler::execute (CGStashWithdraw* pPacket, Player* pPlayer)
 			pSlayer->decreaseStashGoldEx(amount);
 			pSlayer->increaseGoldEx(amount);
 
-			//log(LOG_STASH_REMOVE_MONEY, pSlayer->getName(), "", itos(amount));
+			//log(LOG_STASH_REMOVE_MONEY, pSlayer->getName(), ", itos(amount));
 		}
 	}
 	else if (pPC->isVampire())
@@ -92,7 +92,7 @@ void CGStashWithdrawHandler::execute (CGStashWithdraw* pPacket, Player* pPlayer)
 			pVampire->decreaseStashGoldEx(margin);
 			pVampire->increaseGoldEx(margin);
 
-			//log(LOG_STASH_REMOVE_MONEY, pVampire->getName(), "", itos(margin));
+			//log(LOG_STASH_REMOVE_MONEY, pVampire->getName(), ", itos(margin));
 		}
 		else
 		{
@@ -103,7 +103,7 @@ void CGStashWithdrawHandler::execute (CGStashWithdraw* pPacket, Player* pPlayer)
 			pVampire->decreaseStashGoldEx(amount);
 			pVampire->increaseGoldEx(amount);
 
-			//log(LOG_STASH_REMOVE_MONEY, pVampire->getName(), "", itos(amount));
+			//log(LOG_STASH_REMOVE_MONEY, pVampire->getName(), ", itos(amount));
 		}
 	}
 	else if (pPC->isOusters())
@@ -122,7 +122,7 @@ void CGStashWithdrawHandler::execute (CGStashWithdraw* pPacket, Player* pPlayer)
 			pOusters->decreaseStashGoldEx(margin);
 			pOusters->increaseGoldEx(margin);
 
-			//log(LOG_STASH_REMOVE_MONEY, pOusters->getName(), "", itos(margin));
+			//log(LOG_STASH_REMOVE_MONEY, pOusters->getName(), ", itos(margin));
 		}
 		else
 		{
@@ -133,7 +133,7 @@ void CGStashWithdrawHandler::execute (CGStashWithdraw* pPacket, Player* pPlayer)
 			pOusters->decreaseStashGoldEx(amount);
 			pOusters->increaseGoldEx(amount);
 
-			//log(LOG_STASH_REMOVE_MONEY, pOusters->getName(), "", itos(amount));
+			//log(LOG_STASH_REMOVE_MONEY, pOusters->getName(), ", itos(amount));
 		}
 	}
 

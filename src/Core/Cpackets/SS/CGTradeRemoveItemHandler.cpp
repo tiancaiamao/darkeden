@@ -16,9 +16,9 @@
 	#include "TradeManager.h"
 	#include "ZoneUtil.h"
 
-	#include "Gpackets/GCTradeError.h"
-	#include "Gpackets/GCTradeRemoveItem.h"
-	#include "Gpackets/GCTradeVerify.h"
+	#include "GCTradeError.h"
+	#include "GCTradeRemoveItem.h"
+	#include "GCTradeVerify.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

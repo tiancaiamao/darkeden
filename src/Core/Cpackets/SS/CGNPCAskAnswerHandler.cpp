@@ -16,7 +16,7 @@
 	#include "quest/Condition.h"
 	#include "quest/Action.h"
 
-	#include "Gpackets/GCNPCResponse.h"
+	#include "GCNPCResponse.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

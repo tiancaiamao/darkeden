@@ -26,7 +26,7 @@
 
 	#include "skill/EffectReloadTimer.h"
 
-	#include "Gpackets/GCCannotUse.h"
+	#include "GCCannotUse.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

@@ -11,10 +11,9 @@
 #include "Socket.h"
 #include "SocketInputStream.h"
 #include "SocketOutputStream.h"
-#include "Assert1.h"
+#include "Assert.h"
 #include "Packet.h"
 //#include "PacketFactoryManager.h"
-#include "zlog.h"
 
 //////////////////////////////////////////////////////////////////////
 //
@@ -215,11 +214,15 @@ void Player::sendPacket (Packet * pPacket )
 {
 	__BEGIN_TRY
 
-
 	if (m_pOutputStream!=NULL)	// -_-;
 		m_pOutputStream->writePacket(pPacket);
 
-    dzlog_debug("get a packet: %s\n", pPacket->toString().c_str());
+	/*
+	cout << endl;
+	cout << "=== Player::sendPacket() ===" << endl;
+	cout << pPacket->toString() << endl;
+	cout << "============================" << endl;
+	*/
 
 	__END_CATCH
 }
@@ -229,16 +232,16 @@ void Player::sendPacket (Packet * pPacket )
 // send stream to player's output buffer
 //
 //////////////////////////////////////////////////////////////////////
-//void Player::sendStream (SocketOutputStream* pOutputStream )
-//    throw(ProtocolException , Error )
-//{
-//    __BEGIN_TRY
+void Player::sendStream (SocketOutputStream* pOutputStream )
+	throw(ProtocolException , Error )
+{
+	__BEGIN_TRY
 
-//    if (m_pOutputStream!=NULL)
-//        m_pOutputStream->write(pOutputStream->getBuffer(), pOutputStream->length());
+	if (m_pOutputStream!=NULL)
+		m_pOutputStream->write(pOutputStream->getBuffer(), pOutputStream->length());
 
-//    __END_CATCH
-//}
+	__END_CATCH
+}
 
 
 //////////////////////////////////////////////////////////////////////

@@ -1,5 +1,5 @@
 #include "NicknameInfo.h"
-#include "Assert1.h"
+#include "Assert.h"
 
 PacketSize_t NicknameInfo::getSize() const
 {

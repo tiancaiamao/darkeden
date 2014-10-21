@@ -39,12 +39,12 @@
 
 	#include "ctf/FlagManager.h"
 
-	#include "Gpackets/GCCannotAdd.h"
-	#include "Gpackets/GCSay.h"
-	#include "Gpackets/GCAddEffect.h"
-	#include "Gpackets/GCSystemMessage.h"
-	#include "Gpackets/GCDeleteObject.h"
-	#include "Gpackets/GCDeleteInventoryItem.h"
+	#include "GCCannotAdd.h"
+	#include "GCSay.h"
+	#include "GCAddEffect.h"
+	#include "GCSystemMessage.h"
+	#include "GCDeleteObject.h"
+	#include "GCDeleteInventoryItem.h"
 
 	#include <stdio.h>
 

@@ -8,15 +8,15 @@
 
 #ifdef __GAME_SERVER__
 	#include "SystemAvailabilitiesManager.h"
-	#include "Gpackets/GSModifyGuildMember.h"
-	#include "Gpackets/GSExpelGuildMember.h"
+	#include "GSModifyGuildMember.h"
+	#include "GSExpelGuildMember.h"
 	#include "Guild.h"
 	#include "GuildManager.h"
 	#include "GamePlayer.h"
 	#include "PlayerCreature.h"
 	#include "StringPool.h"
 	#include "SharedServerManager.h"
-	#include "Gpackets/GCSystemMessage.h"
+	#include "GCSystemMessage.h"
 #endif	// __GAME_SERVER__
 
 //////////////////////////////////////////////////////////////////////////////

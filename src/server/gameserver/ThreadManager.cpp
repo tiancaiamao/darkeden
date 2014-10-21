@@ -79,7 +79,7 @@ void ThreadManager::init ()
 		{
 			ZoneGroupID_t zoneGroupID = pResult->getInt(1);
 			ZoneGroupThread* pZoneGroupThread = new ZoneGroupThread(g_pZoneGroupManager->getZoneGroup(zoneGroupID));
-			m_pZoneGroupThreadPool->addThread(pZoneGroupThread);
+            m_pZoneGroupThreadPool->addThread(pZoneGroupThread);
 		}
 
 		SAFE_DELETE(pStmt);

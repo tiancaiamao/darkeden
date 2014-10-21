@@ -6,7 +6,7 @@
 
 #include "Assert1.h"
 #include "EffectMPRecovery.h"
-#include "Gpackets/GCMPRecoveryEnd.h"
+#include "GCMPRecoveryEnd.h"
 #include "Zone.h"
 #include "Slayer.h"
 #include "Ousters.h"

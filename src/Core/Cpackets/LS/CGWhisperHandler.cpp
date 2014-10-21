@@ -12,9 +12,9 @@
 	#include "PCFinder.h"
 	#include "LogNameManager.h"
 
-	#include "Gpackets/GCWhisper.h"
-	#include "Gpackets/GCWhisperFailed.h"
-	#include "Gpackets/GGServerChat.h"
+	#include "GCWhisper.h"
+	#include "GCWhisperFailed.h"
+	#include "GGServerChat.h"
 
 	#include "DB.h"
 

@@ -13,12 +13,12 @@
 	#include "PlayerCreature.h"
 	#include "GuildManager.h"
 	#include "GuildUnion.h"
-	#include "Gpackets/GCGuildResponse.h"
+	#include "GCGuildResponse.h"
 	#include "PCFinder.h"
 	#include "Exception.h"
 	#include "Guild.h"
-	#include "Gpackets/GCModifyInformation.h"
-	#include "Gpackets/GCSystemMessage.h"
+	#include "GCModifyInformation.h"
+	#include "GCSystemMessage.h"
 	#include "PacketUtil.h"
 
 #endif	// __GAME_SERVER__

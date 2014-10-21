@@ -13,8 +13,8 @@
 	#include "Party.h"
 	#include "PCFinder.h"
 
-	#include "Gpackets/GCPartyLeave.h"
-	#include "Gpackets/GCPartyError.h"
+	#include "GCPartyLeave.h"
+	#include "GCPartyError.h"
 
 	#include "SystemAvailabilitiesManager.h"
 #endif
@@ -52,7 +52,7 @@ void CGPartyLeaveHandler::execute (CGPartyLeave* pPacket , Player* pPlayer)
 	GCPartyError gcPartyError;
 
 	// 타겟 이름이 NULL이라면 스스로 파티를 떠나고자 하는 것이다.
-	if (TargetName == "")
+	if (TargetName == ")
 	{
 		// 글로벌 파티에서 삭제해 준다.
 		// 2명인 상태에서 다른 하나를 추방했다면, 

@@ -356,10 +356,10 @@ bool PacketValidator::isValidPacketID (PlayerStatus playerStatus , PacketID_t pa
 	__BEGIN_TRY
 
 	if (playerStatus >= PLAYER_STATUS_MAX )
-        throw Error("invalid player status" + playerStatus);
+		throw Error("invalid player status");
 
 	if (m_PacketIDSets[playerStatus] == NULL )
-        throw NoSuchElementException("invalid packet id for player status");
+		throw NoSuchElementException("invalid player status");
 
 	return m_PacketIDSets[playerStatus]->hasPacketID(packetID);
 

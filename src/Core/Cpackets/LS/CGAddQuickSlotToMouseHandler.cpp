@@ -17,7 +17,7 @@
 	#include "item/Belt.h"
 	#include "item/OustersArmsband.h"
 
-	#include "Gpackets/GCCannotAdd.h"
+	#include "GCCannotAdd.h"
 
 	#include <stdio.h>
 #endif

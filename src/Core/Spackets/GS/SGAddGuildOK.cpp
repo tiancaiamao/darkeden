@@ -52,7 +52,7 @@ void SGAddGuildOK::read (SocketInputStream& iStream )
 	if (szGuildIntro != 0 )
 		iStream.read(m_GuildIntro, szGuildIntro);
 	else
-		m_GuildIntro = "";
+		m_GuildIntro ="";
 	
 	__END_CATCH
 }

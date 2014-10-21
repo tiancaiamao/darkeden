@@ -19,10 +19,10 @@
 	#include "PlayerCreature.h"
 	#include "Zone.h"
 	#include "StringPool.h"
-	#include "Gpackets/GCModifyInformation.h"
-	#include "Gpackets/GCModifyGuildMemberInfo.h"
-	#include "Gpackets/GCSystemMessage.h"
-	#include "Gpackets/GCOtherModifyInfo.h"
+	#include "GCModifyInformation.h"
+	#include "GCModifyGuildMemberInfo.h"
+	#include "GCSystemMessage.h"
+	#include "GCOtherModifyInfo.h"
 
 	#include <stdio.h>
 

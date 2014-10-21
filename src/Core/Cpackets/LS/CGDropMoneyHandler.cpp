@@ -20,8 +20,8 @@
 
 	#include "item/Money.h"
 
-	#include "Gpackets/GCDeleteandPickUpOK.h"
-	#include "Gpackets/GCDeleteObject.h"
+	#include "GCDeleteandPickUpOK.h"
+	#include "GCDeleteObject.h"
 
 	#include <stdio.h>
 #endif
@@ -112,13 +112,13 @@ void CGDropMoneyHandler::execute (CGDropMoney* pPacket, Player* pPlayer)
 		TPOINT pt = pZone->addItem(pItem, ZoneX, ZoneY);
 		if (pt.x != -1)
 		{
-			//pItem->save("", STORAGE_ZONE, pZone->getZoneID(), pt.x, pt.y);	
+			//pItem->save(", STORAGE_ZONE, pZone->getZoneID(), pt.x, pt.y);	
 			// item저장 최적화. by sigi. 2002.5.13
 			char pField[80];
 			sprintf(pField, "OwnerID='', Storage=%d, StorageID=%lu, X=%d, Y=%d", STORAGE_ZONE, pZone->getZoneID(), pt.x, pt.y);
 			pItem->tinysave(pField);
 
-			//pItem->create("", STORAGE_ZONE, pZone->getZoneID(), pt.x, pt.y);
+			//pItem->create(", STORAGE_ZONE, pZone->getZoneID(), pt.x, pt.y);
 
 			// 돈로그 남길 액수면 돈로그 남긴다
 			if (amount >= g_pVariableManager->getMoneyTraceLogLimit() )
@@ -129,11 +129,11 @@ void CGDropMoneyHandler::execute (CGDropMoney* pPacket, Player* pPlayer)
 			}
 
 
-			//log(LOG_DROP_MONEY, pPC->getName(), "", pItem->toString());
+			//log(LOG_DROP_MONEY, pPC->getName(), ", pItem->toString());
 		}
 		else
 		{
-			//log(LOG_DROP_MONEY, pPC->getName(), "", "CANNOT DROP! : " + pItem->toString());
+			//log(LOG_DROP_MONEY, pPC->getName(), ", "CANNOT DROP! : " + pItem->toString());
 
 			//cout << "#############################################" << endl;
 			//cout << "# CRITICAL ERROR! CANNOT ADD MONEY TO ZONE! #" << endl;

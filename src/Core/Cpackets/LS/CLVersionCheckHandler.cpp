@@ -11,8 +11,8 @@
 	#include "DB.h"
 	#include "Assert1.h"
 
-	#include "Lpackets/LCVersionCheckOK.h"
-	#include "Lpackets/LCVersionCheckError.h"
+	#include "LCVersionCheckOK.h"
+	#include "LCVersionCheckError.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

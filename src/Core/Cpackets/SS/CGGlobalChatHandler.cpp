@@ -11,7 +11,7 @@
 	#include "IncomingPlayerManager.h"
 	#include "Creature.h"
 	#include "Zone.h"
-	#include "Gpackets/GCGlobalChat.h"
+	#include "GCGlobalChat.h"
 	#include "LogNameManager.h"
 #endif
 

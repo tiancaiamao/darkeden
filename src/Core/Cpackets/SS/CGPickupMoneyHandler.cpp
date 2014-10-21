@@ -21,9 +21,9 @@
 
 	#include "item/Money.h"
 
-	#include "Gpackets/GCDeleteandPickUpOK.h"
-	#include "Gpackets/GCDeleteObject.h"
-	#include "Gpackets/GCCannotAdd.h"
+	#include "GCDeleteandPickUpOK.h"
+	#include "GCDeleteObject.h"
+	#include "GCCannotAdd.h"
 
 	#include <stdio.h>
 #endif
@@ -166,7 +166,7 @@ void CGPickupMoneyHandler::execute (CGPickupMoney* pPacket, Player* pPlayer)
 
 		if (bSuccess) 
 		{
-			//log(LOG_PICKUP_MONEY, pCreature->getName(), "", pItem->toString());
+			//log(LOG_PICKUP_MONEY, pCreature->getName(), ", pItem->toString());
 
 			// 일단은 존으로부터 아이템을 삭제한다.
 			pZone->deleteItem(pItem, ZoneX, ZoneY);
@@ -203,7 +203,7 @@ void CGPickupMoneyHandler::execute (CGPickupMoney* pPacket, Player* pPlayer)
 				TPOINT pt = pZone->addItem(pItem, ZoneX, ZoneY);
 				if (pt.x != -1) 
 				{
-					//pItem->save("", STORAGE_ZONE, pZone->getZoneID(), pt.x, pt.y);	
+					//pItem->save(", STORAGE_ZONE, pZone->getZoneID(), pt.x, pt.y);	
 					// item저장 최적화. by sigi. 2002.5.13
 					char pField[80];
 					sprintf(pField, "Storage=%d, StorageID=%lu, X=%d, Y=%d", STORAGE_ZONE, pZone->getZoneID(), pt.x, pt.y);

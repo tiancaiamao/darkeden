@@ -13,7 +13,7 @@
 	#include "GameWorldInfoManager.h"
 	#include "WorldInfo.h"
 
-	#include "Lpackets/LCWorldList.h"
+	#include "LCWorldList.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

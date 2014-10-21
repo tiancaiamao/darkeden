@@ -25,8 +25,8 @@
 
 #include "EffectVampirePortal.h"
 
-#include "Gpackets/GCDeleteInventoryItem.h"
-#include "Gpackets/GCCreateItem.h"
+#include "GCDeleteInventoryItem.h"
+#include "GCCreateItem.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 //

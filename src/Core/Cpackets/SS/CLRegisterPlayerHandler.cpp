@@ -12,8 +12,8 @@
 	#include "DB.h"
     #include "GameServerGroupInfoManager.h"
 
-	#include "Lpackets/LCRegisterPlayerError.h"
-	#include "Lpackets/LCRegisterPlayerOK.h"
+	#include "LCRegisterPlayerError.h"
+	#include "LCRegisterPlayerOK.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////
@@ -53,7 +53,7 @@ void CLRegisterPlayerHandler::execute (CLRegisterPlayer* pPacket , Player* pPlay
 
 		//cout << "플레이어 정보 검증 : " << pPacket->toString() << endl;
 
-		if (pPacket->getID() == "") {
+		if (pPacket->getID() == ") {
 			lcRegisterPlayerError.setErrorID(EMPTY_ID);	
 			throw string("ID field is empty");
 		}
@@ -63,7 +63,7 @@ void CLRegisterPlayerHandler::execute (CLRegisterPlayer* pPacket , Player* pPlay
 			throw string("too small ID length");
 		}
 
-		if (pPacket->getPassword() == "") 
+		if (pPacket->getPassword() == ") 
 		{
 			lcRegisterPlayerError.setErrorID(EMPTY_PASSWORD);	
 			throw string("Password field is empty");
@@ -74,7 +74,7 @@ void CLRegisterPlayerHandler::execute (CLRegisterPlayer* pPacket , Player* pPlay
 			if (password.find("\'") < password.size()) throw string("Invalid Password");
 			if (password.find("'") < password.size()) throw string("Invalid Password");
 			else if (password.find("\\") < password.size()) throw string("Invalid Password");
-			else if (password.find("\"") < password.size()) throw string("Invalid Password");
+			else if (password.find("\") < password.size()) throw string("Invalid Password");
 			else if (password.find(";") < password.size()) throw string("Invalid Password");
 		}
 
@@ -83,12 +83,12 @@ void CLRegisterPlayerHandler::execute (CLRegisterPlayer* pPacket , Player* pPlay
 			throw string("too small password length");
 		}
 
-		if (pPacket->getName() == "") {
+		if (pPacket->getName() == ") {
 			lcRegisterPlayerError.setErrorID(EMPTY_NAME);	
 			throw string("Name field is empty");
 		}
 
-		if (pPacket->getSSN() == "") {
+		if (pPacket->getSSN() == ") {
 			lcRegisterPlayerError.setErrorID(EMPTY_SSN);	
 			throw string("SSN field is empty");
 		}

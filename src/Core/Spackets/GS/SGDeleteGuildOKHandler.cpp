@@ -21,10 +21,10 @@
 	#include "Properties.h"
 	#include "Zone.h"
 	#include "ResurrectLocationManager.h"
-	#include "Gpackets/GCSystemMessage.h"
-	#include "Gpackets/GCModifyInformation.h"
-	#include "Gpackets/GCModifyGuildMemberInfo.h"
-	#include "Gpackets/GCOtherModifyInfo.h"
+	#include "GCSystemMessage.h"
+	#include "GCModifyInformation.h"
+	#include "GCModifyGuildMemberInfo.h"
+	#include "GCOtherModifyInfo.h"
 
 	#include "GuildUnion.h"
 #endif

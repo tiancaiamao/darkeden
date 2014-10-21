@@ -25,8 +25,8 @@
 	#include "DB.h"
 	#include "Store.h"
 
-	#include "Gpackets/GCCannotUse.h"
-	#include "Gpackets/GCUseOK.h"
+	#include "GCCannotUse.h"
+	#include "GCUseOK.h"
 #endif
 
 

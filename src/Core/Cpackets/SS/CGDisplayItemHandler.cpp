@@ -14,10 +14,10 @@
 	#include "ItemUtil.h"
 	#include "Zone.h"
 	#include "TradeManager.h"
-	#include "Gpackets/GCMyStoreInfo.h"
-	#include "Gpackets/GCAddStoreItem.h"
-	#include "Gpackets/GCSystemMessage.h"
-	#include "Gpackets/GCNoticeEvent.h"
+	#include "GCMyStoreInfo.h"
+	#include "GCAddStoreItem.h"
+	#include "GCSystemMessage.h"
+	#include "GCNoticeEvent.h"
 #endif	// __GAME_SERVER__
 
 //////////////////////////////////////////////////////////////////////////////

@@ -15,7 +15,7 @@
 	#include "GameServerGroupInfoManager.h"
 	#include "OptionInfo.h"
 
-	#include "Lpackets/LCPCList.h"
+	#include "LCPCList.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

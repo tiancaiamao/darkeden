@@ -11,7 +11,7 @@
 #include "Types.h"
 #include <stdlib.h>
 #include <string.h>
-//#include "Assert1.h"
+//#include "Assert.h"
 
 //////////////////////////////////////////////////////////////////////////////
 // 포인터 지우기

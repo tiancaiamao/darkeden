@@ -8,7 +8,7 @@
 // include files
 #include "Assert1.h"
 #include "EffectShutDown.h"
-#include "Gpackets/GCSystemMessage.h"
+#include "GCSystemMessage.h"
 #include "Zone.h"
 #include "unistd.h"
 #include "signal.h"

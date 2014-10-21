@@ -23,7 +23,7 @@ void CGModifyGuildMemberIntro::read (SocketInputStream & iStream)
 	if (szGuildMemberIntro > 0 )
 		iStream.read(m_GuildMemberIntro, szGuildMemberIntro);
 	else
-		m_GuildMemberIntro = "";
+		m_GuildMemberIntro ="";
 
 	__END_CATCH
 }

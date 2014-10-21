@@ -88,8 +88,8 @@ public:
 	void AddAttribute(const string& name, const string& value);
 	void AddAttribute(const string& name, const char * value);
 	void AddAttribute(const string& name, const int& value);
-	void AddAttribute(const string& name, const unsigned int& value, const bool bHex = false);
-    void AddAttribute(const string& name, const unsigned long& value, const bool bHex = false);
+	// void AddAttribute(const string& name, const unsigned int& value, const bool bHex = false);
+	void AddAttribute(const string& name, const DWORD& value, const bool bHex = false);
 	void AddAttribute(const string& name, const float& value);
 	void AddAttribute(const string& name, const double& value);
 	void AddAttribute(const string& name, const bool& value);
@@ -98,8 +98,8 @@ public:
 
 	const bool GetAttribute(const string& name, string &value);
 	const bool GetAttribute(const string& name, int &value);
-	const bool GetAttribute(const string& name, unsigned int &value, const bool bHex = false);
-    const bool GetAttribute(const string& name, unsigned long &value, const bool bHex = false);
+	// const bool GetAttribute(const string& name, unsigned int &value, const bool bHex = false);
+	const bool GetAttribute(const string& name, DWORD &value, const bool bHex = false);
 	const bool GetAttribute(const string& name, float &value);
 	const bool GetAttribute(const string& name, double &value);
 	const bool GetAttribute(const string& name, bool &value);

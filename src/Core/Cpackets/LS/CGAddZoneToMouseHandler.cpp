@@ -37,11 +37,11 @@
 	#include "OustersArmsband.h"
 	#include "BalloonHeadbandUtil.h"
 
-	#include "Gpackets/GCDeleteandPickUpOK.h"
-	#include "Gpackets/GCDeleteObject.h"
-	#include "Gpackets/GCCannotAdd.h"
-	#include "Gpackets/GCSystemMessage.h"
-	#include "Gpackets/GCAddEffect.h"
+	#include "GCDeleteandPickUpOK.h"
+	#include "GCDeleteObject.h"
+	#include "GCCannotAdd.h"
+	#include "GCSystemMessage.h"
+	#include "GCAddEffect.h"
 
 	#include <stdio.h>
 #endif

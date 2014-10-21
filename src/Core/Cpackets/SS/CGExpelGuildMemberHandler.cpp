@@ -7,7 +7,7 @@
 #include "CGExpelGuildMember.h"
 
 #ifdef __GAME_SERVER__
-	#include "Gpackets/GSExpelGuildMember.h"
+	#include "GSExpelGuildMember.h"
 	#include "Guild.h"
 	#include "GuildManager.h"
 	#include "Player.h"

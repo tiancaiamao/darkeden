@@ -14,9 +14,9 @@
 #include "Guild.h"
 #include "GuildManager.h"
 #include "GuildInfo.h"
-#include "Gpackets/GCWaitGuildList.h"
-#include "Gpackets/GCActiveGuildList.h"
-#include "Gpackets/GCSystemMessage.h"
+#include "GCWaitGuildList.h"
+#include "GCActiveGuildList.h"
+#include "GCSystemMessage.h"
 
 
 #ifdef __GAME_SERVER__

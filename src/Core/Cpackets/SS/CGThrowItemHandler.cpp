@@ -18,11 +18,11 @@
 
 	#include "skill/Sniping.h"
 
-	#include "Gpackets/GCThrowItemOK1.h"
-	#include "Gpackets/GCThrowItemOK2.h"
-	#include "Gpackets/GCThrowItemOK3.h"
-	#include "Gpackets/GCSkillFailed1.h"
-	#include "Gpackets/GCSkillFailed2.h"
+	#include "GCThrowItemOK1.h"
+	#include "GCThrowItemOK2.h"
+	#include "GCThrowItemOK3.h"
+	#include "GCSkillFailed1.h"
+	#include "GCSkillFailed2.h"
 #endif	// __GAME_SERVER__
 
 //////////////////////////////////////////////////////////////////////////////

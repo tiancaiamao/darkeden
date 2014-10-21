@@ -23,7 +23,7 @@
 #include "StringPool.h"
 
 #include "Profile.h"
-#include "Gpackets/GCSay.h"
+#include "GCSay.h"
 
 #include <list>
 

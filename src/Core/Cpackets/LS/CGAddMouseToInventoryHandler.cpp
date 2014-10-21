@@ -22,11 +22,11 @@
 	#include "VariableManager.h"
 	#include "item/SubInventory.h"
 
-	#include "Gpackets/GCCannotAdd.h"
-	#include "Gpackets/GCTradeVerify.h"
-	#include "Gpackets/GCCreateItem.h"
-	#include "Gpackets/GCNoticeEvent.h"
-	#include "Gpackets/GCDeleteInventoryItem.h"
+	#include "GCCannotAdd.h"
+	#include "GCTradeVerify.h"
+	#include "GCCreateItem.h"
+	#include "GCNoticeEvent.h"
+	#include "GCDeleteInventoryItem.h"
 	#include <stdio.h>
 #endif
 

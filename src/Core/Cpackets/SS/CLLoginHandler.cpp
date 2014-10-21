@@ -74,8 +74,8 @@
 	#include "GameServerGroupInfoManager.h"
 	#include "GameServerInfoManager.h"
 
-	#include "Lpackets/LCLoginOK.h"
-	#include "Lpackets/LCLoginError.h"
+	#include "LCLoginOK.h"
+	#include "LCLoginError.h"
 	#include "UserInfoManager.h"
 	#include "Assert1.h"
 	#include "Properties.h"
@@ -241,14 +241,14 @@ void CLLoginHandler::execute (CLLogin* pPacket , Player* pPlayer)
 	}
 
 	string          PASSWORD             = pPacket->getPassword();
-	string          SSN                  = "";
+	string          SSN                  ="";
 	ServerGroupID_t CurrentServerGroupID = 0;
-	string          logon                = "";
-	string          access               = "";
-	string          zipcode              = "";
+	string          logon                ="";
+	string          access               ="";
+	string          zipcode              ="";
 
-	string          lastIP       	     = "";
-	string          lastMacAddress		 = "";
+	string          lastIP       	     ="";
+	string          lastMacAddress		 ="";
 
 	// ºô¸µ~ by sigi. 2002.5.31
 	PayType			payType;

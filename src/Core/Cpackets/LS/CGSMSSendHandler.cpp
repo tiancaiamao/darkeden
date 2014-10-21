@@ -12,7 +12,7 @@
 	#include "SMSServiceThread.h"
 	#include "PlayerCreature.h"
 
-	#include "Gpackets/GCAddressListVerify.h"
+	#include "GCAddressListVerify.h"
 
 	#include <cstdio>
 #endif

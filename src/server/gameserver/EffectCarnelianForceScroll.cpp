@@ -7,7 +7,7 @@
 #include "EffectCarnelianForceScroll.h"
 #include "PlayerCreature.h"
 #include "Zone.h"
-#include "Gpackets/GCRemoveEffect.h"
+#include "GCRemoveEffect.h"
 #include "Timeval.h"
 #include "DB.h"
 

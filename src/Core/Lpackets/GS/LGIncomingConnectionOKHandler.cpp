@@ -18,7 +18,7 @@
 	#include "DatabaseManager.h"
 	#include "LogDef.h"
 
-	#include "Gpackets/GCReconnectLogin.h"
+	#include "GCReconnectLogin.h"
 
 #endif
 

@@ -7,7 +7,7 @@
 
 // include files
 #include "ResourceManager.h"
-#include "Assert1.h"
+#include "Assert.h"
 #include "Socket.h"
 #include "SocketOutputStream.h"
 

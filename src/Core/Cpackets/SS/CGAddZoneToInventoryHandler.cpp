@@ -36,14 +36,14 @@
 	#include "BalloonHeadbandUtil.h"
 	#include "VariableManager.h"
 
-	#include "Gpackets/GCDeleteandPickUpOK.h"
-	#include "Gpackets/GCDeleteObject.h"
-	#include "Gpackets/GCCannotAdd.h"
-	#include "Gpackets/GCSystemMessage.h"
-	#include "Gpackets/GCAddEffect.h"
-	#include "Gpackets/GCCreateItem.h"
-	#include "Gpackets/GCNoticeEvent.h"
-	#include "Gpackets/GCDeleteInventoryItem.h"
+	#include "GCDeleteandPickUpOK.h"
+	#include "GCDeleteObject.h"
+	#include "GCCannotAdd.h"
+	#include "GCSystemMessage.h"
+	#include "GCAddEffect.h"
+	#include "GCCreateItem.h"
+	#include "GCNoticeEvent.h"
+	#include "GCDeleteInventoryItem.h"
 
 	#include "EffectHasSlayerRelic.h"
 	#include "EffectHasVampireRelic.h"
@@ -348,7 +348,7 @@ void CGAddZoneToInventoryHandler::execute (CGAddZoneToInventory* pPacket , Playe
 //			pZone->broadcastPacket(ZoneX , ZoneY, &_GCDeleteObject , pPC);
 			pZone->broadcastPacket(ZoneX , ZoneY, &_GCDeleteObject);
 
-			//log(LOG_PICKUP_ITEM, pPC->getName(), "", pItem->toString());
+			//log(LOG_PICKUP_ITEM, pPC->getName(), ", pItem->toString());
 
 			//pItem->whenPCTake(pPC);
 
@@ -735,7 +735,7 @@ void CGAddZoneToInventoryHandler::execute (CGAddZoneToInventory* pPacket , Playe
 			_GCDeleteObject.setObjectID(pItem->getObjectID());
 			pZone->broadcastPacket(pPC->getX(), pPC->getY(), &_GCDeleteObject , pPC);
 
-			log(LOG_PICKUP_ITEM, pPC->getName(), "", pItem->toString());
+			log(LOG_PICKUP_ITEM, pPC->getName(), ", pItem->toString());
 		
 			if (Merge) 
 			{

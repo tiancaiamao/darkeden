@@ -12,7 +12,7 @@
 #include "SXml.h"
 #include <iostream>
 #include <iosfwd>
-#include <assert.h>
+#include <cassert>
 #include <cstdio>
 #include <cstdarg>
 #include <ctime>
@@ -424,18 +424,18 @@ void XMLTree::AddAttribute(const string& name, const int& value )
 	AddAttribute(name, string(szTemp));
 }
 
-void XMLTree::AddAttribute(const string& name, const unsigned int& value, const bool bHex )
-{
-	char szTemp[20];
-	if(bHex == true )
-		itoa(value, szTemp, 16);
-	else
-		itoa(value, szTemp, 10);
+// void XMLTree::AddAttribute(const string& name, const unsigned int& value, const bool bHex )
+// {
+// 	char szTemp[20];
+// 	if(bHex == true )
+// 		itoa(value, szTemp, 16);
+// 	else
+// 		itoa(value, szTemp, 10);
+// 
+// 	AddAttribute(name, string(szTemp));
+// }
 
-	AddAttribute(name, string(szTemp));
-}
-
-void XMLTree::AddAttribute(const string& name, const unsigned long& value, const bool bHex )
+void XMLTree::AddAttribute(const string& name, const DWORD& value, const bool bHex )
 {
 	char szTemp[20];
 	if(bHex == true )
@@ -508,24 +508,24 @@ XMLTree::GetAttribute(const string& name, int &value )
 	return true;
 }
 
+// const bool
+// XMLTree::GetAttribute(const string& name, unsigned int &value, const bool bHex )
+// {
+// 	const XMLAttribute *pAttr = GetAttribute(name);
+// 
+// 	if(pAttr == NULL )
+// 		return false;
+// 
+// 	if(bHex == true )
+// 		value = pAttr->ToHex();
+// 	else
+// 		value = pAttr->ToInt();
+// 
+// 	return true;
+// }
+
 const bool
-XMLTree::GetAttribute(const string& name, unsigned int &value, const bool bHex )
-{
-	const XMLAttribute *pAttr = GetAttribute(name);
-
-	if(pAttr == NULL )
-		return false;
-
-	if(bHex == true )
-		value = pAttr->ToHex();
-	else
-		value = pAttr->ToInt();
-
-	return true;
-}
-
-const bool
-XMLTree::GetAttribute(const string& name, unsigned long &value, const bool bHex )
+XMLTree::GetAttribute(const string& name, DWORD &value, const bool bHex )
 {
 	const XMLAttribute *pAttr = GetAttribute(name);
 

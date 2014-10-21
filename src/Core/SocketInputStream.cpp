@@ -11,7 +11,7 @@
 //////////////////////////////////////////////////
 #include "SocketInputStream.h"
 #include <errno.h>
-#include "Assert1.h"
+#include "Assert.h"
 #include "Packet.h"
 
 #if __LINUX__

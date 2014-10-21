@@ -14,9 +14,9 @@
 	#include "Ousters.h"
 	#include "OustersSkillSlot.h"
 
-	#include "Gpackets/GCDownSkillOK.h"
-	#include "Gpackets/GCDownSkillFailed.h"
-	#include "Gpackets/GCModifyInformation.h"
+	#include "GCDownSkillOK.h"
+	#include "GCDownSkillFailed.h"
+	#include "GCModifyInformation.h"
 
 	#include <cmath>
 	#include <cstdio>

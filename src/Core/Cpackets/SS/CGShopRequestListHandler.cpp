@@ -16,9 +16,9 @@
 	#include "quest/Condition.h"
 	#include "quest/Action.h"
 
-	#include "Gpackets/GCNPCResponse.h"
-	#include "Gpackets/GCShopList.h"
-	#include "Gpackets/GCShopListMysterious.h"
+	#include "GCNPCResponse.h"
+	#include "GCShopList.h"
+	#include "GCShopListMysterious.h"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

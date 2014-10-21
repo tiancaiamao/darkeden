@@ -21,13 +21,13 @@
     #include "GuildUnion.h"
 #endif
 #ifdef __SHARED_SERVER__
-    #include "Spackets/SGGuildInfo.h"
-    #include "Spackets/SGExpelGuildMemberOK.h"
+    #include "SGGuildInfo.h"
+    #include "SGExpelGuildMemberOK.h"
     #include "GameServerManager.h"
 #endif
 
-#include "Gpackets/GCWaitGuildList.h"
-#include "Gpackets/GCActiveGuildList.h"
+#include "GCWaitGuildList.h"
+#include "GCActiveGuildList.h"
 
 #include <map>
 
