@@ -1,8 +1,0 @@
-OBJS	= \
-	GLIncomingConnection.o GLIncomingConnectionHandler.o \
-	GLIncomingConnectionError.o GLIncomingConnectionErrorHandler.o \
-	GLIncomingConnectionOK.o GLIncomingConnectionOKHandler.o \
-	GLKickVerify.o GLKickVerifyHandler.o \
-
-SRCS	= $(OBJS:.o=.cpp)
-
